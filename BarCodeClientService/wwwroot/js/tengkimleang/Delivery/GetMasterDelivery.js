@@ -83,7 +83,7 @@
             success: function(data) {
                 LCopyFromPO = data;
                 //console.log("getPurchaseOrder");
-                //console.log(data);
+                console.log(LCopyFromPO);
                 TbCopyFromPO.clear();
                 TbCopyFromPO.rows.add(LCopyFromPO);
                 TbCopyFromPO.search('').draw();

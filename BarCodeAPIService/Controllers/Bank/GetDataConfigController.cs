@@ -8,11 +8,12 @@ using System.IO;
 using BarCodeLibrary.Respones.SAP.Bank;
 using Microsoft.Extensions.Options;
 using BarCodeLibrary.Respones.SAP;
+using Barcodesystem.Contract.RouteApi;
 
 namespace BarCodeAPIService.Controllers.Bank
 {
-    [Produces("application/json")]
-    [Route("api/GetDataConfig")]
+    [ApiController]
+    [Route(APIRoute.Root)]
     public class GetDataConfigController : Controller
     {
         private IConfiguration configuration;
@@ -23,34 +24,6 @@ namespace BarCodeAPIService.Controllers.Bank
         }
 
         private readonly IOptions<ResponseGetDataConfig> dataConfig;
-
-        [HttpGet]
-        public IActionResult GetDataConfig()
-        {
-
-            var builder = new ConfigurationBuilder()
-                                    .SetBasePath(Directory.GetCurrentDirectory())
-                                    .AddJsonFile("appsettings.json");
-            var configuration = builder.Build();
-
-            var companyDB = configuration["CompanyDB"];
-            var userNameSAP = configuration["UserNameSAP"];
-
-            return Json(new
-            {
-                errorCode = "0",
-                errorMessage = "",
-                data = new
-                {
-                    companyDB = companyDB,
-                    userNameSAP = userNameSAP
-
-                }
-            }
-            );
-
-        }
-
 
     }
 }

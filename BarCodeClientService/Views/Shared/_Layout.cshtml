@@ -138,7 +138,7 @@
 
             <div class="menu">
                 <div class="logo" style="color:#f0eff1">
-                    Barcode System <font style="font-size:6px;"><b>V.080923.1</b></font>
+                    Barcode System <font style="font-size:6px;"><b>V.02012024.1</b></font>
                 </div>  
                 <div class="right_menu">
                     <div class="row">
@@ -190,6 +190,14 @@
                                 </span>
                                 <span class="title"><label style="font-size:18px;font-weight:500">Inventory</label></span>
 
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Dashboard" asp-action="DashboardNofity" id="NFT" class="active" style="color: #696969">
+                                <span class="icon">
+                                    <i class="fas fa-cubes" style="margin-left: -20px; color: rgba(0, 51, 102,0.8)"></i>
+                                </span>
+                                <span class="title"><label style="font-size:18px;font-weight:500">แจ้งใช้</label></span>
                             </a>
                         </li>
                         <li>
@@ -251,22 +259,49 @@
                     </td>
                 </tr>
             </table>
-            @*<div align="right"><a id="resetpsw" style="cursor:pointer; font-weight:bold;">forgot password</a></div>*@
+            <div align="right"><a id="resetpsw" style="cursor:pointer; font-weight:bold;">Change Password</a></div>
         </form>
         
     </div>
 
     <div id="frmResetPSW" class="modal-2">
         <div class="modal-content-2 animate">
-            <font size="+1" style="font-weight:bold; text-shadow: 1px 1px #ffffff">[Reset Password]</font>
-            Username : <input type="text" id="uname_f" class="form-control" autocomplete="off">
-            Old Password : <input type="text" id="psw_o_f" class="form-control" autocomplete="off">
-            New Password : <input type="text" id="psw_n_f" class="form-control" autocomplete="off">
-            <div align="right">
-                <button type="submit" id="btnResetPSW" class="btn btn-danger">Reset</button>
-            </div>
+            <table id="tbLogin" border="0" class="table table-striped table-bordered dt-responsive nowrap" width="80%" cellspacing="0">
+                <tr>
+                    <td>
+                        <font size="+1" style="font-weight:bold; text-shadow: 1px 1px #ffffff">[Change Password]</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="uname"><b>Username -: </b></label>
+                        <input type="text" placeholder="Username" id="uname_f" name="uname_f" required class="form-control" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="psw"><b>Old Password -: </b></label>
+                        <input type="password" placeholder=" Password" id="psw_o_f" name="psw_o_f" required class="form-control" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="psw"><b>New Password -: </b></label>
+                        <input type="password" placeholder="Password" id="psw_n_f" name="psw_n_f" required class="form-control" autocomplete="off">
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td>
+                        <div id="txtMsgErr">-</div>
+                    </td>
+                </tr>
+                <tr align="right">
+                    <td>
+                        <button type="button" id="btnResetPSW" class="btn btn-danger" onclick="funcChangePassword();">Change</button>
+                    </td>
+                </tr>
+            </table>
         </div>
-        
     </div>
 
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -274,11 +309,50 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
 
 
-        <script type="text/javascript">
+    <script type="text/javascript">
         if (getCookie("username") != '') {
             document.getElementById("id01").style.display = "none";
         } else {
             document.getElementById("id01").style.display = "block";
+        }
+
+        console.log("Get Route -> ");
+        console.log("Route : " + location.pathname.split('/')[1]);
+        var eRoute = "";
+        eRoute = location.pathname.split('/')[1];
+        if (eRoute == "Report") {
+            let user = getCookie("username");
+            if (user == "") {
+                $('#uname').val('admin');
+                $('#psw').val('123');
+                setTimeout(() => {
+                    //alert("XxX");
+                    document.getElementById("btnLogin").click();
+                }, 3000);
+            } else {
+                //https://localhost:44314/Inventory/Waiting
+                setTimeout(() => {
+                    window.location.href = "/SAPUI/Inventory/Waiting";
+                }, 1500);
+            }
+        } else if (eRoute == "SAPUI") {
+            eRoute = location.pathname.split('/')[2];
+            if (eRoute == "Report") {
+                let user = getCookie("username");
+                if (user == "") {
+                    $('#uname').val('admin');
+                    $('#psw').val('123');
+                    setTimeout(() => {
+                        //alert("XxX");
+                        document.getElementById("btnLogin").click();
+                    }, 3000);
+                } else {
+                    //https://localhost:44314/Inventory/Waiting
+                    setTimeout(() => {
+                        window.location.href = "/SAPUI/Inventory/Waiting";
+                    }, 1500);
+                }
+            }
         }
 
         //Read JSON
@@ -323,7 +397,8 @@
                     if (arrUser[i].userName == lusername && arrUser[i].password == lpassword) {
                         console.log("Login Success");
                         console.log(arrUser[i].userName + "----" + lusername);
-                        setCookie("username", lusername, 1);
+                        //alert(arrUser[i].userName + "----" + lusername);
+                        setCookie("username", lusername, "passw0rder", lpassword, 1);
                         document.getElementById("id01").style.display = "none";
                         sstatus = sstatus + 1;
                     }
@@ -341,16 +416,63 @@
         $('#alogout').click(function () {
             console.log('Logout');
             document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "passw0rder=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             //location.reload();
             window.location.href = "@Url.Action("Index", "Home")";
         });
 
-        function setCookie(cname, cvalue, exdays) {
+            function setCookie(cname, cvalue, cpassw0rder, cvaluepassw0rder, exdays) {
             const d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
             let expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
+                document.cookie = "username=" + cvalue + ";" + expires + ";path=/";
+                document.cookie = "passw0rder=" + cvaluepassw0rder + ";" + expires + ";path=/";
+            }
+
+            function funcChangePassword() {
+                var str_uname_f = document.getElementById("uname_f").value;
+                var str_psw_o_f = document.getElementById("psw_o_f").value;
+                var str_psw_n_f = document.getElementById("psw_n_f").value;
+                var strErr = "";
+                if (str_uname_f == '') {
+                    strErr = "กรุณาใส่ Username";
+                }
+                else if (str_psw_o_f == '') {
+                    strErr = "กรุณาใส่ Old Password";
+                }
+                else if (str_psw_n_f == '') {
+                    strErr = "กรุณาใส่ New Password";
+                }
+                else {
+                    strErr = "";
+                }
+
+                document.getElementById("txtMsgErr").innerHTML = strErr;
+                document.getElementById("txtMsgErr").style.color = 'red';
+
+                setTimeout(() => {
+                    document.getElementById("txtMsgErr").innerHTML = "";
+                }, 4000);
+
+                //console.log("Username=" + uname_f + ", OldPassword=" + psw_o_f + ", NamePassword=" + psw_n_f);
+                var User = {};
+                User.userName = str_uname_f;
+                User.oldPassword = str_psw_o_f;
+                User.password = str_psw_n_f;
+                //console.log(User);
+
+                $.ajax({
+                url: '@Url.Action("PostUpdatePassword", "Admin")',
+                type: 'POST',
+                dataType: 'JSON',
+                data: { send: User },
+                    success: function (data) {
+                        alert("Change Password Success.");
+                        window.location.href = "@Url.Action("Index", "Home")";
+                }
+            });
+
+            }
 
         function getCookie(cname) {
             let name = cname + "=";
@@ -379,35 +501,6 @@
         $('#resetpsw').click(function () {
             document.getElementById("id01").style.display = "none";
             document.getElementById("frmResetPSW").style.display = "block";
-        });
-
-        $('#btnResetPSW').click(function () {
-            myObject = [];
-            newData = {};
-            var r_username = $('#uname_f').val();
-            var r_password_o = $('#psw_o_f').val();
-            var r_password_n = $('#psw_n_f').val();
-
-            readTextFile("./js/login.json", function (text) {
-                var data = JSON.parse(text);
-                //console.log(data);
-                for (var i = 0; i < data.length; i++) {
-
-                    if (data[i].username == r_username && data[i].password == r_password_o) {
-                        console.log('Reset Password Success.');
-                        //setCookie("username", lusername, 1);
-                        //document.getElementById("id01").style.display = "none";
-                        return true;
-
-                    }
-                    else {
-                        alert("Username or Password -> incorrect.");
-                        return false;
-                    }
-                }
-            });
-
-
         });
 
 
@@ -496,9 +589,9 @@
             }
         })*@
 
-        </script>
+    </script>
 
-        @RenderSection("Scripts", false)
+    @RenderSection("Scripts", false)
 
 </body>
 </html>

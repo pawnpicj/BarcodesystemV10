@@ -280,7 +280,7 @@
 
 <script type="text/javascript">
     GetDocNum('@ViewBag.DocNum');
-    var dataTableMethod=new DataTableMethod(), 
+    var dataTableMethod=new DataTableMethod(),
     LinesAR = [];
     $('#TbAR').dataTable({
         bLengthChange: false,
@@ -424,51 +424,94 @@
         }
     }
 
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
     $("#Save").click(function () {
         document.getElementById("frmLoading").style.display = "block";
 
-        var object = {};
-        object.CardCode = $("#CusID").val();
-        object.NumAtCard = $("#OrderNumberID").val();
-        object.Remark = $("#Remark").val();
-        object.Series = $("#SeriesID").val();
-        object.DocDate = $("#DocDate").val();
-        object.DocDueDate = $("#DocumentDate").val();
-        object.BPCurrency = $("#BPDocCurr").val();
-        var line = [];
-        var data = TbLine.rows().data();
-        console.log(data);
-        data.each(function (value, index) {
-            var objectLine = {};
-            objectLine.ItemCode = value.itemCode;
-            objectLine.Quantity = value.quatity;
-            objectLine.UnitPrice = value.price;
-            objectLine.Discount = value.discPrcnt;
-            objectLine.TaxCode = value.vatGroup;
-            objectLine.WarehouseCode = value.whsCode;
-            objectLine.UomCode = value.whsCode;
-            objectLine.LineNum = value.lineNum;
-            objectLine.BaseEntry = value.baseEntry;
-            objectLine.ManageItem = value.manageItem;
-            line.push(objectLine);
-        });
-        object.Lines = line;
+        //sendUserPassSAP
+        //get cookie
+        let user = getCookie("username");
+        let passer = getCookie("passw0rder");
+        var dataU = {};
+        dataU.userNameSAP = user;
+        dataU.password = passer;
+
+        console.log("-> User And Password Sending...");
+        console.log(dataU);
         $.ajax({
-            url: '@Url.Action("CreateGoodReturn","Return")',
             type: "POST",
-            data: { sendReturn: object },
+            url: '@Url.Action("PostUserConfig", "Setting")',
+            data: { send: dataU},
             dataType: "JSON",
-            success: function(data) {
-                alert("Success");
-                document.getElementById("frmLoading").style.display = "none";
-                location.reload();
+            error: function (request, error) {
+
             },
-            error: function(erro) {
-                alert(erro.responseText);
-                document.getElementById("frmLoading").style.display = "none";
+            success: function (ex) {
+                console.log("Success PostUserConfig");
+                console.log("-> To Saving...");
+                //======================================
+                var object = {};
+                object.CardCode = $("#CusID").val();
+                object.NumAtCard = $("#OrderNumberID").val();
+                object.Remark = $("#Remark").val();
+                object.Series = $("#SeriesID").val();
+                object.DocDate = $("#DocDate").val();
+                object.DocDueDate = $("#DocumentDate").val();
+                object.BPCurrency = $("#BPDocCurr").val();
+                var line = [];
+                var data = TbLine.rows().data();
+                console.log(data);
+                data.each(function (value, index) {
+                    var objectLine = {};
+                    objectLine.ItemCode = value.itemCode;
+                    objectLine.Quantity = value.quatity;
+                    objectLine.UnitPrice = value.price;
+                    objectLine.Discount = value.discPrcnt;
+                    objectLine.TaxCode = value.vatGroup;
+                    objectLine.WarehouseCode = value.whsCode;
+                    objectLine.UomCode = value.whsCode;
+                    objectLine.LineNum = value.lineNum;
+                    objectLine.BaseEntry = value.baseEntry;
+                    objectLine.ManageItem = value.manageItem;
+                    line.push(objectLine);
+                });
+                object.Lines = line;
+                $.ajax({
+                    url: '@Url.Action("CreateGoodReturn","Return")',
+                    type: "POST",
+                    data: { sendReturn: object },
+                    dataType: "JSON",
+                    success: function(data) {
+                        alert("Success");
+                        document.getElementById("frmLoading").style.display = "none";
+                        location.reload();
+                    },
+                    error: function(erro) {
+                        alert(erro.responseText);
+                        document.getElementById("frmLoading").style.display = "none";
+                    }
+                });
+                //======================================
             }
         });
+
+
     });
+
     $("#ChoosePO").click(function() {
         //alert("Hello");
         const index = TbCopyFromPO.row('.selected').index();

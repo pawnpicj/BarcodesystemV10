@@ -18,5 +18,10 @@ namespace BarCodeClientService.Controllers
         {
             return View();
         }
+
+        public IActionResult DashboardNofity()
+        {
+            return View();
+        }
     }
 }

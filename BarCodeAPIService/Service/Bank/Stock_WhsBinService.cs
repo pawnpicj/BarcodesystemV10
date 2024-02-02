@@ -909,57 +909,6 @@ namespace BarCodeAPIService.Service.Bank
             }
         }
 
-        public Task<ResponseGetDataConfig> responseGetDataConfig()
-        {
-            var ListData = new List<ListData>();
-            SAPbobsCOM.Company oCompany;
-            try
-            {
-                //GetData
-
-                Login login = new();
-                if (login.LErrCode == 0)
-                {
-                    ListData.Add(new ListData
-                    {
-                        CompanyDB = ConnectionString.CompanyDB,
-                        UserNameSAP = ConnectionString.UserName
-                    });
-
-                    return Task.FromResult(new ResponseGetDataConfig
-                    {
-                        ErrorCode = 0,
-                        ErrorMessage = "",
-                        Data = ListData
-                    });
-
-                }
-                else
-                {
-                    return Task.FromResult(new ResponseGetDataConfig
-                    {
-                        ErrorCode = login.LErrCode,
-                        ErrorMessage = login.SErrMsg,
-                        Data = null
-                    });
-                }
-
-                //End
-            }
-            catch (Exception ex)
-            {
-                return Task.FromResult(new ResponseGetDataConfig
-                {
-                    ErrorCode = ex.HResult,
-                    ErrorMessage = ex.Message,
-                    Data = null
-                });
-            }
-
-            
-
-        }
-
         public Task<ResponseGetStockItemBatchAndSerial> responseGetItemByBinCode(string itemCode, string binCode)
         {
 

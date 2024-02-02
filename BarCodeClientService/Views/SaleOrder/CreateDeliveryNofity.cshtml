@@ -1,0 +1,3831 @@
+﻿@{
+    ViewData["Title"] = "Create Delivery Nofity";
+    var dt = DateTime.Now;
+    ViewData["Date"] = dt.ToShortDateString();
+}
+
+<link href="~/css/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/css/DataTable/rowReorder.dataTables.min.css" rel="stylesheet" />
+<link href="~/tengkimleang/goodReceiptPO/Style.css" />
+@*<link href="~/css/DataTable/responsive.dataTables.min.css" rel="stylesheet" />*@
+<script src="~/css/DataTable/jquery-3.3.1.js"></script>
+<script src="~/css/DataTable/jquery.dataTables.min.js"></script>
+<script src="~/css/DataTable/dataTables.rowReorder.min.js"></script>
+@*<script src="~/css/DataTable/dataTables.responsive.min.js"></script>*@
+<script src="~/css/DataTable/moment.min.js"></script>
+<script src="~/css/DataTable/datetime-moment.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+
+@* Icon *@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    tr.selected {
+        background: red;
+        color: red;
+    }
+
+    #main {
+        position: absolute;
+    }
+
+    .color_tap {
+        background-color: #5f95c3;
+        color: #ffffff;
+        font-weight: 600;
+        margin-right: 1px;
+        min-width: 60px;
+    }
+
+    .color_tap3 {
+        min-width: 60px;
+        background-color: #ffc024;
+        color: #ffffff;
+        font-weight: 600;
+        margin-right: 1px;
+    }
+
+    .nav-tabs .nav-link {
+        border: 1px solid rgb(193, 193, 193);
+        border-radius: 0px 12px 0px 0px;
+        height: 40px;
+        line-height: 20px;
+    }
+
+    .modal {
+        z-index: 200000;
+    }
+
+    .modal-header {
+        background: #5f95c3;
+        color: #ffffff;
+        height: 40px;
+    }
+
+        .modal-header b {
+            margin-top: -10px;
+        }
+
+    #TbAR table tr td {
+        height: 35px;
+        margin-left: 15px;
+        margin-top: 10px;
+        padding: 0px !important;
+        position: relative !important;
+        /*background-color: none;*/
+    }
+
+    table tbody tr td {
+        background-color: #ffffff;
+        color: black;
+    }
+
+    table tbody tr.selected td {
+        background: #94d8e1;
+        color: red;
+    }
+
+        table tbody tr.selected td .clsinput {
+            background: #94d8e1;
+            color: red;
+        }
+
+    .clsinput:focus {
+        outline: none;
+    }
+
+    .hrnew4 {
+        border: 1px solid black;
+    }
+
+    .textBorderWhite {
+        width: 50px;
+        text-align: center;
+        font-weight: bolder;
+        color: white;
+    }
+
+    .textBorderBlack {
+        width: 50px;
+        text-align: center;
+        font-weight: bolder;
+        color: black;
+    }
+
+    .styBalance {
+        display: none;
+    }
+    /* =================================================== */
+    .cover-spin {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255,0.7);
+        z-index: 9999;
+        display: none;
+    }
+
+    .styBalance {
+        text-align: center;
+    }
+
+    @@-webkit-keyframes spin {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .cover-spin::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 48%;
+        top: 40%;
+        width: 40px;
+        height: 40px;
+        border-style: solid;
+        border-color: black;
+        border-top-color: transparent;
+        border-width: 4px;
+        border-radius: 50%;
+        -webkit-animation: spin .8s linear infinite;
+        animation: spin .8s linear infinite;
+    }
+    /* =================================================== */
+
+</style>
+
+<div id="#main">
+    <input type="text" id="xmodule" value="delivery" style="display:none" />
+    <div id="frmLoading" class="cover-spin" style="display:none"></div>
+
+    <div class="row" style="color: #696969; margin-left: 5px; margin-top: 5px;">
+        <h5 style="color: #696969; margin-top: 5px;">
+            <a onclick="return confirm('Unsaved data will be lost. Do you want to continue without saving?')"><i class="fas fa-home"></i> Dashboard</a>
+            <span>
+                <a onclick="return confirm('Unsaved data will be lost. Do you want to continue without saving?')"><i class="fa fa-caret-right align-right"></i><label style="font-size:18px;font-weight:500">Sale Order</label></a>
+                <i class="fa fa-caret-right align-right"></i>
+            </span><label style="font-size:18px;font-weight:500">Create Delivery Nofity</label>
+
+        </h5>
+    </div>
+    <hr />
+    <div style="color: #696969; padding: 10px;">
+        <ul class="nav nav-tabs Tap-PA" id="mytab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active color_tap" id="cus-tab" data-toggle="tab" href="#cus" role="tab" aria-controls="Customer" aria-selected="true"><label style="font-size:18px;font-weight:500">Customer</label></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link color_tap" id="item-tab" data-toggle="tab" href="#item" role="tab" aria-controls="Items" aria-selected="false" onclick="clickFocusScan();">
+                    <label style="font-size:18px;font-weight:500">Items</label>
+                </a>
+            </li>
+            @*<li class="nav-item">
+            <a class="nav-link color_tap3" id="item-tab" data-toggle="tab" href="#setting" role="tab" aria-controls="Setting" aria-selected="false" >
+            <label style="font-size:18px;font-weight:500">Setting</label>
+            </a>
+            </li>*@
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="cus" role="tabpanel" aria-labelledby="cus-tab" style="margin-top: 10px">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="nav navbar-nav mr-auto">
+
+                            <div class="btn-group">
+                                <button class="btn btn-info" id="CopyFromPO" data-toggle="modal" data-target="#ModalCopyFromPO" disabled>
+                                    Select SO
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label style="font-size:18px;font-weight:500">Vendor Code :</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="input-group-text" id="CcusID">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search Code" id="CusID" value="" readonly>
+                                @*<div class="input-group-append">
+                <button class="input-group-text btnModelsCus" data-toggle="modal" data-target="#ModalCusCode">
+                <i class="fa fa-search"></i>
+                </button>
+                </div>*@
+                            </div>
+                        </div>
+                        <div>
+                            <label style="font-size:18px;font-weight:500">Vender Name :</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="CusName" value="" readonly>
+                            </div>
+                        </div>
+                        Sales Order No :
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="OrderNumberID" readonly>
+                        </div>
+                        Remarks :
+                        <div class="input-group">
+                            <textarea class="form-control" id="Remark" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div style="display:none">
+                            <div class="input-group">
+                                <select id="ShowType" class="form-control" onchange="funcShowType();">
+                                    <option value="0">แสดงทั้งหมด</option>
+                                    <option value="1">ไม่แสดงแจ้งใช้</option>
+                                    <option value="2">แสดงเฉพาะแจ้งใช้</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            Series :
+                            <div class="input-group">
+                                <select id="SeriesID" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            Posting Date :
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="DocDate">
+                            </div>
+                        </div>
+                        <div>
+                            Document Date :
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="DocumentDate">
+                            </div>
+                        </div>
+                        @*<div>
+        BP Currency :
+        <div class="input-group">
+        <select class="form-control" id="BPDocCurr"></select>
+        </div>
+        </div>*@
+                        Sales Employees :
+                        <div class="input-group">
+                            <select class="form-control" id="SaleEmp" style="display:none"></select>
+                            <input type="text" size="7" placeholder="" id="txtSlpCode" value="" disabled>
+                            <input type="text" class="form-control" placeholder="" id="txtSlpName" value="" disabled>
+                        </div>
+
+                        หมายเหตุ (SQ) :
+                        <div class="input-group">
+                            <textarea class="form-control" id="SQ_Remark" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="item" role="tabpanel" aria-labelledby="item-tab" style="margin-top: 10px;">
+
+                <div style="display:none;">
+                    Add More Item
+                    <button class="btn btn-info" id="btnShowAddItemBar" style="background:#f0eff1;color:#696969" onclick="shAddItemBar()">
+                        <i class="fa fa-window-minimize" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="row" id="DivBarAddItem" style="display: none;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="hidden" id="itemManage" />
+                            Item Code -:
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button class="input-group-text" id="CItemCode">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search Code" id="ItemCode">
+                                <div class="input-group-append">
+                                    <button class="input-group-text btnModelsItem" data-toggle="modal" data-target="#ModalItem">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            Item Descrition :
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="ItemDescr" readonly>
+                            </div>
+                            Quantity :
+                            <div class="input-group">
+                                <input type="number" class="form-control" value="1" id="Qty" onchange="QtyChange()">
+                            </div>
+
+                            <div>
+                                Unit Price :
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <input type="button" class="input-group-text" id="DocCurr" />
+                                    </div>
+                                    <input type="number" class="form-control" id="Price" value="0" onchange="DisAmtChange()">
+                                </div>
+                            </div>
+
+                            <div>
+                                Discount(%) :
+                                <div class="input-group">
+                                    <input type="number" class="form-control" value="0" id="Discount" onchange="DisCountPerChange()">
+                                </div>
+                                Discount Amount :
+                                <div class="input-group">
+                                    <input type="number" class="form-control" value="0" id="DiscountAmt" onchange="DisAmtChange()">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div>
+                                Bar Code :
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="BarCode" onchange="">
+                                </div>
+                            </div>
+                            <div>
+                                VAT Code :
+                                <div class="input-group">
+                                    <select id="TaxCode" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                Warehouse :
+                                <div class="input-group">
+                                    <select id="whscode" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                Uom Name :
+                                <div class="input-group">
+                                    <select id="UomID" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                Total :
+                                <div class="input-group">
+                                    <input type="number" class="form-control" value="0" id="totalItem" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row" style="padding: 15px;">
+                        <div class="nav navbar-nav ml-auto">
+                            <button class="btn btn-info" id="AddItem" style="background: #f0eff1; color: #696969">Add Item</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="hrnew4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="TabQty" style="display:block;">
+                            Input Quantity :
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="" id="txtQuantity01" value="1" style="background-color: antiquewhite; border: 3px solid #000000; margin: 0 auto; text-align: center; ">
+                                <button class="btn btn-warning" id="btnUpdateQty" style="margin-left:5px; display:none" onclick="fncUpdateQty();">Update Qty</button>
+                            </div>
+                        </div>
+                        <div id="TabScanBarcode" style="display: block;">
+                            Scan Barcode :
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="txtScanBarCode01" autocomplete="off" style="background-color: antiquewhite; border: 3px solid #000000;text-align: center;" />
+                                <button class="btn-lg btn-warning" id="btnFocusScan" onclick="clickFocusScan();"><i class="fas fa-barcode"></i></button>
+                            </div>
+                            <button class="input-group-text" id="addRow01" style="display: none;" autocomplete="off"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <div id="TabBinLoc" style="display:none;">
+                            Bin Location : <input type="text" id="txtGetBinEntry" autocomplete="off" disabled readonly size="5" />
+                            <input type="text" id="txtGetBinCode" autocomplete="off" disabled readonly />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-sm-12">
+                        <div>Data Line</div>
+                        <div class="table-responsive">
+                            <table id="TbAR" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>BatchOrSerial</th>
+                                        <th>ItemCode</th>
+                                        <th>UnitPrice</th>
+                                        <th>Discount(%)</th>
+                                        <th>Dis.Amount</th>
+                                        <th>Qty</th>
+                                        <th>InputQty</th>
+                                        <th>Price Before Discount</th>
+                                        <th>Line Total</th>
+                                        <th>Uom Name</th>
+                                        <th>TaxCode</th>
+                                        <th>GrossPrice</th>
+                                        <th>Warehouse</th>
+                                        <th>Patient</th>
+                                        <th>TranferNo</th>
+                                        <th>LineNo</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <br>
+                        <div style="display:none;">
+                            เลือก -> ItemCode&nbsp;<input type="text" id="txtSeleteItemCode" size="10" class="text-sm-left" readonly style="border-top:none; border-left:none; border-right:none;" />
+                            QTY&nbsp;<input type="text" id="txtSeleteQty" size="2" class="text-sm-left" readonly style="border-top:none; border-left:none; border-right:none; text-align:center;" />
+                            <input type="text" id="txtSeleteLine" size="2" class="text-sm-left" readonly style="border-top:none; border-left:none; border-right:none; display: none;" />
+                        </div>
+                        <div>Data Scan</div>
+                        <div class="table-responsive">
+                            <table id="TbLineScan" class="table table-striped table-bordered table-condensed dt-responsive nowrap text-xsmall" style="width: 100%; background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <th>ItemCode</th>
+                                        <th>ItemName</th>
+                                        <th>Quantity</th>
+                                        <th>Warehouse</th>
+                                        <th>BinEntry</th>
+                                        <th>BinLocation</th>
+                                        <th>UOMCode</th>
+                                        <th>ExpDate</th>
+                                        <th>BatchNumber</th>
+                                        <th>SerialNumber</th>
+                                        <th>LineSap</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div>Data Batch/Serial</div>
+                        <div class="table-responsive">
+                            <table id="TbLineBatchSerial" class="table table-striped table-bordered table-condensed dt-responsive nowrap text-xsmall" style="width: 100%; background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>LineNo</th>
+                                        <th>ItemCode</th>
+                                        <th>ItemName</th>
+                                        <th>Quantity</th>
+                                        <th>InputQuantity</th>
+                                        <th>UOMCode</th>
+                                        <th>GrossPrice</th>
+                                        <th>BatchSerialType</th>
+                                        <th>BatchNumber</th>
+                                        <th>SerialNumber</th>
+                                        <th>Warehouse</th>
+                                        <th>BinEntry</th>
+                                        <th>BinLocation</th>
+                                        <th>Patient</th>
+                                        <th>LineSap</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 5px;">
+                    <div class="col-sm-4">
+                        Table[1] QTY :
+                        <input type="text" class="form-control bg-warning textBorderBlack" value="0" id="txt_totalQty1" readonly />
+                        Table[2] QTY :
+                        <input type="text" class="form-control bg-primary textBorderWhite" value="0" id="txt_totalQty2" readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        Discount % :
+                        <input type="number" class="form-control" value="0" id="DisPer" />
+                        Discount Amount :
+                        <input type="number" class="form-control" value="0" id="DisAmt" />
+                    </div>
+                    <div class="col-sm-4">
+                        Before Discount :
+                        <input class="form-control" readonly id="BTax" />
+                        Discount By Items :
+                        <input class="form-control" readonly id="DisA" />
+                        @*Tax Amount :*@
+                        <input class="form-control d-none" readonly id="Tax" />
+                        <input class="d-none" id="TaxBeforeDis" />
+                        Total Amount :
+                        <input class="form-control" readonly id="Total" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row" style="margin-bottom: -20px; margin-top: -20px; padding: 15px;">
+            <div class="nav navbar-nav mr-auto">
+                <div class="btn-group">
+                    @*<button class="btn btn-info" id="CopyFromPO" style="background: #f0eff1; color: #696969;"
+                    data-toggle="modal" data-target="#ModalCopyFromPO" disabled>
+                    Copy From PO
+                    </button>*@
+                    <button class="btn btn-info" id="CopyToGoodReturn" style="background: #f0eff1; color: #696969;"
+                            data-toggle="modal" data-target="#ModalCopyToGoodReturn" disabled>
+                        Copy To Good Return
+                    </button>
+                </div>
+            </div>
+            <div class="nav navbar-nav ml-auto">
+                <div class="btn-group">
+                    <button class="btn btn-info modal-toggle" id="btnNext" style="margin-left: 5px;" data-href="#item">Next</button>
+                    <button class="btn btn-success" id="Save" style="margin-left: 5px;">Send SAP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row" style="display:none;">
+        Status : <input id="alertMsg" type="text" readonly style="border-width: 0px; border: none; background:none;" />
+    </div>
+</div>
+
+@*Block Models*@
+<div class="modal modal-backdrop" id="Modalloder" role="dialog" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-body">
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="ModalSuccess" role="dialog" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Information</b>
+            </div>
+            <div class="modal-body">
+                <p id="ErrMsg"> - </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-sm btn-success" data-dismiss="modal" style="color: #696969;">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Create Models*@
+@*1. Search Customer Code*@
+<div class="modal fade" id="ModalCusCode">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>List of Customer</b>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="TbCusCode" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>Customer Code</th>
+                                        <th>Cusetomer Name</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" id="ChooseCus">Choose</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*2. Search ItemCode*@
+<div class="modal fade" id="ModalItem">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>List of Items</b>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="TbItem" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>Item Code</th>
+                                        <th>Item Descrition</th>
+                                        <th>Unit Price</th>
+                                        <th>In Stock</th>
+                                        <th>BarCode</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" id="ChooseItem">Choose</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Copy From PO*@
+<div class="modal fade" id="ModalCopyFromPO" data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Sale Order</b>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="TbCopyFromPO" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>Receipt No(SAP)</th>
+                                        <th>Customer Name</th>
+                                        <th>Document Date</th>
+                                        <th>DocTotal</th>
+                                        <th>Document Status</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" id="ChoosePO">Choose</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Copy To Good Return*@
+<div class="modal fade" id="ModalCopyToGoodReturn" data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Good Return</b>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="TbCopyToGoodReturn" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>Receipt No(SAP)</th>
+                                        <th>Customer Name</th>
+                                        <th>Document Date</th>
+                                        <th>DocTotal</th>
+                                        <th>Document Status</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" id="ChooseGoodReceiptPO">Choose</button>
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Selecct Serial*@
+<div class="modal fade " id="ModalBarCodeSerail" data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Serial Numbers - Select</b>
+            </div>
+            <div class="modal-body">
+                ItemCode : <input type="text" id="ItemCodeSerial" disabled="disabled" size="12" />&nbsp;
+                Quantity : <input type="text" id="ItemCodeSerialQty" disabled="disabled" size="5" />
+                <input type="hidden" id="txtRowID" />
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="TbSerial" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>Select</th>
+                                        <th>Serial</th>
+                                        <th>Qty</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <center>
+                                <button class="btn btn-info" id="btnUnSelect">UnSelect</button>
+                                <button class="btn btn-info" id="btnSelect">Select</button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div id="DisPlayCustomizeTableSerial">
+                    <div class="table-responsive">
+                        <div class="row">
+                            <div class="col-12">
+                                <table id="tmpSerial" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                    <thead>
+                                        <tr>
+                                            <th>Select</th>
+                                            <th>Serial</th>
+                                            <th>Qty</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal" style="background: #f0eff1; color: #696969;" id="btnCloseSerial">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Select Batch*@
+<div class="modal fade " id="ModalBarCodeBatch" data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Batch Numbers - Select</b>
+            </div>
+            <div class="modal-body">
+                ItemCode : <input type="text" id="ItemCodeBatch" disabled size="12" />&nbsp;
+                Quantity : <input type="text" id="ItemCodeBatchQty" disabled size="5" />
+
+                <input type="hidden" id="txtIDRowB" />
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="TbBatch" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>Action</th>
+                                        <th>Batch Number</th>
+                                        <th>InputQty</th>
+                                        <th>Qty</th>
+                                        <th>ExpDate</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="container pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <center>
+                                <button class="btn btn-info" id="btnUnSelectBatch">UnSelect</button>
+                                <button class="btn btn-info" id="btnSelectBatch">Select</button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div id="DisPlayCustomizeTable">
+                    <div class="table-responsive">
+                        <div class="row">
+                            <div class="col-12">
+                                <table id="tmpBatchFromTo" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                    <thead>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>Batch Number</th>
+                                            <th>Qty</th>
+                                            <th>ExpDate</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal" style="" id="btnCLoseBatchSelect">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*List BarCode*@
+<div class="modal fade " id="ModalBarCode" data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Batch Numbers - Setup</b>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="TbBarCode" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0" style="background: #f0eff1; color: #696969;">
+                                <thead>
+                                    <tr>
+                                        <th>BarCode</th>
+                                        <th>BarCodeName</th>
+                                        <th>ItemCode</th>
+                                        <th>ItemName</th>
+                                        <th>UOMCode</th>
+                                        <th>Price</th>
+                                        <th>Uom Name</th>
+                                        <th>Manage Item</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal" style="background: #f0eff1; color: #696969;" id="btnCLoseBatch">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*List Scan Item*@
+<div class="modal fade " id="ModalScanItem" data-backdrop="static">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: #f0eff1; color: #696969;">
+            <div class="modal-header">
+                <b>Scan Items</b>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-12">
+                            test
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal" style="background: #f0eff1; color: #696969;" id="btnCLoseBatch">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/tengkimleang/Delivery/GetMasterDelivery.js"></script>
+<script src="~/js/tengkimleang/Method/MethodDataTable.js"></script>
+<script src="~/js/Array.js"></script>
+<script src="~/js/tengkimleang/Delivery/Service/IEventCopyFromSO.js"></script>
+<script src="~/js/tengkimleang/Delivery/Service/EventCopyFromSO.js"></script>
+<script src="~/js/tengkimleang/Delivery/Service/IEventItemAdd.js"></script>
+<script src="~/js/tengkimleang/Delivery/Service/EventAddItemService.js"></script>
+<script src="~/js/tengkimleang/Delivery/Service/IEventSaveDelivery.js"></script>
+<script src="~/js/tengkimleang/Delivery/Service/EventSaveDeliveryService.js"></script>
+<script src="~/js/tengkimleang/Delivery/CreateSO.js"></script>
+@*<script src="~/js/fncScanAddItem.js"></script>*@
+
+<script type="text/javascript">
+    var Ltmp = [];
+
+    function clickFocusScan() {
+        $('#txtScanBarCode01').val('');
+        $('#txtScanBarCode01').focus();
+    }
+
+    //ShowHide Add Item Bar
+    function shAddItemBar() {
+        var x = document.getElementById("DivBarAddItem");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    var fpath = window.location.pathname
+    var fjs;
+    var character = fpath.substring(1, 6);
+    var strURL = character.toLowerCase();
+    if (strURL === "sapui") {
+        fjs = "http://203.151.171.239/" + character + "/js/setup-delivery.json";
+    } else {
+        fjs = "../../js/setup-delivery.json";
+    }
+
+    var oXHR = new XMLHttpRequest();
+    console.log(oXHR);
+    oXHR.onreadystatechange = reportStatus;
+    //oXHR.open("GET", "../../js/setup-inc.json", true);  // get json file.
+    oXHR.open("GET", fjs, true);  // get json file.
+    oXHR.send();
+
+    function reportStatus() {
+        //console.log("Status : " + oXHR.readyState);
+        if (oXHR.readyState == 4 && oXHR.status == 200) {		// Check if request is complete.
+            //document.getElementById('demo').innerHTML = this.responseText;
+            //console.log(oXHR.responseURL);
+
+            var data1 = [];
+            data1 = JSON.parse(oXHR.responseText);
+            //console.log(data1);
+            if (data1.type = "delivery") {
+                document.querySelector('#ShowType').value = data1.typeShow;
+            }
+            //createTableFromJSON(this.responseText);
+        }
+    }
+
+    //function createTableFromJSON(jsonData) {
+    //    var data1 = [];
+    //    data1 = JSON.parse(jsonData);
+    //    if (data1.type = "delivery") {
+    //        document.querySelector('#ShowType').value = data1.typeShow;
+    //    }
+
+    //}
+
+    function funcShowType() {
+        //alert("TypeShow : "+document.getElementById('ShowType').value);
+
+        const params = {
+            type: 'delivery',
+            desc: 'Delivery',
+            typeShow: document.getElementById('ShowType').value
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("PostSettingDelivery", "Setting")',
+            data: { setupTypeModel: params },
+            dataType: "JSON",
+            success: function (ex) {
+                //alert('Setting Updated.');
+                location.reload();
+            }
+        });
+    }
+
+    /* Init DataTable */
+    /* List Serial And Batch */
+    let lsSerialRowNumber = [];
+    let lsSerialRowRemove = [];
+    let lsBatchRowNumber = [];
+    let lsBatchRowRemove = [];
+    //var chkQty = "";
+    /* End List Serial And Batch */
+    /* DataTable List Of Item */
+    let objectLine = {};
+    let LinesAR = [];
+    DataTableInit.TableItemLine();
+    var tbItemLine = $('#TbAR').DataTable();
+    DataMethod.AddClassSelected("TbAR", tbItemLine);
+
+    let LineBatchSerial = [];
+    DataTableInit.TableListBatchSerial();
+    var tbLineBatchSerial = $('#TbLineBatchSerial').DataTable();
+    DataMethod.AddClassSelected("TbLineBatchSerial", tbLineBatchSerial);
+
+    $('#TbAR tbody').on('click', 'tr', function () {
+        var data = tbItemLine.row(this).data();
+        //console.log(data);
+        $('#txtScanBarCode01').focus();
+
+        if ($(this).hasClass('selected')) {
+            $(this).addClass('selected');
+
+            var selItemCode = data.ItemCode;
+            var selQuantity = data.InputQuantity;
+            var selLineNum = data.LineNum;
+
+            $('#txtSeleteItemCode').val(selItemCode);
+            $('#txtSeleteQty').val(selQuantity);
+            $('#txtSeleteLine').val(selLineNum);
+        }
+        else {
+            $('#TbAR tr.selected').removeClass('selected');
+            $(this).removeClass('selected');
+
+            $('#txtSeleteItemCode').val('');
+            $('#txtSeleteQty').val('');
+            $('#txtSeleteLine').val('');
+        }
+
+
+    });
+
+    tbItemLine.columns([0, 3, 4]).visible(false, false);
+    /* End DataTable List Of ItemLine */
+
+    // #region Start List Data from Scan
+    var LtmpDataSelected = [];
+    var tbLineScan = $('#TbLineScan').DataTable({
+        responsive: true,
+        bLengthChange: false,
+        binfo: false,
+        language: {
+            emptyTable: "<b>Table Scan is Empty</b>"
+        },
+        data: LtmpDataSelected,
+        columnDefs: [{
+            "defaultContent": "-",
+            "targets": "_all"
+        }],
+        columns: [
+            {
+                render: function (data, type, full, meta) { return '<button class="btn-sm btn-danger" onClick="removeRowScan(' + meta.row + ')"><i class="fas fa-trash-alt"></i></button>'; }
+            },
+            { data: "itemCode", autoWidth: true },
+            { data: "itemName", autoWidth: true },
+            { data: "quantity", autoWidth: true },
+            { data: "warehouse", autoWidth: true },
+            { data: "binEntry", autoWidth: true },
+            { data: "binLocation", autoWidth: true },
+            { data: "uomCode", autoWidth: true },
+            { data: "expDate", autoWidth: true },
+            { data: "batchNumber", autoWidth: true },
+            { data: "serialNumber", autoWidth: true },
+            { data: "lineSap", autoWidth: true }
+        ],
+        rowCallback: function (row, data, index) {
+        },
+        "footerCallback": function (row, data, start, end, display) {
+            var api = this.api();
+            nb_cols = api.columns().nodes().length;
+            //console.log(data[0].quantity);
+            //console.log(nb_cols);
+            var sumQty = 0;
+            for (let ls = 0; ls < api.column(0).data().length; ls++) {
+                //var datals = api.row(ls).data();
+                //console.log(datals);
+                sumQty = sumQty + parseInt(api.row(ls).data().quantity);
+            }
+
+            $('#txt_totalQty2').val(sumQty);
+        },
+        autoWidth: true,
+        pageLength: 10,
+        select: true,
+        paging: true,
+        ordering: false,
+        info: false,
+        searching: false
+    });
+
+    tbLineScan.columns([0]).visible(false, false);
+
+    function removeRowScan(rowno) {
+
+        //console.log($(this).parent());
+        //tbLineScan.row($(this).parents('tr')).remove().draw(false);
+
+        //alert('rowNo : ' + row);
+        var data = tbLineScan.row(rowno).data();
+        //console.log(data);
+        var itemCode = data.itemCode;
+        let msg = "คุณต้องการลบ Item " + itemCode + " นี้ใช่ไหม";
+        if (confirm(msg) == true) {
+            console.log('OK -> Remove Row' + rowno);
+            tbLineScan.rows(rowno).remove().draw(false);
+        }
+        else {
+            console.log('Cancel -> Remove Row' + rowno);
+        }
+    }
+    // #endregion END List Data from Scan
+
+    /* DataTable List Of Item Code */
+    var LItm = [];
+    DataTableInit.TableSearchItemCode();
+    var tbItemSearch = $('#TbItem').DataTable();
+    DataMethod.AddClassSelected("TbItem", tbItemSearch);
+    $(".btnModelsItem").click(function() {
+        $("#ModalItem").modal({ backdrop: "static" });
+        if (tbItemSearch.length==0) {
+            EventItemAdd.getItemCode('@Url.Action("GetItemActionResult","GoodsReceiptPO")');
+        }
+    });
+    /* End DataTable List Of Item Code */
+
+    /* DataTable List Good Receipt PO*/
+    var temporyListGoodReturn = [];
+    var LCopyToGoodReturn = [];
+    DataTableInit.TableGoodReturn();
+    var TbCopyFromGoodReciptPO = $("#TbCopyToGoodReturn").DataTable();
+    $('#TbCopyToGoodReturn tbody').on('click',
+        'tr',
+        function() {
+            temporyListPO = [];
+            if ($(this).hasClass('selected')) {
+                temporyListPO = DataMethod.arrayRemove(temporyListPO, $(this)[0]._DT_RowIndex);
+            } else {
+                temporyListPO.push($(this)[0]._DT_RowIndex);
+            }
+        });
+    DataMethod.AddClassSelected('TbCopyToGoodReturn', TbCopyFromGoodReciptPO);
+    /*End Good Receipt PO*/
+
+    /* DataTable List Purchase Order*/
+    var temporyListPO = [];
+    var LCopyFromPO = [];
+    DataTableInit.TablePurchaseOrder();
+    var TbCopyFromPO = $("#TbCopyFromPO").DataTable();
+    $('#TbCopyFromPO tbody').on('click',
+        'tr',
+        function() {
+            temporyListPO = [];
+            if ($(this).hasClass('selected')) {
+                temporyListPO = DataMethod.arrayRemove(temporyListPO, $(this)[0]._DT_RowIndex);
+            } else {
+                temporyListPO.push($(this)[0]._DT_RowIndex);
+            }
+        });
+    DataMethod.AddClassSelected('TbCopyFromPO', TbCopyFromPO);
+    /*End Purchase Order*/
+    /* DataTable List BarCode */
+
+    var LBarCode = [];
+    DataTableInit.TableBarCode();
+    var TbBarCode = $("#TbBarCode").DataTable();
+    DataMethod.AddClassSelected('TbBarCode', TbBarCode);
+    /* End DataTable List BarCode */
+
+    /* DataTable List Of Customer */
+    var LCus = [];
+    DataTableInit.TableCustomer();
+    var tbCus = $('#TbCusCode').DataTable();
+    DataMethod.AddClassSelected('TbCusCode', tbCus);
+    $(".btnModelsCus").click(function() {
+        $("#ModalCusCode").modal({ backdrop: "static" });
+        GetMasterData.getCustomer('@Url.Action("GetCustomerClientResult", "GoodsReceiptPO")','C');
+    });
+
+    $('#CopyFromPO').removeAttr("disabled");
+    @*$('#ChooseCus').click(function() {
+        const index = tbCus.row('.selected').index();
+        const data = tbCus.row(index).data();
+        $('#CusID').val(data.cardCode);
+        $('#CusName').val(data.cardName);
+        $('#CcusID').css('background-color', '#4CAF50');
+        $('#CopyFromPO').removeAttr("disabled");
+        $('#CopyToGoodReturn').removeAttr("disabled");
+        GetMasterData.getCurrency('@Url.Action("GetCurrency", "GoodsReceiptPO")', data.cardCode);
+    });*@
+    /* End DataTable List Of Customer */
+
+    /* DataTable Init Serial */
+    var lsSerial = [];
+    //DataTableInit.TableSerial1();
+    DataTableInit.TableSerialGen();
+    var tbSerial1 = $('#TbSerial').DataTable();
+    /* End DataTable Init Serial */
+
+    // DataTable Init Batch
+    var LBatch = [];
+    DataTableInit.TableBatch();
+    var tbBatch = $('#TbBatch').DataTable();
+    /* End DataTable Init Batch */
+
+    // DataTable Init tmpBatch
+    var LtmpBatch = [];
+    DataTableInit.TabletmpBatchFromTo();
+    var TbtmpBatchFromTo = $('#tmpBatchFromTo').DataTable();
+    /* End Init DataTable */
+
+    // DataTable Init Serial
+    var LtmpSerial = [];
+    DataTableInit.TableSerialFromTo();
+    var TbSerial = $('#tmpSerial').DataTable();
+    /* End Init DataTable Serial */
+
+    // #region Init Master
+    GetMasterData.getSeries("", '@ViewData["Date"]', '@Url.Action("GetSeries", "GoodsReceiptPO")', '15');
+    GetMasterData.getSaleEmployee('@Url.Action("GetSaleEmployeeResult", "GoodsReceiptPO")');
+    GetMasterData.getTaxCode('@Url.Action("GetTaxCodeResult", "GoodsReceiptPO")');
+    GetMasterData.getWarehouse('@Url.Action("GetWarehouseResult", "GoodsReceiptPO")');
+    // #endregion
+
+    // #region EventChange DocDate
+    $("#DocDate").change(function() {
+        GetMasterData.getSeries($("#DocDate").val(), '@ViewData["Date"]', '@Url.Action("GetSeries", "GoodsReceiptPO")', '20');
+    });
+    // #endregion
+
+    // #region EventChange Discount
+    $("#DisPer").change(function() {
+        var total = ($("#BTax").val() - $("#DisA").val()).toFixed(2);
+        total = (total * ($("#DisPer").val()/100)).toFixed(2);
+        $("#DisAmt").val(total);
+        $("#Total").val((($("#BTax").val() - $("#DisA").val()).toFixed(2)-total).toFixed(2));
+
+    });
+    $("#DisAmt").change(function() {
+        var total = ($("#BTax").val() - $("#DisA").val()).toFixed(2);
+        total = (($("#DisAmt").val() / total)*100).toFixed(2);
+        $("#DisPer").val(total);
+        $("#Total").val((($("#BTax").val() - $("#DisA").val()).toFixed(2)-$("#DisAmt").val()).toFixed(2));
+    });
+    // #endregion
+
+    // #region Onchange BP Currency
+
+    $("#BPDocCurr").change(function() {
+        $("#DocCurr").val($("#BPDocCurr").val());
+    });
+    // #endregion
+
+    $('#AddItem').click(function() {
+        if ($("#ItemCode").val() === "") {
+            alert("Please Choose Item First");
+        } else {
+            if ($('#itemManage').val() == 'S') {
+                if (objectLine.Serial !== undefined) {
+                    if ($("#Qty").val() == objectLine.Serial.length) {
+                        alert("Can add to LineAR");
+                        objectLine.UomName = $("#UomID").val();
+                        objectLine.ItemCode = $("#ItemCode").val();
+                        objectLine.Whs = $("#whscode").val();
+                        objectLine.TaxCode = $("#TaxCode").val();
+                        objectLine.LineTotal = $("#totalItem").val();
+                        objectLine.PriceBeforeDis = $("#Price").val() * $("#Qty").val();
+                        objectLine.Quantity = $("#Qty").val();
+                        objectLine.DiscountAmount = $("#DiscountAmt").val();
+                        objectLine.Discount = $("#Discount").val();
+                        objectLine.UnitPrice = $("#Price").val();
+                        LinesAR.push(objectLine);
+                        tbItemLine.clear();
+                        tbItemLine.rows.add(LinesAR);
+                        tbItemLine.search('').draw();
+                        var priceBeforeDis = $("#BTax").val();
+                        if (priceBeforeDis != "") {
+                            priceBeforeDis = parseFloat(priceBeforeDis);
+                        }
+                        priceBeforeDis = priceBeforeDis + parseFloat($("#Price").val() * $("#Qty").val());
+                        $("#BTax").val(priceBeforeDis);
+                        var disByItem = $("#DisA").val();
+                        if (disByItem != "") {
+                            disByItem = parseFloat(disByItem);
+                        }
+                        disByItem = disByItem + parseFloat($("#DiscountAmt").val());
+                        $("#DisA").val(disByItem);
+                        var totalLine = $("#Total").val();
+                        if (totalLine != "") {
+                            totalLine = parseFloat(totalLine);
+                        }
+                        totalLine = totalLine + parseFloat($("#totalItem").val());
+                        $("#Total").val(totalLine);
+                        EventItemAdd.clearText(
+                            [
+                                { id: "ItemCode", value: "" },
+                                { id: "ItemDescr", value: "" },
+                                { id: "Qty", value: "1" },
+                                { id: "Price", value: "0" },
+                                { id: "Discount", value: "0" },
+                                { id: "DiscountAmt", value: "0" },
+                                { id: "totalItem", value: "0" },
+                                { id: "txtRowID", value: "0" },
+                                { id: "txtScriptID", value: "0" },
+                                { id: "ItemCodeSerial", value: "0" },
+                                { id: "ItemCodeSerialQty", value: "0" },
+                                { id: "SerialNumber", value: "0" },
+                                { id: "txtManfrSerial", value: "0" },
+                                { id: "BarCode", value: "" }
+                            ],
+                            "");
+                        EventItemAdd.clearText([
+                                { id: "UomID" }
+                            ],
+                            "option");
+                        objectLine = {};
+                        //lsSerial = [];
+                    } else {
+                        $.ajax({
+                            url: "@Url.Action("GetSerialActionResult", "SaleOrder")",
+                            type: "GET",
+                            dataType: "JSON",
+                            data: { ItemCode: $("#ItemCode").val(), whsCode: $("#whscode").val() },
+                            success: function (data) {
+                                lsSerial = [];//objectLine.Serial;
+                                console.log(data);
+                                lsSerial = data;
+                                tbSerial1.clear();
+                                tbSerial1.rows.add(lsSerial);
+                                tbSerial1.search("").draw();
+                            }
+                        });
+                        $('#ModalBarCodeSerail').modal('show');
+                    }
+                } else {
+                    //console.log(objectLine.Serial);
+                    $("#ItemCodeSerial").val($("#ItemCode").val());
+                    $("#ItemCodeSerialQty").val($("#Qty").val());
+                    tbSerial1.clear();
+                    tbSerial1.rows.add(lsSerial);
+                    tbSerial1.search("").draw();
+                    $('#ModalBarCodeSerail').modal('show');
+                }
+            }
+            else if ($('#itemManage').val() == 'B') {
+                console.log('itemManage -> Batch');
+                console.log(objectLine.Batches);
+                if (objectLine.Batches !== undefined) {
+                    var qtyBatch = 0;
+                    for (var i = 0; i < objectLine.Batches.length; i++) {
+                        console.log(objectLine.Batches[i]);
+                        qtyBatch = qtyBatch + objectLine.Batches[i].qty;
+                    }
+                    if (parseFloat($("#Qty").val()) === qtyBatch) {
+                        objectLine.UomName = $("#UomID").val();
+                        objectLine.Whs = $("#whscode").val();
+                        objectLine.TaxCode = $("#TaxCode").val();
+                        objectLine.LineTotal = $("#totalItem").val();
+                        objectLine.PriceBeforeDis = $("#Price").val() * $("#Qty").val();
+                        objectLine.Quantity = $("#Qty").val();
+                        objectLine.DiscountAmount = $("#DiscountAmt").val();
+                        objectLine.Discount = $("#Discount").val();
+                        objectLine.UnitPrice = $("#Price").val();
+                        //objectLine.Batches = LBatch;
+                        LinesAR.push(objectLine);
+                        tbItemLine.clear();
+                        tbItemLine.rows.add(LinesAR);
+                        tbItemLine.search('').draw();
+                        var priceBeforeDis = $("#BTax").val();
+                        if (priceBeforeDis != "") {
+                            priceBeforeDis = parseFloat(priceBeforeDis);
+                        }
+                        priceBeforeDis = priceBeforeDis + parseFloat($("#Price").val() * $("#Qty").val());
+                        $("#BTax").val(priceBeforeDis);
+                        var disByItem = $("#DisA").val();
+                        if (disByItem != "") {
+                            disByItem = parseFloat(disByItem);
+                        }
+                        disByItem = disByItem + parseFloat($("#DiscountAmt").val());
+                        $("#DisA").val(disByItem);
+                        var totalLine = $("#Total").val();
+                        if (totalLine != "") {
+                            totalLine = parseFloat(totalLine);
+                        }
+                        totalLine = totalLine + parseFloat($("#totalItem").val());
+                        $("#Total").val(totalLine);
+                        EventItemAdd.clearText(
+                            [
+                                { id: "ItemCode", value: "" },
+                                { id: "ItemDescr", value: "" },
+                                { id: "Qty", value: "1" },
+                                { id: "Price", value: "0" },
+                                { id: "Discount", value: "0" },
+                                { id: "DiscountAmt", value: "0" },
+                                { id: "totalItem", value: "0" },
+                                { id: "txtRowID", value: "0" },
+                                { id: "txtScriptID", value: "0" },
+                                { id: "ItemCodeSerial", value: "0" },
+                                { id: "ItemCodeSerialQty", value: "0" },
+                                { id: "SerialNumber", value: "0" },
+                                { id: "txtManfrSerial", value: "0" }
+                            ],
+                            "");
+                        EventItemAdd.clearText([
+                                { id: "UomID" }
+                            ],
+                            "option");
+                        objectLine = {};
+                        LBatch = [];
+                    } else {
+                        //$("#ItemCodeBatch").val($("#ItemCode").val());
+                        //var tmpQty = parseFloat($("#Qty").val()) - qtyBatch;
+                        //console.log(tmpQty);
+                        //$("#ItemCodeBatchQty").val(tmpQty);
+                        $.ajax({
+                            url: "@Url.Action("GetBatchActionResult", "SaleOrder")",
+                            type: "GET",
+                            dataType: "JSON",
+                            data: { ItemCode: $("#ItemCode").val(), whsCode: $("#whscode").val() },
+                            success: function (data) {
+                                LBatch = [];
+                                LBatch = data;
+                                console.log(data);
+                                tbBatch.clear();
+                                tbBatch.rows.add(LBatch);
+                                tbBatch.search("").draw();
+                            }
+                        });
+                        $('#ModalBarCodeBatch').modal('show');
+                    }
+                } else {
+                    $.ajax({
+                        url: "@Url.Action("GetBatchActionResult", "SaleOrder")",
+                        type: "GET",
+                        dataType: "JSON",
+                        data: { ItemCode: $("#ItemCode").val(), whsCode: $("#whscode").val() },
+                        success: function (data) {
+                            LBatch = [];
+                            LBatch = data;
+                            console.log(data);
+                            tbBatch.clear();
+                            tbBatch.rows.add(LBatch);
+                            tbBatch.search("").draw();
+                        }
+                    });
+                    $('#ModalBarCodeBatch').modal('show');
+                }
+            }
+            else {
+                objectLine.UomName = $("#UomID").val();
+                objectLine.Whs = $("#whscode").val();
+                objectLine.TaxCode = $("#TaxCode").val();
+                objectLine.LineTotal = $("#totalItem").val();
+                objectLine.PriceBeforeDis = $("#Price").val() * $("#Qty").val();
+                objectLine.Quantity = $("#Qty").val();
+                objectLine.DiscountAmount = $("#DiscountAmt").val();
+                objectLine.Discount = $("#Discount").val();
+                objectLine.UnitPrice = $("#Price").val();
+                LinesAR.push(objectLine);
+                tbItemLine.clear();
+                tbItemLine.rows.add(LinesAR);
+                tbItemLine.search('').draw();
+                var priceBeforeDis = $("#BTax").val();
+                if (priceBeforeDis != "") {
+                    priceBeforeDis = parseFloat(priceBeforeDis);
+                }
+                priceBeforeDis = priceBeforeDis + parseFloat($("#Price").val() * $("#Qty").val());
+                $("#BTax").val(priceBeforeDis);
+                var disByItem = $("#DisA").val();
+                if (disByItem != "") {
+                    disByItem = parseFloat(disByItem);
+                }
+                disByItem = disByItem + parseFloat($("#DiscountAmt").val());
+                $("#DisA").val(disByItem);
+                var totalLine = $("#Total").val();
+                if (totalLine != "") {
+                    totalLine = parseFloat(totalLine);
+                }
+                totalLine = totalLine + parseFloat($("#totalItem").val());
+                $("#Total").val(totalLine);
+                EventItemAdd.clearText(
+                    [
+                        { id: "ItemCode", value: "" },
+                        { id: "ItemDescr", value: "" },
+                        { id: "Qty", value: "1" },
+                        { id: "Price", value: "0" },
+                        { id: "Discount", value: "0" },
+                        { id: "DiscountAmt", value: "0" },
+                        { id: "totalItem", value: "0" },
+                        { id: "txtRowID", value: "0" },
+                        { id: "txtScriptID", value: "0" },
+                        { id: "ItemCodeSerial", value: "0" },
+                        { id: "ItemCodeSerialQty", value: "0" },
+                        { id: "SerialNumber", value: "0" },
+                        { id: "txtManfrSerial", value: "0" }
+                    ],
+                    "");
+                EventItemAdd.clearText([
+                        { id: "UomID" }
+                    ],
+                    "option");
+                objectLine = {};
+                LBatch = [];
+            }
+        }
+    });
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    //Go To #Save
+    $('#Save').click(function () {
+        console.clear();
+        var sLine = [];
+        var sLine2 = [];
+        console.log("Send Data to SAP");
+        document.getElementById("frmLoading").style.display = "block";
+        xLinesAR = [];
+        xLinesAR = LinesAR;
+        //console.log(LinesAR);
+
+        for (let ls = 0; ls < tbLineBatchSerial.column(0).data().length; ls++) {
+            var datals = tbLineBatchSerial.row(ls).data();
+            console.log(datals);
+
+            arrayLine = {};
+            var ManageItem = "";
+            var batchSerialNo = "";
+
+            if (datals.batchNumber != "") {
+                ManageItem = "B";
+                batchSerialNo = datals.itemCode + ";" + datals.batchNumber + ";" + datals.lineSap;
+            } else {
+                if (datals.serialNumber != "") {
+                    ManageItem = "S";
+                    batchSerialNo = datals.itemCode + ";" + datals.serialNumber + ";" + datals.lineSap;
+                }
+            }
+
+            if (datals.batchNumber == "" && datals.serialNumber == "") {
+                ManageItem = "N";
+                batchSerialNo = 'non' + datals.itemCode + ";" + datals.lineSap;
+            }
+
+            arrayLine.rowNo = datals.lineSap;
+            arrayLine.itemCode = datals.itemCode;
+            arrayLine.quantity = parseInt(datals.quatity);
+            arrayLine.binEntry = datals.binEntry;
+            arrayLine.binLocation = datals.binLocation;
+            arrayLine.warehouse = datals.warehouse;
+            arrayLine.uomCode = datals.uomCode;
+            arrayLine.taxCode = datals.taxCode;
+            arrayLine.ManageItem = ManageItem;
+            arrayLine.batchNo = datals.batchNumber;
+            arrayLine.serialNo = datals.serialNumber;
+            arrayLine.batchSerialNo = batchSerialNo;
+            sLine.push(arrayLine);
+
+        }
+        //console.log("Gen Table Scan Line ");
+        //console.log(sLine);
+
+        for (let ls = 0; ls < tbLineScan.column(0).data().length; ls++) {
+            var datals2 = tbLineScan.row(ls).data();
+            //console.log(datals2);
+
+            arrayLine2 = {};
+            var ManageItem = "";
+            var batchSerialNo = "";
+
+            if (datals2.batchNumber != "") {
+                ManageItem = "B";
+                batchSerialNo = datals2.itemCode + ";" + datals2.batchNumber + ";" + datals2.lineSap;
+            } else {
+                if (datals2.serialNumber != "") {
+                    ManageItem = "S";
+                    batchSerialNo = datals2.itemCode + ";" + datals2.serialNumber + ";" + datals2.lineSap;
+                }
+            }
+
+            if (datals2.batchNumber == "" && datals2.serialNumber == "") {
+                ManageItem = "n";
+                batchSerialNo = 'non' + datals2.itemCode + ";" + datals2.lineSap;
+            }
+
+            arrayLine2.rowNo = datals2.lineSap;
+            arrayLine2.itemCode = datals2.itemCode;
+            arrayLine2.quantity = parseInt(datals2.quantity);
+            arrayLine2.binEntry = datals2.binEntry;
+            arrayLine2.binLocation = datals2.binLocation;
+            arrayLine2.warehouse = datals2.warehouse;
+            arrayLine2.uomCode = datals2.uomCode;
+            arrayLine2.taxCode = datals2.taxCode;
+            arrayLine2.ManageItem = ManageItem;
+            arrayLine2.batchNo = datals2.batchNumber;
+            arrayLine2.serialNo = datals2.serialNumber;
+            arrayLine2.batchSerialNo = batchSerialNo;
+            sLine.push(arrayLine2);
+
+        }
+        console.log("Array 2 Table ");
+        console.log(sLine);
+
+        // #region Group batchSerialNo
+
+        const groupBy = sLine.reduce((acc, cur) => {
+            acc[cur.batchSerialNo] ? acc[cur.batchSerialNo] = {
+                ...acc[cur.batchSerialNo],
+                quantity: acc[cur.batchSerialNo].quantity + cur.quantity
+            } : acc[cur.batchSerialNo] = {
+                ...cur
+            };
+            return acc;
+        }, {});
+
+        const output = Object.values(groupBy).map((item) => ({
+            ...item
+        }));
+
+
+        console.log("groupBy...");
+        console.log(output);
+        // #endregion Group batchSerialNo
+
+        LtmpBatch = [];
+        for (let tl = 0; tl < tbItemLine.column(1).data().length; tl++) {
+            var datatl = tbItemLine.row(tl).data();
+            //console.log(datatl);
+
+            xLinesAR[tl].Batches = [];
+            xLinesAR[tl].Serial = [];
+
+            for (let y = 0; y < output.length; y++) {
+
+                arrDataLineS = {};
+                arrDataLineB = {};
+                //console.log(datatl.ItemCode + "=" + output[y].itemCode + ";" + datatl.LineNum + "=" + output[y].rowNo);
+                if (datatl.ItemCode == output[y].itemCode && datatl.LineNum == output[y].rowNo) {
+                    if (datatl.ManageItem == "B") {
+                        arrDataLineB.ItemCode = output[y].itemCode;
+                        arrDataLineB.qty = output[y].quantity;
+                        arrDataLineB.BatchNumber = output[y].batchNo;
+                        arrDataLineB.BinEntry = output[y].binEntry;
+                        //LtmpBatch.push(arrDataLineB);
+                        xLinesAR[tl].Batches.push(arrDataLineB);
+                        xLinesAR[tl].YesNo = "Yes";
+                        xLinesAR[tl].BinEntry = 0;
+                    }
+                    else if (datatl.ManageItem == "S") {
+                        arrDataLineS.ItemCode = output[y].itemCode;
+                        arrDataLineS.qty = output[y].quantity;
+                        arrDataLineS.SerialNumber = output[y].serialNo;
+                        arrDataLineS.BinEntry = output[y].binEntry;
+                        //LtmpSerial.push(SerialNumber);
+                        xLinesAR[tl].Serial.push(arrDataLineS);
+                        xLinesAR[tl].YesNo = "Yes";
+                        xLinesAR[tl].BinEntry = 0;
+                    }
+                    else if (datatl.ManageItem == "N") {
+                        xLinesAR[tl].YesNo = "Yes";
+                        xLinesAR[tl].BinEntry = output[y].binEntry;
+                    }
+
+                }
+
+            }
+
+        }
+
+        //sendUserPassSAP
+        //get cookie
+        let user = getCookie("username");
+        let passer = getCookie("passw0rder");
+        var dataU = {};
+        dataU.userNameSAP = user;
+        dataU.password = passer;
+
+        //console.log("-> User And Password Sending...");
+        //console.log(dataU);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("PostUserConfig", "Setting")',
+            data: { send: dataU},
+            dataType: "JSON",
+            error: function (request, error) {
+
+            },
+                success: function (ex) {
+                    console.log("Success PostUserConfig");
+                    EventSaveGoodReceiptPO.sendDelivery('@Url.Action("PostDelivery", "SaleOrder")');
+            }
+        });
+
+
+    });
+
+
+    // Item Code
+    $('#ChooseItem').click(function() {
+        const index = tbItemSearch.row('.selected').index();
+        const data = tbItemSearch.row(index).data();
+        $('#ItemCode').val(data.itemCode);
+        $('#ItemDescr').val(data.itemName);
+        $('#Price').val(data.unitPrice);
+        $('#itemManage').val(data.manageItem);
+        $('#totalItem').val(data.unitPrice);
+        $('#CItemCode').css('background-color', '#4CAF50');
+        AddDataToFrom(data);
+    });
+    // End Item Code
+
+    // Copy From PO
+    $('#ChoosePO').click(function() {
+        const result = EventCopyFromPOService.ChoosePONofity_Click(temporyListPO, TbCopyFromPO);
+        console.log("=== XresultX ===");
+        console.log(result);
+
+        LinesAR = result.linesAR;
+        LineBatchSerial = result.lineBatchSerial;
+        $('#CusID').val(result.cardCode);
+        $('#CusName').val(result.cardName);
+        $('#txtSlpCode').val(result.slpCode);
+        $('#txtSlpName').val(result.slpName);
+
+        $('#OrderNumberID').val(result.docNum);
+
+        $('#Remark').val(`Based On Sale Orders ${result.remark}`);
+        $('#Total').val(result.docTotal);
+        $("#DisPer").val(result.discountPercentage);
+        $("#DisAmt").val(result.discountAmount);
+        $("#DisA").val(result.discountLine);
+        $("#BTax").val(Number(result.lineTotal + result.discountLine).toFixed(2));
+        $('#txtGetBinCode').val(result.toBinLocation);
+        $('#SQ_Remark').val(result.sqRemark);
+        //console.log("Length : " + result.linesAR.length);
+        //console.log("Length : " + result.LineBatchSerial.length);
+
+        var total1 = 0;
+        for (let x = 0; x < result.linesAR.length; x++) {
+            total1 = total1 + result.linesAR[x].InputQuantity;
+        }
+        $('#txt_totalQty1').val(total1);
+
+
+        SaveConsole("GetSO", result.docNum)
+
+        tbItemLine.clear();
+        tbItemLine.rows.add(LinesAR);
+        tbItemLine.search('').draw();
+
+        tbLineBatchSerial.clear();
+        tbLineBatchSerial.rows.add(LineBatchSerial);
+        tbLineBatchSerial.search('').draw();
+
+        //GetBinEntry
+        //TextBox = txtGetBinEntry, txtGetBinCode
+        var txtGetBinCode = "";
+        txtGetBinCode = $('#txtGetBinCode').val();
+        if (txtGetBinCode != "") {
+            $.ajax({
+                url: "@Url.Action("GetOBinByCode", "Inventory")",
+                data: { binCode: txtGetBinCode },
+                type: "GET",
+                dataType: "JSON",
+                success: function (data)
+                {
+                    jqueryXml = $(data);
+                    //console.log("showBinLocation : ");
+                    //console.log(data);
+                    //sBinEntry = jqueryXml[0].data[0].absEntry;
+                    sBinEntry = "";
+                    //console.log("GetBin : " + sBinEntry);
+                    //showBinLocation = data[0].binCode;
+                    $('#txtGetBinEntry').val(sBinEntry);
+                }
+            });
+
+        }
+    });
+
+    $('#CopyFromPO').click(function () {
+        console.log("OPENNING SO" + document.getElementById('ShowType').value);
+        temporyListPO = [];
+        const cardCode = "empty";
+        const typeShow = document.getElementById('ShowType').value;
+
+        GetMasterData.getPurchaseOrder('@Url.Action("GetSONofity", "SaleOrder")', cardCode, '0');
+
+    @*if ($("#CusID").val() != "") {
+            const cardCode = $("#CusID").val();
+            GetMasterData.getPurchaseOrder('@Url.Action("GetSO", "SaleOrder")', cardCode);
+        } else {
+            alert("Please Select Customer, if you don't select can bind data");
+        }*@
+    });
+    // End Copy From PO
+
+    //$(".modal-header").on("mousedown",
+    //    function(mousedownEvt) {
+    //        var $draggable = $(this);
+    //        var x = mousedownEvt.pageX - $draggable.offset().left,
+    //            y = mousedownEvt.pageY - $draggable.offset().top;
+    //        $("body").on("mousemove.draggable",
+    //            function(mousemoveEvt) {
+    //                $draggable.closest(".modal-dialog").offset({
+    //                    "left": mousemoveEvt.pageX - x,
+    //                    "top": mousemoveEvt.pageY - y
+    //                });
+    //            });
+    //        $("body").one("mouseup",
+    //            function() {
+    //                $("body").off("mousemove.draggable");
+    //            });
+    //        $draggable.closest(".modal").one("bs.modal.hide",
+    //            function() {
+    //                $("body").off("mousemove.draggable");
+    //            });
+    //    }
+    //);
+
+
+    $('#DocDate').val(formatDate('@ViewData["Date"]'));
+
+    $('#DocumentDate').val(formatDate('@ViewData["Date"]'));
+
+    function DeleteBatch(arr, value) {
+        let tmp = arr.filter(function (ele) {
+            return ele.serialAndBatch !== value;
+        });
+        let tmpQty = arr.filter(function (ele) {
+            return ele.serialAndBatch === value;
+        });
+        console.log(tmpQty);
+        var tmpQ = parseFloat($("#ItemCodeBatchQty").val());
+        tmpQ = tmpQ + tmpQty[0].qty;
+        console.log(tmpQ);
+        $("#ItemCodeBatchQty").val(tmpQ);
+        LBatch = tmp;
+        tbBatch.clear();
+        tbBatch.rows.add(LBatch);
+        tbBatch.search('').draw();
+    }
+
+    function formatDate(date) {
+        const d = new Date(date);
+        var month = `${d.getMonth() + 1}`,
+            day = `${d.getDate()}`;
+        const year = d.getFullYear();
+        if (month.length < 2)
+            month = `0${month}`;
+        if (day.length < 2)
+            day = `0${day}`;
+
+        return [year, month, day].join('-');
+    }
+
+    function DisCountPerChange() {
+        EventSaveGoodReceiptPO.LineDiscountPer();
+    }
+
+    function DisAmtChange() {
+        EventSaveGoodReceiptPO.LinDiscountAMT();
+    }
+
+    function BatchChangeType() {
+        if ($("#optBatchType").val() === "1") {
+            $("#DisPlayCustomizeTable").css("display","none");
+            $("#DisPlayCustomize").css("display","none");
+            $("#BtnSaveBatch").val("Save");
+            $("#BatchNumber").removeAttr("readonly");
+            $("#BtnSaveBatch").text("Save");
+        } else {
+            $("#DisPlayCustomizeTable").css("display","block");
+            $("#DisPlayCustomize").css("display","block");
+            $("#BatchNumber").attr("readonly","readonly");
+            $("#BtnSaveBatch").text("Save Item");
+        }
+    }
+
+    function SerialChangeType() {
+        if ($("#optSerialType").val() === "1") {
+            $("#DisPlayCustomizeTableSerial").css("display","none");
+            $("#DisPlayCustomizeSerial").css("display","none");
+            $("#BtnSaveBatch").val("Save");
+            $("#SerialNumber").removeAttr("readonly");
+            $("#BtnSaveSerial1").text("Save");
+            alert("Standard");
+        } else {
+            $("#DisPlayCustomizeTableSerial").css("display","block");
+            $("#DisPlayCustomizeSerial").css("display","block");
+            $("#SerialNumber").attr("readonly","readonly");
+            $("#BtnSaveSerial1").text("Save Item");
+            alert("Adance");
+        }
+    }
+
+    $("#txtTotalGenBatch").change(function() {
+        if ($("#txtPerBatch").val() !== 0 && $("#txtPerBatch").val() !=="") {
+            var totalGenBatch = $("#txtTotalGenBatch").val();
+            var totalPerBatch = $("#txtPerBatch").val();
+            var totalQty = totalGenBatch * totalPerBatch;
+            if (totalQty > $("#ItemCodeBatchQty").val()) {
+                alert("Value Can not bigger than Qty");
+            } else {
+                $("#txtTotalQtyGenBatch").val(totalQty);
+                $("#optBatchFrom").empty();
+                $("#optBatchTo").empty();
+                //$("#optBatchTo").append(new Option("All", "-1")).selected = true;
+                //$("#optBatchFrom").append(new Option("All", "-1")).selected=true;
+                $("#optBatchTo").append('<option value="-1" selected="selected">ALL</option>');
+                $("#optBatchFrom").append('<option value="-1" selected="selected">ALL</option>');
+                for (i = 1; i <= totalGenBatch; i++) {
+                    $("#optBatchFrom").append(new Option(i, i));
+                    $("#optBatchTo").append(new Option(i, i));
+                }
+            }
+        }
+    });
+
+    $("#txtPerBatch").change(function() {
+        if ($("#txtPerBatch").val() !== 0 && $("#txtPerBatch").val() !== "") {
+            const totalGenBatch = $("#txtTotalGenBatch").val();
+            const totalPerBatch = $("#txtPerBatch").val();
+            const totalQty = totalGenBatch * totalPerBatch;
+            if (totalQty > $("#ItemCodeBatchQty").val()) {
+                alert("Value Can not bigger than Qty");
+            } else {
+                $("#txtTotalQtyGenBatch").val(totalQty);
+                $("#optBatchFrom").empty();
+                $("#optBatchTo").empty();
+                //$("#optBatchTo").append(new Option("All", "-1"));
+                //$("#optBatchFrom").append(new Option("All", "-1"));
+                $("#optBatchTo").append('<option value="-1" selected="selected">ALL</option>');
+                $("#optBatchFrom").append('<option value="-1" selected="selected">ALL</option>');
+                for (i = 1; i <= totalGenBatch; i++) {
+                    $("#optBatchFrom").append(new Option(i, i));
+                    $("#optBatchTo").append(new Option(i, i));
+                }
+            }
+        }
+    });
+
+    $("#txtTotalGenSerial").change(function() {
+        if ($("#txtPerSerial").val() !== 0 && $("#txtPerSerial").val() !=="") {
+            var totalGenBatch = $("#txtTotalGenSerial").val();
+            var totalPerBatch = $("#txtPerSerial").val();
+            var totalQty = totalGenBatch * totalPerBatch;
+            if (totalQty > $("#ItemCodeSerialQty").val()) {
+                alert("Value Can not bigger than Qty");
+            } else {
+                $("#txtTotalQtyGenSerial").val(totalQty);
+                $("#optSerialFrom").empty();
+                $("#optSerialTo").empty();
+                //$("#optBatchTo").append(new Option("All", "-1")).selected = true;
+                //$("#optBatchFrom").append(new Option("All", "-1")).selected=true;
+                $("#optSerialTo").append('<option value="-1" selected="selected">ALL</option>');
+                $("#optSerialFrom").append('<option value="-1" selected="selected">ALL</option>');
+                for (i = 1; i <= totalGenBatch; i++) {
+                    $("#optSerialFrom").append(new Option(i, i));
+                    $("#optSerialTo").append(new Option(i, i));
+                }
+            }
+        }
+    });
+
+    $("#BtnSaveBatch").click(function() {
+        if ($("#BtnSaveBatch").text()==="Save") {
+            //alert("Save Btn");
+            LBatch.push(
+                {
+                    "itemCode":$("#ItemCodeBatch").val(),
+                    "qty":1,
+                    "serialAndBatch":$("#BatchNumber").val(),
+                    "mfrDate":$("#dtpMfrDateBatch").val(),
+                    "expirationDate":$("#dtpExpireDateBatch").val(),
+                    "admissionDate":$("#dtpAdmissionDateBatch").val()
+                });
+            var qtytmp = parseFloat($("#ItemCodeBatchQty").val()) - 1;
+            $("#ItemCodeBatchQty").val(qtytmp);
+            //Clear Text
+            $("#txtTotalGenBatch").val("");
+            $("#txtPerBatch").val("");
+            $("#txtTotalQtyGenBatch").val("");
+            $("#optBatchFrom").empty();
+            $("#optBatchTo").empty();
+            $("#dtpMfrDateBatch").val("");
+            $("#dtpExpireDateBatch").val("");
+            $("#dtpAdmissionDateBatch").val("");
+            $("#BatchNumber").val("");
+            tbBatch.clear();
+            tbBatch.rows.add(LBatch);
+            tbBatch.search('').draw();
+        }else if ($("#BtnSaveBatch").text()==="Save Item") {
+            var batchFrom=$("#optBatchFrom").val();
+            console.log($("#optBatchFrom").val());
+            var batchTo=$("#optBatchTo").val();
+            var i = 0;
+            if (batchFrom !== -1) {
+                i = 1;
+            }
+            if (batchTo !== -1) {
+                i = 1;
+            }
+            console.log(i);
+            if (i === 1) {
+                var k = 0;
+                if (LtmpBatch.length !== null && LtmpBatch.length !== 0) {
+                    if ($("#optBatchFrom").val() > $("#optBatchTo").val()) {
+                        alert("Cannot Add BatchTo Smaller than BatchFrom");
+                    }
+                    else{
+                        for (var z = 0; z < LtmpBatch.length; z++) {
+                            if (LtmpBatch[z].BatchFrom === $("#optBatchFrom").val()) {
+                                k = 1;
+                            }
+                            if (LtmpBatch[z].BatchTo === $("#optBatchTo").val()) {
+                                k = 1;
+                            }
+                            if (LtmpBatch[z].BatchTo === $("#optBatchFrom").val()) {
+                                k = 1;
+                            }
+                            if (LtmpBatch[z].BatchFrom === $("#optBatchTo").val()) {
+                                k = 1;
+                            }
+                            if ($("#optBatchFrom").val() === -1) {
+                                k = 1;
+                            }
+                            if ($("#optBatchTo").val() === -1) {
+                                k = 1;
+                            }
+                            if ($("#optBatchFrom").val() <= LtmpBatch[z].BatchTo && $("#optBatchFrom").val() <= LtmpBatch[z].BatchTo) {
+                                k = 1;
+                            }
+                            if ($("#optBatchTo").val() <= LtmpBatch[z].BatchTo && $("#optBatchTo").val() <= LtmpBatch[z].BatchTo) {
+                                k = 1;
+                            }
+                        }
+                        if (k === 1) {
+                            alert("Can not Add Batch The same");
+                        } else {
+                            LtmpBatch.push({
+                                "BatchFrom": $("#optBatchFrom").val(),
+                                "BatchTo": $("#optBatchTo").val(),
+                                "ExpirationDate": $("#dtpExpireDateBatch").val(),
+                                "MfrDate": $("#dtpMfrDateBatch").val(),
+                                "AdmissionDate": $("#dtpAdmissionDateBatch").val(),
+                                "Qty": $("#txtPerBatch").val()
+                            });
+                            //Clear Text
+                            //$("#txtTotalGenBatch").val("");
+                            //$("#txtPerBatch").val("");
+                            //$("#txtTotalQtyGenBatch").val("");
+                            //$("#optBatchFrom").empty();
+                            //$("#optBatchTo").empty();
+                            //$("#dtpMfrDateBatch").val("");
+                            //$("#dtpExpireDateBatch").val("");
+                            //$("#dtpAdmissionDateBatch").val("");
+                            //$("#BatchNumber").val("");
+                        }
+                    }
+                } else {
+                    if ($("#txtTotalQtyGenBatch").val() !== "") {
+                        if ($("#optBatchFrom").val() > $("#optBatchTo").val()) {
+                            alert("Cannot Add BatchTo Smaller than BatchFrom");
+                        } else {
+                            LtmpBatch.push({
+                                "BatchFrom": ($("#optBatchFrom").val()==-1)?"ALL":$("#optBatchFrom").val(),
+                                "BatchTo": ($("#optBatchTo").val()==-1)?"ALL":$("#optBatchTo").val(),
+                                "ExpirationDate": $("#dtpExpireDateBatch").val(),
+                                "MfrDate": $("#dtpMfrDateBatch").val(),
+                                "AdmissionDate": $("#dtpAdmissionDateBatch").val(),
+                                "Qty": $("#txtPerBatch").val()
+                            });
+                            //CLear Data
+                            //$("#txtTotalGenBatch").val("");
+                            //$("#txtPerBatch").val("");
+                            //$("#txtTotalQtyGenBatch").val("");
+                            //$("#optBatchFrom").empty();
+                            //$("#optBatchTo").empty();
+                            //$("#dtpMfrDateBatch").val("");
+                            //$("#dtpExpireDateBatch").val("");
+                            //$("#dtpAdmissionDateBatch").val("");
+                            //$("#BatchNumber").val("");
+                        }
+                    }
+                }
+            }
+            TbtmpBatchFromTo.clear();
+            TbtmpBatchFromTo.rows.add(LtmpBatch);
+            TbtmpBatchFromTo.search('').draw();
+        }
+    });
+
+    function DeleteTmpBatch(LsBatch,BatchFrom,BatchTo){
+        let tmp = LsBatch.filter(function (ele) {
+            return (ele.BatchFrom !== BatchFrom && ele.BatchTo !== BatchTo);
+        });
+        console.log(tmp);
+        LtmpBatch = tmp;
+        TbtmpBatchFromTo.clear();
+        TbtmpBatchFromTo.rows.add(LtmpBatch);
+        TbtmpBatchFromTo.search('').draw();
+    }
+
+    function DeleteTmpSerial(LsSerial,SerialFrom,SerialTo){
+        let tmp = LsSerial.filter(function (ele) {
+            return (ele.SerialFrom !== SerialFrom && ele.SerialTo !== SerialTo);
+        });
+        console.log(tmp);
+        LtmpSerial = tmp;
+        TbSerial.clear();
+        TbSerial.rows.add(LtmpSerial);
+        TbSerial.search('').draw();
+    }
+
+    function QtyChange() {
+        var PriceChange=parseFloat($("#Price").val());
+        PriceChange = PriceChange * $("#Qty").val();
+        $("#totalItem").val(PriceChange);
+    }
+
+    $('#CopyToGoodReturn').click(function () {
+        temporyListPO = [];
+        if ($("#CusID").val() != "") {
+            const cardCode = $("#CusID").val();
+            GetMasterData.getGoodReceiptPO('@Url.Action("GetGoodReturnByCardCode", "GoodsReceiptPO")', cardCode);
+        } else {
+            alert("Please Select Customer, if you don't select can bind data");
+        }
+    });
+
+    $("#btnCLoseBatch").click(function() {
+        if ($("#txtIDRowB").val() !== "") {
+            //alert("Hello");
+            console.log(parseInt($("#txtIDRowB").val()));
+            console.log("BatchSerial Save And Close.");
+            console.log(LinesAR[parseInt($("#txtIDRowB").val())].Batches);
+            console.log(LBatch);
+            LinesAR[parseInt($("#txtIDRowB").val())].Batches = LBatch;
+            $("#txtIDRowB").val("");
+            LBatch = [];
+            tbBatch.clear();
+            tbBatch.rows.add(LBatch);
+            tbBatch.search("").draw();
+        }
+    });
+
+    $("#ChooseGoodReceiptPO").click(function() {
+        const index = TbCopyFromGoodReciptPO.row('.selected').index();
+        const data = TbCopyFromGoodReciptPO.row(index).data();
+        window.location.href = '@Url.Action("CreateGoodReturn","GoodReturn")?DocNum='+data.docNum;
+    });
+
+    $("#BarCode").change(function() {
+        var barCode = $("#BarCode").val();
+        $.ajax({
+            url: '@Url.Action("GetBarCodeActionResult", "GoodsReceiptPO")',
+            type: "GET",
+            data: { BarCode: (barCode==="")?'-':barCode },
+            dataType: "JSON",
+            success: function(data) {
+                //alert("Success");
+                console.log(data);
+                if (data.length !== 0) {
+                    if (data.length > 1) {
+                        $("#ModalBarCode").modal("show");
+                        LBarCode = data;
+                        TbBarCode.clear();
+                        TbBarCode.rows.add(LBarCode);
+                        TbBarCode.search('').draw();
+                    } else {
+                        var object={};
+
+                        object.itemCode=data[0].itemCode;
+                        object.itemName=data[0].itemName;
+                        object.price=data[0].price;
+                        object.UomName=data[0].uomName;
+                        object.manageItem=data[0].manageItem;
+                        AddDataToFrom(object);
+                    }
+                } else {
+                    alert("Not Found");
+                    EventItemAdd.clearText(
+                        [
+                            {id:"ItemCode",value:""},
+                            {id:"ItemDescr",value:""},
+                            {id:"Qty",value:"1"},
+                            {id:"Price",value:"0"},
+                            {id:"Discount",value:"0"},
+                            {id:"DiscountAmt",value:"0"},
+                            {id:"totalItem",value:"0"},
+                            {id:"txtRowID",value:"0"},
+                            {id:"txtScriptID",value:"0"},
+                            {id:"ItemCodeSerial",value:"0"},
+                            {id:"ItemCodeSerialQty",value:"0"},
+                            {id:"SerialNumber",value:"0"},
+                            {id:"txtManfrSerial",value:"0"}
+                        ],"");
+                    EventItemAdd.clearText([
+                            { id: "UomID" }
+                        ],
+                        "option");
+                }
+            },
+            error: function(erro) {
+                        console.log(erro.responseText);
+            }
+        });
+    });
+
+    $('#TbBarCode tbody').on('click', 'tr', function () {
+        var data = TbBarCode.row(this).data();
+        AddDataToFrom(data);
+        $("#ModalBarCode").modal("hide");
+    });
+
+    function AddDataToFrom(data) {
+        console.log(data);
+        $('#ItemCode').val(data.itemCode);
+        $('#ItemDescr').val(data.itemName);
+        $('#Price').val(data.price);
+        $('#itemManage').val(data.manageItem);
+        $('#totalItem').val(data.price);
+        $('#CItemCode').css('background-color', '#4CAF50');
+        objectLine = {};
+        if(objectLine!=undefined)
+        {
+            if (data.itemCode !== objectLine.ItemCode) {
+                objectLine = {};
+            }
+        }
+        objectLine.ItemCode = data.itemCode;
+        objectLine.ManageItem = data.manageItem;
+        objectLine.UomName = data.UomName;
+        objectLine.Serial = [];
+        GetMasterData.getUomCode('@Url.Action("GetUomCodeResult", "GoodsReceiptPO")',data.itemCode,"S");
+    }
+
+    function AddRowSerial(row) {
+        if($("#chkSerialSelect"+row).prop("checked") == true) {
+            lsSerialRowNumber.push(row);
+        }
+        else {
+            var index = lsSerialRowNumber.indexOf(row);
+            lsSerialRowNumber.splice(index,1);
+        }
+    }
+
+    function AddRowRemoveSerial(row) {
+        if($("#chkRemoveSerial"+row).prop("checked") == true) {
+            lsSerialRowRemove.push(row);
+        }
+        else {
+            var index = lsSerialRowRemove.indexOf(row);
+            lsSerialRowRemove.splice(index,1);
+        }
+    }
+
+    $("#btnSelect").click(function() {
+        console.log(LtmpSerial.length);
+        console.log(lsSerialRowNumber);
+        var qty = lsSerialRowNumber.length + LtmpSerial.length;
+        console.log(qty);
+        console.log($("#Qty").val());
+        if (qty > $("#Qty").val()) {
+            alert("Serial Greater than Qty");
+        } else {
+            for (var i = 0; i < lsSerialRowNumber.length; i++) {
+                let data = tbSerial1.row(lsSerialRowNumber[i]).data();
+                var index = lsSerial.indexOf(data);
+                lsSerial.splice(index,1);
+                LtmpSerial.push(data);
+            }
+            tbSerial1.clear();
+            tbSerial1.rows.add(lsSerial);
+            tbSerial1.search('').draw();
+            TbSerial.clear();
+            TbSerial.rows.add(LtmpSerial);
+            TbSerial.search('').draw();
+            lsSerialRowNumber = [];
+            lsSerialRowRemove = [];
+        }
+    });
+
+    $("#btnUnSelect").click(function() {
+        for (var i = 0; i < lsSerialRowRemove.length; i++) {
+            let data = TbSerial.row(lsSerialRowRemove[i]).data();
+            var index = LtmpSerial.indexOf(data);
+            LtmpSerial.splice(index,1);
+            lsSerial.push(data);
+        }
+        TbSerial.clear();
+        TbSerial.rows.add(LtmpSerial);
+        TbSerial.search('').draw();
+        tbSerial1.clear();
+        tbSerial1.rows.add(lsSerial);
+        tbSerial1.search('').draw();
+        lsSerialRowRemove = [];
+        lsSerialRowNumber = [];
+
+    });
+
+    $("#btnCloseSerial").click(function() {
+        if ($("#txtRowID").val() === "") {
+            objectLine.Serial = LtmpSerial;
+        } else {
+            console.log("CloseSerailLine");
+            console.log(LtmpSerial);
+            LinesAR[$("#txtRowID").val()].Serial = [];
+            for (var i = 0; i < LtmpSerial.length; i++) {
+                LinesAR[$("#txtRowID").val()].Serial.push(LtmpSerial[i]);
+            }
+            console.log(LinesAR);
+        }
+        lsSerialRowRemove = [];
+        lsSerialRowNumber = [];
+        LtmpSerial = [];
+        $("#txtRowID").val("");
+        $("#ItemCodeSerialQty").val("");
+        $("#ItemCodeSerial").val("");
+    });
+
+    function Btn_ClickBatchSerail(index, table) {
+        const data = table.row(index).data();
+
+        //$("#ModalScanItem").modal("show");
+
+        if (data.ManageItem === "S") {
+            console.log(data);
+            console.log(data.Serial.length);
+            LtmpSerial = data.Serial;
+            TbSerial.clear();
+            TbSerial.rows.add(LtmpSerial);
+            TbSerial.search("").draw();
+            let k = 0;
+            if (data.Serial.length !== 0) {
+                for (let i = 0; i < data.Serial.length; i++) {
+                    k = k + 1;
+                }
+            }
+            $("#ItemCodeSerial").val(data.ItemCode);
+            $("#ItemCodeSerialQty").val(data.Quantity - k);
+            $("#txtRowID").val(index);
+            $.ajax({
+                url: "@Url.Action("GetSerialActionResult", "SaleOrder")",
+                type: "GET",
+                dataType: "JSON",
+                data: { ItemCode: data.ItemCode, whsCode: data.Whs },
+                success: function (data1) {
+                    lsSerial = [];//objectLine.Serial;
+                    lsSerial = data1;
+                    for (var i = 0; i < data.Serial.length; i++) {
+                        lsSerial = lsSerial.filter(function (ele) {
+                            return ele.serialNumber !== data.Serial[i].serialNumber;
+                        });
+                    }
+                    tbSerial1.clear();
+                    tbSerial1.rows.add(lsSerial);
+                    tbSerial1.search("").draw();
+                }
+            });
+
+            $("#ModalBarCodeSerail").modal("show");
+        }
+        else if (data.ManageItem == "B") {
+            let k = 0;
+            console.log(data);
+            console.log('SAP QTY : ' + data.Quantity);
+            if (data.Batches.length !== 0) {
+                for (let i = 0; i < data.Batches.length; i++) {
+                    k = k + data.Batches[i].qty;
+                }
+            }
+            //console.log(k);
+            //console.log(data);
+            $("#ItemCodeBatch").val(data.ItemCode);
+            $("#ItemCodeBatchQty").val(data.Quantity - k);
+            $("#txtIDRowB").val(index);
+            $.ajax({
+                url: "@Url.Action("GetBatchActionResult", "SaleOrder")",
+                type: "GET",
+                dataType: "JSON",
+                data: { ItemCode: data.ItemCode, whsCode: data.Whs },
+                success: function (data1) {
+                    LBatch= [];
+                    LBatch = data1;
+                    for (var i = 0; i < data.Batches.length; i++) {
+                        var z = LBatch.filter(function (ele) {
+                            //return ele.batchNumber !== data.Batches[i].batchNumber;
+                            return ele.batchNumber === data.Batches[i].batchNumber && ele.expDate===data.Batches[i].expDate;
+                        });
+                        var index = LBatch.indexOf(z[0]);
+                        LBatch[index].qty = LBatch[index].qty - data.Batches[i].qty;
+                    }
+                    tbBatch.clear();
+                    tbBatch.rows.add(LBatch);
+                    tbBatch.search("").draw();
+                }
+            });
+            LtmpBatch = data.Batches;
+            TbtmpBatchFromTo.clear();
+            TbtmpBatchFromTo.rows.add(LtmpBatch);
+            TbtmpBatchFromTo.search("").draw();
+            $("#ModalBarCodeBatch").modal("show");
+        }
+    }
+
+    function OnInputBatchChange(row) {
+        const data = tbBatch.row(row).data();
+        if (data.qty < $("#txtInputBatch"+row).val()) {
+            alert("Qty Greater than Qty available");
+            $("#txtInputBatch" + row).val("");
+        }
+    }
+
+    function AddRowBatch(row) {
+        if($("#chkBatchSelect"+row).prop("checked") == true) {
+            lsBatchRowNumber.push(row);
+        }
+        else {
+            var index = lsBatchRowNumber.indexOf(row);
+            lsBatchRowNumber.splice(index,1);
+        }
+    }
+
+    function AddRowRemoveBatch(row) {
+        if($("#chkBatchUnSelect"+row).prop("checked") == true) {
+            lsBatchRowRemove.push(row);
+        }
+        else {
+            var index = lsBatchRowRemove.indexOf(row);
+            lsBatchRowRemove.splice(index,1);
+        }
+    }
+
+    $("#btnSelectBatch").click(function() {
+        var qty = 0;
+        var z = false;
+        console.log('BatchRowNumber -> ' + lsBatchRowNumber.length);
+        for (var v = 0; v < lsBatchRowNumber.length; v++) {
+            if ($("#txtInputBatch" + lsBatchRowNumber[v]).val() === "" || $("#txtInputBatch" + lsBatchRowNumber[v]).val() === "0") {
+                z = true;
+                break;
+            }
+        }
+        if (z === true) {
+            alert("Please Enter Qty After Select");
+        } else {
+
+            for (var i = 0; i < lsBatchRowNumber.length; i++) {
+                qty = qty + parseInt($("#txtInputBatch" + lsBatchRowNumber[i]).val());
+            }
+
+            for (var i = 0; i < LtmpBatch.length; i++) {
+                qty = qty + LtmpBatch[i].qty;
+            }
+
+            console.log('QTY Check :: ' + qty + ' > ' + $("#Qty").val());
+
+            if (qty > $("#ItemCodeBatchQty").val()) {
+                alert("Batch Greater than Qty");
+            } else {
+                for (var i = 0; i < lsBatchRowNumber.length; i++) {
+                    let data = tbBatch.row(lsBatchRowNumber[i]).data();
+                    if (data.qty === parseInt($("#txtInputBatch" + lsBatchRowNumber[i]).val())) {
+                        var index = LBatch.indexOf(data);
+                        LBatch.splice(index, 1);
+                    } else {
+                        var index = LBatch.indexOf(data);
+                        LBatch[index].qty = LBatch[index].qty - parseInt($("#txtInputBatch"+lsBatchRowNumber[i]).val());
+                    }
+                    var tmpAdd = {};
+                    tmpAdd.batchNumber = data.batchNumber;
+                    tmpAdd.expDate = data.expDate;
+                    tmpAdd.qty = parseInt($("#txtInputBatch" + lsBatchRowNumber[i]).val());
+                    tmpAdd.itemCode = data.itemCode;
+                    tmpAdd.row = lsBatchRowNumber[i];
+                    LtmpBatch.push(tmpAdd);
+                }
+                tbBatch.clear();
+                tbBatch.rows.add(LBatch);
+                tbBatch.search('').draw();
+                TbtmpBatchFromTo.clear();
+                TbtmpBatchFromTo.rows.add(LtmpBatch);
+                TbtmpBatchFromTo.search('').draw();
+                lsBatchRowNumber = [];
+                lsBatchRowRemove = [];
+            }
+        }
+    });
+
+    $("#btnUnSelectBatch").click(function() {
+        console.log("1");
+        console.log(lsBatchRowRemove.length);
+        for (var i = 0; i < lsBatchRowRemove.length; i++) {
+            let data = TbtmpBatchFromTo.row(lsBatchRowRemove[i]).data();
+            var tmpCheckBatch = LBatch.filter(function (ele) {
+                return ele.batchNumber === data.batchNumber && ele.expDate===data.expDate;
+            });
+            console.log(tmpCheckBatch);
+            if (tmpCheckBatch.length === 0) {
+                var index = LtmpBatch.indexOf(data);
+                LtmpBatch.splice(index, 1);
+                LBatch.push(data);
+            } else {
+                console.log(LBatch);
+                console.log(data);
+                var indexUpdate = LBatch.indexOf(tmpCheckBatch[0]);
+                console.log(indexUpdate);
+                LBatch[indexUpdate].qty = LBatch[indexUpdate].qty + data.qty;
+                indexUpdate = LtmpBatch.indexOf(data);
+                LtmpBatch.splice(indexUpdate, 1);
+            }
+        }
+        tbBatch.clear();
+        tbBatch.rows.add(LBatch);
+        tbBatch.search('').draw();
+        TbtmpBatchFromTo.clear();
+        TbtmpBatchFromTo.rows.add(LtmpBatch);
+        TbtmpBatchFromTo.search('').draw();
+        lsBatchRowNumber = [];
+        lsBatchRowRemove = [];
+    });
+
+    $("#btnCLoseBatchSelect").click(function() {
+        if ($("#txtRowID").val() === "") {
+            objectLine.Batches = LtmpBatch;
+        } else {
+            console.log(LtmpBatch);
+            LinesAR[$("#txtRowID").val()].Batches = [];
+            for (var i = 0; i < LtmpBatch.length; i++) {
+                LinesAR[$("#txtRowID").val()].Batches.push(LtmpBatch[i]);
+            }
+            console.log(LinesAR);
+        }
+        lsSerialRowRemove = [];
+        lsSerialRowNumber = [];
+        LtmpBatch = [];
+        $("#txtRowID").val("");
+        $("#ItemCodeSerialQty").val("");
+        $("#ItemCodeSerial").val("");
+    });
+
+    $('.modal-toggle').click(function (e) {
+        var tab = $(this).data('href');
+        $('li > a[href="' + tab + '"]').tab("show");
+
+        if (tab == '#item') {
+            console.log("#item");
+            //btnNext
+            document.getElementById("btnNext").style.display = "none";
+            //Save
+            document.getElementById("Save").style.display = "block";
+            //clickFocusScan();
+            document.getElementById("txtScanBarCode01").focus();
+        }
+
+    });
+
+
+    //Go to : XXX
+    $('#addRow01').on('click', function () {
+        var txtScanBarCode = document.getElementById("txtScanBarCode01").value;
+        var sWarehouse = "";
+        var sBatchSerial = "";
+        let sBinEntry = $('#txtGetBinEntry').val();
+        var sBinCode = $('#txtGetBinCode').val();
+        var inputScanQty = 0;
+        //Url.Action("GetStockItemBatchBin", "Inventory");
+        //{ itemcode: sItemCode, batchnumber: sBatchSerial, binentry: sBinEntry };
+        //Url.Action("GetStockItemBatchW", "Inventory")
+        //{ itemcode: sItemCode, batchnumber: sBatchSerial, whscode: sWarehouse }
+
+        if ($('#txtScanBarCode01').val() != '') {
+
+            SaveConsole('scan', "ScanBarCode:" + $('#txtScanBarCode01').val());
+            document.getElementById("frmLoading").style.display = "block";
+            //Variable
+            const strArr = txtScanBarCode.split(";");
+            var sItemCode = strArr[0];
+            var sBatch = strArr[1];
+            var sSerial = strArr[2];
+            var sArr3 = strArr[3];
+            var sQty;
+            let lcase1 = sArr3.toLowerCase();
+            let iQTY = lcase1.slice(0, 3);
+            var val1msg = "-";
+
+            var txtseleteItemCode = "";
+            var txtseleteLine = 0;
+            var txtseleteQty = 0;
+            txtseleteItemCode = $('#txtSeleteItemCode').val();
+            txtseleteLine = parseInt($('#txtSeleteLine').val());
+            txtseleteQty = parseInt($('#txtSeleteQty').val());
+            //if (txtseleteItemCode == "") {
+            //    alert("กรุณาเลือกสินค้าที่ต้องการสแกน");
+            //    $('#txtScanBarCode01').val('');
+            //    return true;
+            //}
+
+            //Find Whs in Line (TbAR)
+            for (let ii = 0; ii < tbItemLine.column(1).data().length; ii++) {
+                var datax = tbItemLine.row(ii).data();
+                //console.log(data);
+                //console.log("itemCode = " + data.ItemCode + "==" + sItemCode);
+                if (datax.ItemCode == sItemCode) {
+                    console.log('Whs : ' + datax.Whs);
+                    sWarehouse = datax.Whs;
+                }
+            }
+            //=======================
+
+            //Qty on BOX
+
+            if (iQTY != "qty") {
+                sQty = document.getElementById("txtQuantity01").value;
+                sQty = parseFloat(sQty);
+            } else if (iQTY == "qty") {
+                sQty = sArr3.substring(3, 9);
+                sQty = parseFloat(sQty);
+                if (isNaN(sQty)) {
+                    sQty = document.getElementById("txtQuantity01").value;
+                } else {
+                    sQty = sQty;
+                }
+            }
+            //=======================
+            //var isAdd = "";
+            var output = 0;
+            for (let rr = 0; rr < tbItemLine.column(1).data().length; rr++) {
+                var data = tbItemLine.row(rr).data();
+                //console.log(data.ItemCode);
+                if (data.ItemCode == sItemCode) {
+                    output = output + 1;
+                }
+                else {
+                    output = output + 0;
+                }
+            }
+            //console.log(output);
+            //#region CHECK Item Not Found ? IF > 0 = True And IF = 0 False
+            if (output > 0) {
+                //=================================================================
+                // #region [Check Bin Location]
+                if ($('#txtGetBinEntry').val() != "") {
+                    //#region Batch Number
+                    if (sBatch != '') {
+                        sBatchSerial = sBatch;
+                        console.log(sItemCode + ";" + sBatchSerial + ";" + sBinEntry + ";");
+                        $.ajax({
+                            url: '@Url.Action("GetStockItemBatchBin", "Inventory")',
+                            data: { itemcode: sItemCode, batchnumber: sBatchSerial, binentry: sBinCode },
+                            type: "GET",
+                            dataType: "JSON",
+                            "dataSrc": 'data',
+                            success: function (data) {
+                                var jqueryXml = $(data);
+                                console.log(data);
+                                if (jqueryXml[0].data.length != 0) {
+
+                                    var bItemCode = jqueryXml[0].data[0].itemCode;
+                                    var bItemName = jqueryXml[0].data[0].itemName;
+                                    var bQuantity = sQty;
+                                    var bWhsCode = jqueryXml[0].data[0].whsCode;
+                                    var bBinEntry = jqueryXml[0].data[0].binEntry;
+                                    var bBinCode = jqueryXml[0].data[0].binCode;
+                                    var bUOMCode = jqueryXml[0].data[0].uomCode;
+                                    var bBatchNumber = jqueryXml[0].data[0].batchNumber;
+                                    var bSerialNumber = jqueryXml[0].data[0].serialNumber;
+                                    var bTotalQuantity = jqueryXml[0].data[0].quantity;
+
+                                    //if (bSerialNumber != '') { bSerialNumber = bSerialNumber } else { bSerialNumber = '' }
+                                    var bExpDate = jqueryXml[0].data[0].expDate;
+                                    if (bExpDate == '1899-12-30T00:00:00') {
+                                        bExpDate = '';
+                                    } else {
+                                        bExpDate = bExpDate;
+                                    }
+
+                                    //CheckQtyIsMore(bItemCode, bQuantity, txtseleteLine);
+
+                                    Ltmp = [];
+                                    var tmpAdd = {};
+                                    AddAuto(bItemCode, txtseleteLine,);
+                                    console.log("fncAddAuto : " + isAdd);
+                                    const mArr = isAdd.split(",");
+                                    var mVal = mArr[0];
+                                    var mRow = mArr[1];
+                                    alertMsg(isAdd);
+                                    SaveConsole('additem', "ITEM:" + bItemCode + "|Row:" + mRow + "|Status:" + isAdd);
+                                    console.log(mVal);
+
+                                    //AddRow
+                                    if (mVal == "pass") {
+                                        tmpAdd.itemCode = bItemCode;
+                                        tmpAdd.itemName = bItemName;
+                                        tmpAdd.quantity = bQuantity;
+                                        tmpAdd.warehouse = bWhsCode;
+                                        tmpAdd.binEntry = bBinEntry;
+                                        tmpAdd.binLocation = bBinCode;
+                                        tmpAdd.uomCode = bUOMCode;
+                                        tmpAdd.expDate = bExpDate;
+                                        tmpAdd.batchNumber = bBatchNumber;
+                                        tmpAdd.serialNumber = '';
+                                        tmpAdd.lineSap = mRow;
+                                        Ltmp.push(tmpAdd);
+                                        tbLineScan.rows.add(Ltmp);
+                                        tbLineScan.search('').draw();
+                                        Ltmp = [];
+                                    }
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+
+                                }
+                                else {
+                                    alert("Batch Number does not exist.\r\nไม่มีเลข Batch ใน Bin Location นี้");
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+                                }
+
+                            }
+
+                        });
+                    }
+                    //#endregion Batch Number
+
+                    //#region Serial Number
+                    else if (sSerial != '') {
+                        //sBatchSerial = sSerial;
+                        console.log(sItemCode + ";" + sBatchSerial + ";" + sBinEntry + ";");
+
+                        if (sItemCode == 'DGC110' || sItemCode == 'GC18' || sItemCode == 'DGC120' || sItemCode == 'GC120' || sItemCode == 'DGC14' || sItemCode == 'GC14' || sItemCode == 'DGC110' || sItemCode == 'GC110' || sItemCode == 'C/Cmix-1.0' || sItemCode == 'C/Cmix-0.5' || sItemCode == 'OCAN-0.5A' || sItemCode == 'DGC18') {
+                            if (sSerial.length >= 14) {
+                                sBatchSerial = sSerial.substring(0, 12);
+                            } else {
+                                sBatchSerial = sSerial;
+                            }
+
+                        } else {
+                            sBatchSerial = sSerial;
+                        }
+                        console.log(sBatchSerial);
+                        $.ajax({
+                            url: '@Url.Action("GetStockItemSerialBin", "Inventory")',
+                            data: { itemcode: sItemCode, serialnumber: sBatchSerial, binentry: sBinCode },
+                            type: "GET",
+                            dataType: "JSON",
+                            "dataSrc": 'data',
+                            success: function (data) {
+                                var jqueryXml = $(data);
+                                console.log(data);
+                                if (jqueryXml[0].data.length != 0) {
+
+                                    var bItemCode = jqueryXml[0].data[0].itemCode;
+                                    var bItemName = jqueryXml[0].data[0].itemName;
+                                    var bQuantity = sQty;
+                                    var bWhsCode = jqueryXml[0].data[0].whsCode;
+                                    var bBinEntry = jqueryXml[0].data[0].binEntry;
+                                    var bBinCode = jqueryXml[0].data[0].binCode;
+                                    var bUOMCode = jqueryXml[0].data[0].uomCode;
+                                    var bBatchNumber = jqueryXml[0].data[0].batchNumber;
+                                    var bSerialNumber = jqueryXml[0].data[0].serialNumber;
+                                    var bTotalQuantity = jqueryXml[0].data[0].quantity;
+
+                                    //if (bSerialNumber != '') { bSerialNumber = bSerialNumber } else { bSerialNumber = '' }
+                                    var bExpDate = jqueryXml[0].data[0].expDate;
+                                    if (bExpDate == '1899-12-30T00:00:00') {
+                                        bExpDate = '';
+                                    } else {
+                                        bExpDate = bExpDate;
+                                    }
+
+                                    //CheckQtyIsMore(bItemCode, bQuantity, txtseleteLine);
+                                    var sny = 0;
+                                    for (let h = 0; h < tbLineScan.column(0).data().length; h++) {
+                                        var datasn = tbLineScan.row(h).data();
+                                        //console.log(datasn);
+                                        if (datasn.itemCode == bItemCode && datasn.serialNumber == bSerialNumber) {
+                                            sny = sny + 1;
+                                        }
+                                    }
+
+                                    Ltmp = [];
+                                    var tmpAdd = {};
+                                    AddAuto(bItemCode, txtseleteLine,);
+                                    console.log("fncAddAuto : " + isAdd);
+                                    const mArr = isAdd.split(",");
+                                    var mVal = mArr[0];
+                                    var mRow = mArr[1];
+                                    alertMsg(isAdd);
+                                    SaveConsole('additem', "ITEM:" + bItemCode + "|Row:" + mRow + "|Status:" + isAdd);
+                                    console.log(mVal);
+
+                                    //CheckQtyIsMore(bItemCode, bQuantity, mRow);
+
+                                    //AddRow
+                                    //console.log("chkQty :- " + chkQty);
+
+                                    if (mVal == "pass" && sny == 0) {
+                                        tmpAdd.itemCode = bItemCode;
+                                        tmpAdd.itemName = bItemName;
+                                        tmpAdd.quantity = bQuantity;
+                                        tmpAdd.warehouse = bWhsCode;
+                                        tmpAdd.binEntry = bBinEntry;
+                                        tmpAdd.binLocation = bBinCode;
+                                        tmpAdd.uomCode = bUOMCode;
+                                        tmpAdd.expDate = bExpDate;
+                                        tmpAdd.batchNumber = '';
+                                        tmpAdd.serialNumber = bSerialNumber;
+                                        tmpAdd.lineSap = mRow;
+                                        Ltmp.push(tmpAdd);
+                                        tbLineScan.rows.add(Ltmp);
+                                        tbLineScan.search('').draw();
+                                        Ltmp = [];
+                                    }
+                                    else if (mVal == 'pass' && sny > 0) {
+                                        alert("Serial Number Duplicate.\r\nเลข Serial ซ้ำ");
+                                        document.getElementById("frmLoading").style.display = "none";
+                                    }
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+
+                                }
+                                else {
+                                    alert("Serial Number does not exist.\r\nไม่มีเลข Serial ใน Bin Location นี้");
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+                                }
+
+                            }
+
+                        });
+                    }
+                    //#endregion Serial Number
+
+                    //#region No Batch/Serial Number
+                    else if (sSerial == '' && sBatch == '') {
+                        console.log('No Serial And No Batch But ItemCode : ' + sItemCode);
+                        $.ajax({
+                            url: '@Url.Action("GetItemByBinCode", "Inventory")',
+                            data: { itemCode: sItemCode, binCode: sBinCode},
+                            type: "GET",
+                            dataType: "JSON",
+                            "dataSrc": 'data',
+                            success: function (val) {
+                                var jqueryXml = $(val);
+                                //console.log(val);
+                                if (jqueryXml[0].data.length != 0) {
+
+                                    var bItemCode = jqueryXml[0].data[0].itemCode;
+                                    var bItemName = jqueryXml[0].data[0].itemName;
+                                    var bQuantity = sQty;
+                                    var bWhsCode = jqueryXml[0].data[0].whsCode;
+                                    var bBinEntry = jqueryXml[0].data[0].binEntry;
+                                    var bBinCode = jqueryXml[0].data[0].binCode;
+                                    var bUOMCode = jqueryXml[0].data[0].uomCode;
+                                    var bBatchNumber = jqueryXml[0].data[0].batchNumber;
+                                    var bSerialNumber = jqueryXml[0].data[0].serialNumber;
+                                    var bTotalQuantity = jqueryXml[0].data[0].quantity;
+
+                                    //if (bSerialNumber != '') { bSerialNumber = bSerialNumber } else { bSerialNumber = '' }
+                                    var bExpDate = jqueryXml[0].data[0].expDate;
+                                    if (bExpDate == '1899-12-30T00:00:00') {
+                                        bExpDate = '';
+                                    } else {
+                                        bExpDate = bExpDate;
+                                    }
+
+                                    //CheckQtyIsMore(bItemCode, bQuantity, txtseleteLine);
+
+                                    Ltmp = [];
+                                    var tmpAdd = {};
+                                    AddAuto(bItemCode, txtseleteLine,);
+                                    console.log("fncAddAuto : " + isAdd);
+                                    const mArr = isAdd.split(",");
+                                    var mVal = mArr[0];
+                                    var mRow = mArr[1];
+                                    alertMsg(isAdd);
+                                    SaveConsole('additem', "ITEM:" + bItemCode + "|Row:" + mRow + "|Status:" + isAdd);
+                                    console.log(mVal);
+
+                                    //AddRow
+                                    if (mVal == "pass") {
+                                        tmpAdd.itemCode = bItemCode;
+                                        tmpAdd.itemName = bItemName;
+                                        tmpAdd.quantity = bQuantity;
+                                        tmpAdd.warehouse = bWhsCode;
+                                        tmpAdd.binEntry = bBinEntry;
+                                        tmpAdd.binLocation = bBinCode;
+                                        tmpAdd.uomCode = bUOMCode;
+                                        tmpAdd.expDate = bExpDate;
+                                        tmpAdd.batchNumber = '';
+                                        tmpAdd.serialNumber = '';
+                                        tmpAdd.lineSap = mRow;
+                                        Ltmp.push(tmpAdd);
+                                        tbLineScan.rows.add(Ltmp);
+                                        tbLineScan.search('').draw();
+                                        Ltmp = [];
+                                    }
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+
+                                }
+                                else {
+                                    alert("ไม่มี Item Barcode ใน Bin Location นี้");
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+                                }
+
+                            }
+
+                        });
+                    }
+                    //#endregion No Batch/Serial Number
+                }
+
+                else if ($('#txtGetBinEntry').val() == "") {
+                    //#region Batch Number
+                    if (sBatch != '') {
+                        sBatchSerial = sBatch;
+                        console.log(sItemCode + ";" + sBatchSerial + ";" + sBinEntry + ";");
+                        $.ajax({
+                            url: '@Url.Action("GetStockItemBatchW", "Inventory")',
+                            data: { itemcode: sItemCode, batchnumber: sBatchSerial, whscode: sWarehouse },
+                            type: "GET",
+                            dataType: "JSON",
+                            "dataSrc": 'data',
+                            success: function (data) {
+                                var jqueryXml = $(data);
+                                console.log("Whs And Batch Number.");
+                                console.log(data);
+                                if (jqueryXml[0].data.length != 0) {
+
+                                    var bItemCode = jqueryXml[0].data[0].itemCode;
+                                    var bItemName = jqueryXml[0].data[0].itemName;
+                                    var bQuantity = sQty;
+                                    var bWhsCode = jqueryXml[0].data[0].whsCode;
+                                    var bBinEntry = jqueryXml[0].data[0].binEntry;
+                                    var bBinCode = jqueryXml[0].data[0].binCode;
+                                    var bUOMCode = jqueryXml[0].data[0].uomCode;
+                                    var bBatchNumber = jqueryXml[0].data[0].batchNumber;
+                                    var bSerialNumber = jqueryXml[0].data[0].serialNumber;
+                                    var bTotalQuantity = jqueryXml[0].data[0].quantity;
+                                    var bLineNo = jqueryXml[0].data[0].quantity;
+
+                                    //if (bSerialNumber != '') { bSerialNumber = bSerialNumber } else { bSerialNumber = '' }
+                                    var bExpDate = jqueryXml[0].data[0].expDate;
+                                    if (bExpDate == '1899-12-30T00:00:00') {
+                                        bExpDate = '';
+                                    } else {
+                                        bExpDate = bExpDate;
+                                    }
+
+                                    //CheckQtyIsMore(bItemCode, bQuantity, txtseleteLine);
+
+                                    Ltmp = [];
+                                    var tmpAdd = {};
+                                    //AddAuto(bItemCode, txtseleteLine,);
+                                    RowAuto(bItemCode, sQty);
+                                    console.log("fncAddAuto : " + isAdd);
+                                    const mArr = isAdd.split(",");
+                                    var mVal = mArr[0];
+                                    var mRow = mArr[1];
+                                    var mType = mArr[2];
+                                    alertMsg(isAdd);
+                                    SaveConsole('additem', "ITEM:" + bItemCode + "|Row:" + mRow + "|Status:" + isAdd);
+                                    console.log(mVal);
+                                    //AddRow
+                                    //var isZero = "";
+                                    if (mVal == "pass" && mType == "run") {
+                                        fncCheckTb(bItemCode, mRow, sQty);
+                                        //console.log("Zero is " + isZero);
+
+                                        if (isZero != "Yes") {
+                                            tmpAdd.itemCode = bItemCode;
+                                            tmpAdd.itemName = bItemName;
+                                            tmpAdd.quantity = bQuantity;
+                                            tmpAdd.warehouse = bWhsCode;
+                                            tmpAdd.binEntry = bBinEntry;
+                                            tmpAdd.binLocation = bBinCode;
+                                            tmpAdd.uomCode = bUOMCode;
+                                            tmpAdd.expDate = bExpDate;
+                                            tmpAdd.batchNumber = bBatchNumber;
+                                            tmpAdd.serialNumber = '';
+                                            tmpAdd.lineSap = mRow;
+                                            Ltmp.push(tmpAdd);
+                                            tbLineScan.rows.add(Ltmp);
+                                            tbLineScan.search('').draw();
+                                            Ltmp = [];
+                                        }
+
+                                    }
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+
+                                }
+                                else {
+                                    alert("Batch Number does not exist.\r\nไม่มีเลข Batch ใน Warehouse นี้");
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+                                }
+
+                            }
+
+                        });
+                    }
+                    //#endregion Batch Number
+
+                    //#region Serial Number
+                    else if (sSerial != '') {
+                        console.clear();
+                        console.log("Whs And Serial Number.");
+                        console.log("Serial No = " + sSerial);
+                        if (sItemCode == 'DGC110' || sItemCode == 'GC18' || sItemCode == 'DGC120' || sItemCode == 'GC120' || sItemCode == 'DGC14' || sItemCode == 'GC14' || sItemCode == 'DGC110' || sItemCode == 'GC110' || sItemCode == 'C/Cmix-1.0' || sItemCode == 'C/Cmix-0.5' || sItemCode == 'OCAN-0.5A' || sItemCode == 'DGC18') {
+                            if (sSerial.length >= 14) {
+                                sBatchSerial = sSerial.substring(0, 12);
+                            } else {
+                                sBatchSerial = sSerial;
+                            }
+                            console.log("Serial No is " + sBatchSerial);
+                        } else {
+                            sBatchSerial = sSerial;
+                        }
+                        //sBatchSerial = sSerial;
+                        console.log("Add Serial NoBinLocation :- " + sItemCode + ";" + sBatchSerial + ";" + sWarehouse);
+                            $.ajax({
+                                url: '@Url.Action("GetStockItemSerialW", "Inventory")',
+                                data: { itemcode: sItemCode, serialnumber: sBatchSerial, whscode: sWarehouse},
+                                type: "GET",
+                                dataType: "JSON",
+                                "dataSrc": 'data',
+                                success: function (data) {
+                                    //console.log("Get data by Serial Whs");
+                                    //console.log(data);
+                                    var jqueryXml = $(data);
+                                    if (jqueryXml[0].data.length != 0) {
+                                        //=========================
+                                        var bItemCode = jqueryXml[0].data[0].itemCode;
+                                        var bItemName = jqueryXml[0].data[0].itemName;
+                                        var bQuantity = sQty;
+                                        var bWhsCode = jqueryXml[0].data[0].whsCode;
+                                        var bWhsEntry = jqueryXml[0].data[0].whsEntry;
+                                        var bBinCode = jqueryXml[0].data[0].binCode;
+                                        var bBinEntry = jqueryXml[0].data[0].binEntry;
+                                        var bUOMCode = jqueryXml[0].data[0].uomCode;
+                                        var bBatchNumber = jqueryXml[0].data[0].batchNumber;
+                                        var bSerialNumber = jqueryXml[0].data[0].serialNumber;
+                                        var bExpDate = jqueryXml[0].data[0].expDate;
+                                        if (bExpDate == '1899-12-30T00:00:00') {
+                                            bExpDate = '';
+                                        } else {
+                                            bExpDate = bExpDate;
+                                        }
+                                        var bLineSap = '0';
+
+
+                                        var sny = 0;
+                                        for (let h = 0; h < tbLineScan.column(0).data().length; h++) {
+                                            var datasn = tbLineScan.row(h).data();
+                                            //console.log(datasn);
+                                            if (datasn.itemCode == bItemCode && datasn.serialNumber == bSerialNumber) {
+                                                sny = sny + 1;
+                                            }
+                                        }
+
+                                        Ltmp = [];
+                                        var tmpAdd = {};
+                                        //AddAuto(bItemCode, txtseleteLine,);
+                                        RowAuto(bItemCode, sQty);
+                                        console.log("fncAddAuto : " + isAdd);
+                                        const mArr = isAdd.split(",");
+                                        var mVal = mArr[0];
+                                        var mRow = mArr[1];
+                                        var mType = mArr[2];
+                                        alertMsg(isAdd);
+                                        SaveConsole('additem', "ITEM:" + bItemCode + "|Row:" + mRow + "|Status:" + isAdd);
+                                        console.log(mVal);
+
+                                        //CheckQtyIsMore(bItemCode, bQuantity, mRow);
+
+                                        //AddRow
+                                        //console.log("chkQty :- " + chkQty);
+
+                                        if (mVal == "pass" && mType == "run" && sny == 0) {
+                                            fncCheckTb(bItemCode, mRow, sQty);
+                                            //console.log("Zero is " + isZero);
+                                            if (isZero != "Yes") {
+                                                tmpAdd.itemCode = bItemCode;
+                                                tmpAdd.itemName = bItemName;
+                                                tmpAdd.quantity = bQuantity;
+                                                tmpAdd.warehouse = bWhsCode;
+                                                tmpAdd.binEntry = bBinEntry;
+                                                tmpAdd.binLocation = bBinCode;
+                                                tmpAdd.uomCode = bUOMCode;
+                                                tmpAdd.expDate = bExpDate;
+                                                tmpAdd.batchNumber = '';
+                                                tmpAdd.serialNumber = bSerialNumber;
+                                                tmpAdd.lineSap = mRow;
+                                                Ltmp.push(tmpAdd);
+                                                tbLineScan.rows.add(Ltmp);
+                                                tbLineScan.search('').draw();
+                                                Ltmp = [];
+                                            }
+                                        }
+                                        else if (mVal == 'pass' && mType == "run" && sny > 0) {
+                                            alert("Serial Number Duplicate.\r\nเลข Serial ซ้ำ");
+                                            document.getElementById("frmLoading").style.display = "none";
+                                        }
+                                        document.getElementById("frmLoading").style.display = "none";
+                                        $('#txtScanBarCode01').val("");
+                                        $('#txtScanBarCode01').focus();
+                                        //=========================
+                                    }
+                                    else {
+                                        alert("Serial Number does not exist.\r\nไม่มีเลข Serial ใน Warehouse นี้");
+                                        document.getElementById("frmLoading").style.display = "none";
+                                        $('#txtScanBarCode01').val("");
+                                        $('#txtScanBarCode01').focus();
+                                    }
+                                }
+                            });
+                    }
+                    //#endregion Serial Number
+
+                    //#region No Batch/Serial Number
+                    else if (sSerial == '' && sBatch == '') {
+                        console.log('No Serial And No Batch But ItemCode : ' + sItemCode);
+                        $.ajax({
+                            url: '@Url.Action("GetItemByWhs", "Inventory")',
+                            data: { itemcode: sItemCode, whscode: sWarehouse },
+                            type: "GET",
+                            dataType: "JSON",
+                            "dataSrc": 'data',
+                            success: function (val) {
+                                var jqueryXml = $(val);
+                                //console.log(val);
+                                if (jqueryXml[0].data.length != 0) {
+
+                                    var bItemCode = jqueryXml[0].data[0].itemCode;
+                                    var bItemName = jqueryXml[0].data[0].itemName;
+                                    var bQuantity = sQty;
+                                    var bWhsCode = jqueryXml[0].data[0].whsCode;
+                                    var bBinEntry = jqueryXml[0].data[0].binEntry;
+                                    var bBinCode = jqueryXml[0].data[0].binCode;
+                                    var bUOMCode = jqueryXml[0].data[0].uomCode;
+                                    var bBatchNumber = jqueryXml[0].data[0].batchNumber;
+                                    var bSerialNumber = jqueryXml[0].data[0].serialNumber;
+                                    var bTotalQuantity = jqueryXml[0].data[0].quantity;
+
+                                    //if (bSerialNumber != '') { bSerialNumber = bSerialNumber } else { bSerialNumber = '' }
+                                    var bExpDate = jqueryXml[0].data[0].expDate;
+                                    if (bExpDate == '1899-12-30T00:00:00') {
+                                        bExpDate = '';
+                                    } else {
+                                        bExpDate = bExpDate;
+                                    }
+
+                                    //CheckQtyIsMore(bItemCode, bQuantity, txtseleteLine);
+
+                                    Ltmp = [];
+                                    var tmpAdd = {};
+                                    //AddAuto(bItemCode, txtseleteLine,);
+                                    RowAuto(bItemCode, sQty);
+                                    console.log("fncAddAuto : " + isAdd);
+                                    const mArr = isAdd.split(",");
+                                    var mVal = mArr[0];
+                                    var mRow = mArr[1];
+                                    var mType = mArr[2];
+                                    alertMsg(isAdd);
+                                    SaveConsole('additem', "ITEM:" + bItemCode + "|Row:" + mRow + "|Status:" + isAdd);
+                                    console.log(mVal);
+
+                                        //AddRow
+                                    if (mVal == "pass" && mType == "run") {
+                                        fncCheckTb(bItemCode, mRow, sQty);
+                                        //console.log("Zero is " + isZero);
+
+                                        if (isZero != "Yes") {
+                                            tmpAdd.itemCode = bItemCode;
+                                            tmpAdd.itemName = bItemName;
+                                            tmpAdd.quantity = bQuantity;
+                                            tmpAdd.warehouse = bWhsCode;
+                                            tmpAdd.binEntry = bBinEntry;
+                                            tmpAdd.binLocation = bBinCode;
+                                            tmpAdd.uomCode = bUOMCode;
+                                            tmpAdd.expDate = bExpDate;
+                                            tmpAdd.batchNumber = '';
+                                            tmpAdd.serialNumber = '';
+                                            tmpAdd.lineSap = mRow;
+                                            Ltmp.push(tmpAdd);
+                                            tbLineScan.rows.add(Ltmp);
+                                            tbLineScan.search('').draw();
+                                            Ltmp = [];
+                                        }
+                                    }
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+
+                                }
+                                else {
+                                    alert("ไม่มี Item Barcode ใน Warehouse นี้");
+                                    document.getElementById("frmLoading").style.display = "none";
+                                    $('#txtScanBarCode01').val("");
+                                    $('#txtScanBarCode01').focus();
+                                }
+
+                            }
+
+                        });
+                    }
+                    //#endregion No Batch/Serial Number
+                }
+                // #endregion [Check Bin Location]
+                //=================================================================
+            }
+            //#endregion
+            //document.getElementById("frmLoading").style.display = "none";
+
+            $('#txtScanBarCode01').val("");
+            $('#txtScanBarCode01').focus();
+        }
+
+    });
+    $('#addRow01').click();
+
+    var input01 = document.getElementById("txtScanBarCode01");
+    input01.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("addRow01").click();
+        }
+    });
+
+    function RowAuto(itemCode, qTy) {
+        console.log(itemCode + ";" + qTy);
+        for (let i = 0; i < tbItemLine.column(1).data().length; i++) {
+            var dataX = tbItemLine.row(i).data();
+            //console.log("##########################################");
+            //console.log(dataX);
+            //console.log("##########################################");
+
+            let aLineNum = dataX.LineNum;
+            let aQty = dataX.InputQuantity;
+            let bQty = qTy;
+            var typeX = "break";
+            let vBalance = $('#txtBalance' + i).val();
+            if (itemCode == dataX.ItemCode && vBalance != "0") {
+                let u = parseFloat($('#txtBalance' + i).val());
+                if (u != 0) {
+                    typeX = "run";
+                }
+                else {
+                    typeX = "break";
+                }
+
+                let x = $('#txtBalance' + i).val() - bQty;
+                //$('#txtBalance' + i).val(x);
+                document.getElementById("txtBalance" + i).value = x;
+                //console.log("Box Qty : " + u);
+                isAdd = "pass," + aLineNum + "," + typeX;
+                return isAdd;
+            }
+
+        }
+    }
+
+    function fncCheckTb(itemCode, lineNum, qty) {
+        //let x = $('#txtBalance' + ii).val() - cQty;
+        var ZeroX = 0;
+        let cc = 0;
+        var v = "";
+        let cQty = qty;
+        for (let ii = 0; ii < tbItemLine.column(1).data().length; ii++) {
+            console.log("====== fncCheckTb ->" + ii + " ====== LineNum-" + lineNum);
+            var dataA = tbItemLine.row(ii).data();
+            //console.log(dataA);
+            //console.log(itemCode + "=" + dataA.ItemCode + ", " + $('#txtBalance' + ii).val());
+            //let u = parseFloat($('#txtBalance' + ii).val());
+            if (itemCode == dataA.ItemCode) {
+                console.log("T");
+                //console.log(dataA);
+                //console.log("Balance : " + $('#txtBalance' + ii).val());
+                if ($('#txtBalanceX' + ii).val() != "0") {
+                    ZeroX = 1;
+                    document.getElementById("txtBalanceX" + ii).value = document.getElementById("txtBalance" + ii).value;
+                } else {
+                    ZeroX = 0;
+                    document.getElementById("txtBalanceX" + ii).value = document.getElementById("txtBalance" + ii).value;
+                }
+            }
+            cc = cc + ZeroX;
+            console.log("Count :" + cc);
+            if (cc == 0) {
+                v = "Yes";
+            } else if (cc != 0) {
+                v = "No";
+            }
+            isZero = v;
+            //return isZero;
+        }
+
+        return isZero;
+        //isZero = "No";
+        //return isZero;
+    }
+
+    //function AddAuto() -> NotUsed
+    function AddAuto(itemCode, rowX, typeX) {
+        console.log("AddAuto itemCode is " + itemCode);
+        //var isAdd = "";
+        let rowNo = 99;
+        var caseX = "";
+        const arr1 = [];
+        const arr2 = [];
+        if (tbLineScan.data().length == 0) {
+            //add
+            console.log("Added-1");
+
+            for (let i = 0; i < tbItemLine.column(1).data().length; i++) {
+                var dataX = tbItemLine.row(i).data();
+                if (itemCode == dataX.ItemCode) {
+
+                    rowNo = dataX.LineNum;
+                    break;
+                }
+            }
+
+            isAdd = "pass," + rowX + ",Case0";
+
+        }
+        else if (tbLineScan.data().length !== 0) {
+
+            //#region Grouping
+            //=====================
+            var sLine = [];
+            for (let ls = 0; ls < tbLineScan.column(0).data().length; ls++) {
+                var datals = tbLineScan.row(ls).data();
+                //console.log(datals);
+                arrayLine = {};
+                var ManageItem = "";
+                var batchSerialNo = "";
+
+                if (datals.batchNumber != "") {
+                    ManageItem = "B";
+                    batchSerialNo = datals.itemCode + ";" + datals.lineSap;
+                } else {
+                    if (datals.serialNumber != "") {
+                        ManageItem = "S";
+                        batchSerialNo = datals.itemCode + ";" + datals.lineSap;
+                    }
+                }
+
+                if (datals.batchNumber == "" && datals.serialNumber == "") {
+                    ManageItem = "n";
+                    batchSerialNo = 'non' + datals.itemCode + ";" + datals.lineSap;
+                }
+
+                arrayLine.rowNo = datals.lineSap;
+                arrayLine.itemCode = datals.itemCode;
+                arrayLine.quantity = parseInt(datals.quantity);
+                arrayLine.binEntry = datals.binEntry;
+                arrayLine.binLocation = datals.binLocation;
+                arrayLine.warehouse = datals.warehouse;
+                arrayLine.uomCode = datals.uomCode;
+                arrayLine.ManageItem = ManageItem;
+                arrayLine.batchNo = datals.batchNumber;
+                arrayLine.serialNo = datals.serialNumber;
+                arrayLine.batchSerialNo = batchSerialNo;
+                sLine.push(arrayLine);
+            }
+            const groupBy = sLine.reduce((acc, cur) => {
+                acc[cur.batchSerialNo] ? acc[cur.batchSerialNo] = {
+                    ...acc[cur.batchSerialNo],
+                    quantity: acc[cur.batchSerialNo].quantity + cur.quantity
+                } : acc[cur.batchSerialNo] = {
+                    ...cur
+                };
+                return acc;
+            }, {});
+
+            const output = Object.values(groupBy).map((item) => ({
+                ...item
+            }));
+
+
+            console.log("groupBy...");
+            console.log(output);
+            //=====================
+            //#endregion Grouping
+
+            let cyy = 0;
+            for (let yy = 0; yy < output.length; yy++) {
+                console.log("ItemCode :" + itemCode + "=?" + output[yy].itemCode);
+                if (itemCode == output[yy].itemCode) {
+                    cyy += 1;
+                }
+            }
+
+            console.log("===========Step 1=============");
+            console.log("Count Item -:" + cyy);
+            caseX = "empty";
+            console.log("Case X -:" + caseX);
+            console.log("==============================");
+            if (cyy == 0) {
+                console.log("= = = = No = = = =");
+                for (let i = 0; i < tbItemLine.column(1).data().length; i++) {
+                    var dataX = tbItemLine.row(i).data();
+                    if (itemCode == dataX.ItemCode) {
+                        rowNo = dataX.LineNum;
+                        msgBox = "pass";
+                        caseX = "Case1";
+                        break;
+                    }
+                }
+            }
+
+            else {
+                console.log("= = = = Yes = = = =");
+                msgBox = "notpass";
+                rowNo = 0;
+                caseX = "empty";
+                //arr1.length = 0;
+                for (let ii = 0; ii < tbItemLine.column(1).data().length; ii++) {
+                    //arr2.length = 0;
+                    var dataX = tbItemLine.row(ii).data();
+                    for (let y0 = 0; y0 < output.length; y0++) {
+                        //output[y0].itemCode
+                        console.log("ItemCode :- " + itemCode + "," + dataX.ItemCode + "," + output[y0].itemCode);
+                        //Checked Item Code
+                        if ((itemCode === dataX.ItemCode) && (itemCode === output[y0].itemCode)) {
+                            console.warn("Same");
+
+                            console.log("ItemCode :- " + dataX.ItemCode + "," + output[y0].itemCode);
+                            console.log("RowNo :- " + dataX.LineNum + "," + output[y0].rowNo);
+                            arr1.push(dataX.LineNum);
+                            arr2.push(parseInt(output[y0].rowNo));
+
+                            if (parseInt(dataX.LineNum) == parseInt(output[y0].rowNo)) {
+                                console.log('%cLineNum ==' + dataX.LineNum, 'background-color: green;');
+
+                                if (parseInt(output[y0].quantity) < parseInt(dataX.InputQuantity)) {
+                                    console.log("%cยังรับไม่ครบ" + output[y0].quantity + "<" + dataX.InputQuantity + "LineNum " + dataX.LineNum, 'background-color: yellow;');
+                                    rowNo = dataX.LineNum;
+                                    msgBox = "pass";
+                                    caseX = "Case2";
+                                    break;
+                                }
+
+                                rowNo = rowNo;
+                                msgBox = msgBox;
+                                caseX = caseX;
+
+                            }
+                            else if (parseInt(dataX.LineNum) != parseInt(output[y0].rowNo)) {
+                                console.log('%cLineNum !=', 'background-color: pink;');
+
+                                rowNo = 99;
+                                msgBox = "empty";
+                                caseX = "empty";
+
+                                console.log("Array1 :-");
+                                console.log(arr1);
+                                console.log("Array2 :-");
+                                console.log(arr2);
+                                console.log("Difference :-");
+                                var difference = $(arr1).not(arr2).get();
+                                console.log(difference);
+
+                                if (difference.length != 0) {
+                                    rowNo = difference[0];
+                                    msgBox = "pass";
+                                    caseX = "Case3";
+                                }
+                                else {
+                                    rowNo = 0;
+                                    msgBox = "notpass";
+                                    caseX = "Case4";
+                                }
+
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+
+            //console.log("Added-2");
+            isAdd = msgBox + "," + rowX + "," + caseX;
+
+        }
+
+        arr1.length = 0;
+        arr2.length = 0;
+
+        return isAdd;
+    }
+
+    function AddAutoSerial(itemCode, rowX, typeX) {
+        console.log("AddAuto Serial itemCode is " + itemCode);
+        //var isAdd = "";
+        let rowNo;
+        var caseX = "";
+        const arr1 = [];
+        const arr2 = [];
+        if (tbLineScan.data().length == 0) {
+            //add
+            console.log("Added-1");
+
+            for (let i = 0; i < tbItemLine.column(1).data().length; i++) {
+                var dataX = tbItemLine.row(i).data();
+                if (itemCode == dataX.ItemCode) {
+
+                    rowNo = dataX.LineNum;
+                    break;
+                }
+            }
+
+            isAdd = "pass," + rowNo + ",Case0";
+
+        }
+        else if (tbLineScan.data().length !== 0) {
+
+            //#region Grouping
+            //=====================
+            var sLine = [];
+            for (let ls = 0; ls < tbLineScan.column(0).data().length; ls++) {
+                var datals = tbLineScan.row(ls).data();
+                //console.log(datals);
+                arrayLine = {};
+                var ManageItem = "";
+                var batchSerialNo = "";
+
+                if (datals.batchNumber != "") {
+                    ManageItem = "B";
+                    batchSerialNo = datals.itemCode + ";" + datals.batchNumber + ";" + datals.lineSap;
+                } else {
+                    if (datals.serialNumber != "") {
+                        ManageItem = "S";
+                        batchSerialNo = datals.itemCode + ";" + datals.lineSap + ";" + datals.lineSap;
+                    }
+                }
+
+                if (datals.batchNumber == "" && datals.serialNumber == "") {
+                    ManageItem = "n";
+                    batchSerialNo = 'non' + datals.itemCode + ";" + datals.lineSap;
+                }
+
+                arrayLine.rowNo = datals.lineSap;
+                arrayLine.itemCode = datals.itemCode;
+                arrayLine.quantity = parseInt(datals.quantity);
+                arrayLine.binEntry = datals.binEntry;
+                arrayLine.binLocation = datals.binLocation;
+                arrayLine.warehouse = datals.warehouse;
+                arrayLine.uomCode = datals.uomCode;
+                arrayLine.ManageItem = ManageItem;
+                arrayLine.batchNo = datals.batchNumber;
+                arrayLine.serialNo = datals.serialNumber;
+                arrayLine.batchSerialNo = batchSerialNo;
+                sLine.push(arrayLine);
+            }
+            const groupBy = sLine.reduce((acc, cur) => {
+                acc[cur.batchSerialNo] ? acc[cur.batchSerialNo] = {
+                    ...acc[cur.batchSerialNo],
+                    quantity: acc[cur.batchSerialNo].quantity + cur.quantity
+                } : acc[cur.batchSerialNo] = {
+                    ...cur
+                };
+                return acc;
+            }, {});
+
+            const output = Object.values(groupBy).map((item) => ({
+                ...item
+            }));
+
+
+            console.log("groupBy...");
+            console.log(output);
+            //=====================
+            //#endregion Grouping
+
+            let cyy = 0;
+            for (let yy = 0; yy < output.length; yy++) {
+                if (itemCode == output[yy].itemCode) {
+                    cyy += 1;
+                }
+            }
+            console.log("Count Item -:" + cyy);
+            if (cyy == 0) {
+                console.log("= = = = No = = = =");
+                for (let i = 0; i < tbItemLine.column(1).data().length; i++) {
+                    var dataX = tbItemLine.row(i).data();
+                    if (itemCode == dataX.ItemCode) {
+                        rowNo = dataX.LineNum;
+                        msgBox = "pass";
+                        caseX = "Case1";
+                        break;
+                    }
+                }
+            }
+
+            else {
+                console.log("= = = = Yes = = = =");
+                msgBox = "notpass";
+                rowNo = 0;
+                caseX = "empty";
+                //arr1.length = 0;
+                for (let ii = 0; ii < tbItemLine.column(1).data().length; ii++) {
+                    //arr2.length = 0;
+                    var dataX = tbItemLine.row(ii).data();
+                    for (let y0 = 0; y0 < output.length; y0++) {
+                        //output[y0].itemCode
+
+                        if (dataX.ItemCode === output[y0].itemCode) {
+                            console.log("ItemCode :- " + dataX.ItemCode + "," + output[y0].itemCode);
+                            console.log("RowNo :- " + dataX.LineNum + "," + output[y0].rowNo);
+                            arr1.push(dataX.LineNum);
+                            arr2.push(parseInt(output[y0].rowNo));
+
+                            if (parseInt(dataX.LineNum) == parseInt(output[y0].rowNo)) {
+                                console.log('%cLineNum ==', 'background-color: green;');
+
+                                if (parseInt(output[y0].quantity) < parseInt(dataX.InputQuantity)) {
+                                    console.log("%cยังรับไม่ครบ" + output[y0].quantity + "<" + dataX.InputQuantity, 'background-color: yellow;');
+                                    rowNo = dataX.LineNum;
+                                    msgBox = "pass";
+                                    caseX = "Case2";
+                                    return true;
+                                }
+
+                                rowNo = rowNo;
+                                msgBox = msgBox;
+                                caseX = caseX;
+                            }
+                            else if (parseInt(dataX.LineNum) != parseInt(output[y0].rowNo)) {
+                                console.log('%cLineNum !=', 'background-color: pink;');
+
+                                console.log("Array1 :-");
+                                console.log(arr1);
+                                console.log("Array2 :-");
+                                console.log(arr2);
+                                console.log("Difference :-");
+                                var difference = $(arr1).not(arr2).get();
+                                console.log(difference);
+
+                                if (difference.length != 0) {
+                                    rowNo = difference[0];
+                                    msgBox = "pass";
+                                    caseX = "Case3";
+                                }
+                                else {
+                                    rowNo = 0;
+                                    msgBox = "notpass";
+                                    caseX = "Case4";
+                                }
+
+
+                            }
+
+                        }
+
+
+                    }
+                }
+
+            }
+
+            console.log("Added-2");
+            isAdd = msgBox + "," + rowNo + "," + caseX;
+
+        }
+
+        arr1.length = 0;
+        arr2.length = 0;
+        return isAdd;
+    }
+
+    function CheckQtyIsMore(itm, qty, row) {
+
+        //console.warn('ItemCode : ' + itm + ' Qty : ' + qty);
+
+        //==========================================
+        console.log('Tb : List Data From Scan');
+        const sumh = 0;
+        //var chkQty = "notpass";
+        var cQty = 0;
+        var cQuantity1 = 0;
+        var cQuantity2 = 0;
+        var cQuantity3 = 0;
+        var sumQty = 0;
+        var convQty = 0;
+        var sumQtySAP = 0;
+        var sLineSap = [];
+        convQty = parseFloat(qty);
+
+        for (let h = 0; h < tbLineScan.column(0).data().length; h++) {
+            var datah = tbLineScan.row(h).data();
+            //console.log(datah);
+            if (datah.itemCode == itm && datah.lineSap == row) {
+                //console.log("Chk-Quantity" + datah.quantity);
+                cQty = cQty + parseFloat(datah.quantity);
+            } else {
+                cQty = 0;
+            }
+        }
+
+        sumQty = cQty + convQty;
+        console.log('SUM :> ' + sumQty);
+        //==========================================
+        //console.log('Tb : List Data From SAP');
+
+        //#region xComment
+        for (let i = 0; i < tbItemLine.column(1).data().length; i++) {
+            var data = tbItemLine.row(i).data();
+            //console.log(data);
+
+            if (data.ItemCode == itm && data.LineNum == row) {
+                cQuantity1 = parseFloat(data.InputQuantity);
+                cQuantity2 = cQty;
+                cQuantity3 = sumQty;
+                console.log("Compare : " + cQuantity1 + "<=" + cQuantity2 + "=>" + cQuantity3);
+                if (cQuantity3 > cQuantity1) {
+                    chkQty = 'nopass';
+                    alert("1.Quantity Over [สแกนเกินจำนวน]");
+                    return true;
+                }
+
+                if (cQuantity2 == 0) {
+                    //console.log('True');
+                    chkQty = 'pass';
+                } else {
+                    if (cQuantity1 < sumQty) {
+                        chkQty = 'nopass';
+                        //console.warn('nopass');
+                        alert("2.Quantity Over [สแกนเกินจำนวน]");
+                    }
+                    else if (cQuantity1 >= sumQty) {
+                        chkQty = 'pass';
+                        //console.log('pass');
+                    }
+                }
+            }
+        }
+        //#endregion xComment
+
+        //console.log("chkQty is =" + chkQty);
+        return chkQty;
+
+    }
+
+    function alertMsg(msg) {
+        console.log("Message :- "+msg);
+        $('#alertMsg').val(msg);
+        return;
+    }
+
+    function SaveConsole(type, msg) {
+        var jmsg = "";
+
+        if (type == "additem") {
+            jmsg = msg;
+        }
+        else if (type == "GetSO") {
+            jmsg = "SO DocNum : " + msg;
+        }
+        else if (type == "scan") {
+            jmsg = "->" + msg;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("SaveConsole", "Setting")',
+            data: { msg: jmsg },
+            dataType: "JSON",
+            success: function (ex) {
+                alert('Save Complete.');
+            }
+        });
+    }
+
+</script>

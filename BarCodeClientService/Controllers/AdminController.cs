@@ -49,5 +49,12 @@ namespace BarCodeClientService.Controllers
             return Ok(a);
         }
 
+        [HttpPost]
+        public IActionResult PostUpdatePasswordAsync(SendUser send)
+        {
+            var a = API.PostWithReturn<ResponseGetUserX>("api/User/UpdatePasswordUser", send);
+            return Ok(a);
+        }
+
     }
 }

@@ -1508,6 +1508,20 @@
             }
         }
 
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
 
         //POST Data
         function POSTDataAPI() {
@@ -1744,34 +1758,58 @@
             sHead.line = arrLineAll;
             console.log(sHead);
 
-            console.log("-> To Saving...");
+            //sendUserPassSAP
+            //get cookie
+            let user = getCookie("username");
+            let passer = getCookie("passw0rder");
+            var dataU = {};
+            dataU.userNameSAP = user;
+            dataU.password = passer;
+
+            //console.log("-> User And Password Sending...");
+            //console.log(dataU);
             $.ajax({
                 type: "POST",
-                url: '@Url.Action("PostInventoryTransfer", "Inventory")',
-                data: { sendInventoryTransfer: sHead},
+                url: '@Url.Action("PostUserConfig", "Setting")',
+                data: { send: dataU},
                 dataType: "JSON",
                 error: function (request, error) {
-                    console.log(arguments);
-                    alert(" Can't do because: " + error);
+
                 },
                 success: function (ex) {
-                    //console.log(ex);
-                    if (ex.errorCode == 0) {
-                        alert("Success");
-                        document.getElementById("Save").style.display = 'none';
-                        document.getElementById("frmLoading").style.display = "none";
+                    console.log("Success PostUserConfig");
+                    console.log("-> To Saving...");
 
-                        setTimeout(() => {
-                            document.location.reload();
-                        }, 1500);
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("PostInventoryTransfer", "Inventory")',
+                        data: { sendInventoryTransfer: sHead},
+                        dataType: "JSON",
+                        error: function (request, error) {
+                            console.log(arguments);
+                            alert(" Can't do because: " + error);
+                        },
+                        success: function (ex) {
+                            //console.log(ex);
+                            if (ex.errorCode == 0) {
+                                alert("Success");
+                                document.getElementById("Save").style.display = 'none';
+                                document.getElementById("frmLoading").style.display = "none";
+
+                                setTimeout(() => {
+                                    document.location.reload();
+                                }, 1500);
 
 
-                    } else {
-                        console.log(ex.errorMsg);
-                        alert(ex.errorMsg);
-                        document.getElementById("Save").style.display = 'block';
-                        document.getElementById("frmLoading").style.display = "none";
-                    }
+                            } else {
+                                console.log(ex.errorMsg);
+                                alert(ex.errorMsg);
+                                document.getElementById("Save").style.display = 'block';
+                                document.getElementById("frmLoading").style.display = "none";
+                            }
+                        }
+                    });
+
                 }
             });
 

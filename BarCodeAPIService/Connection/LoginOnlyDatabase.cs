@@ -41,14 +41,14 @@ namespace BarCodeAPIService.Models
                 //HDBODBC
                 string connectionstr = "";
                 if (type == Type.SapHana)
-                    connectionstr = "Driver={HDBODBC};UID=SYSTEM;PWD=SAPB1Admin;SERVERNODE=192.168.10.110:30115;[DATABASE=UDOM_TRD]";
+                    connectionstr = "Driver={HDBODBC};UID=SYSTEM;PWD=SAPB1Admin;SERVERNODE=172.20.150.240:30115;[DATABASE=UDOM_TRD]";
                 //connectionstr = ConnectionString.ConnectionStringHANA1!;
                 //connectionstr = ConnectionString.ConnectionStringSAP!;
                 //connectionstr = $"Driver={{HDBODBC}};UID={ConnectionString.DbUserName};" +
                 //$"PWD={ConnectionString.DbPassword};SERVERNODE={ConnectionString.ServerGET};[DATABASE={ConnectionString.CompanyDB}];";
                 else if (type == Type.SqlHana)
                 {
-                    connectionstr = "Driver={HDBODBC};UID=SYSTEM;PWD=SAPB1Admin;SERVERNODE=192.168.10.110:30115;[DATABASE=BARCODESYSTEMDB]";
+                    connectionstr = "Driver={HDBODBC};UID=SYSTEM;PWD=SAPB1Admin;SERVERNODE=172.20.150.240:30115;[DATABASE=BARCODESYSTEMDB]";
                     //connectionstr = $"Driver={{HDBODBC}};UID={ConnectionString.DbUserName};" +
                     //$"PWD={ConnectionString.DbPassword};SERVERNODE={ConnectionString.ServerGET};[DATABASE={ConnectionString.CompanyDB}];";
                 }

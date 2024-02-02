@@ -1074,3 +1074,3022 @@ ITEM:300-300|Row:0|Status:pass,0,Case0
 SO DocNum : 123090001
 ->ScanBarCode:300-300;325102;;QTY1;0002;
 ITEM:300-300|Row:0|Status:pass,0,Case0
+SO DocNum : 123090003
+SO DocNum : 123090003
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:2|Status:pass,2,Case1
+SO DocNum : 123090003
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:1|Status:pass,1,Case1
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+SO DocNum : 123090003
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+SO DocNum : 123090003
+SO DocNum : 123090003
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+SO DocNum : 123080001
+SO DocNum : 123090004
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+SO DocNum : 123090005
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+SO DocNum : 123090005
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+SO DocNum : 123090005
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+SO DocNum : 123090005
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+SO DocNum : 123090005
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+SO DocNum : 123090005
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:notpass,0,empty
+SO DocNum : 123090005
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-301;126205;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+SO DocNum : 123090005
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-300;024205;;QTY1;0001;
+ITEM:300-300|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-301;325203;;QTY1;0001;
+ITEM:300-301|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-302;023205;;QTY1;0001;
+ITEM:300-302|Row:0|Status:notpass,0,empty
+SO DocNum : 123090005
+SO DocNum : 123090006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090006
+SO DocNum : 123090006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090006
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case0
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;\
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:0|Status:notpass,0,empty
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090007
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090008
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123090008
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090008
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090008
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123090008
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;1;
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;1;
+ITEM:300-320|Row:0|Status:notpass,0,empty
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:0|Status:notpass,0,empty
+SO DocNum : 123090009
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-317;024204;;QTY1;1
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case2
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:0|Status:notpass,0,empty
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090009
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-330;027205;;QTY1;2
+ITEM:300-330|Row:1|Status:pass,1,Case2
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3
+ITEM:300-320|Row:2|Status:pass,2,Case2
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case0
+SO DocNum : 123090011
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case0
+SO DocNum : 123090012
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090012
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case0
+SO DocNum : 123090012
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090012
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case0
+SO DocNum : 123090012
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090012
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090012
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090013
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090013
+SO DocNum : 123090014
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090014
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090013
+SO DocNum : 123090015
+->ScanBarCode:300-317;024204;;QTY5;1
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090015
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY5;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY2;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090016
+->ScanBarCode:300-317;024204;;QTY2;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY3;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090016
+->ScanBarCode:300-317;024204;;QTY2;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090017
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090018
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123090019
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case1
+SO DocNum : 123090020
+SO DocNum : 123100001
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100002
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100003
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100004
+->ScanBarCode:300-317;024204;;QTY3;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+SO DocNum : 123100005
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY2;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+SO DocNum : 123100005
+SO DocNum : 123100005
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY2;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123100005
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case1
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+SO DocNum : 123100005
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+SO DocNum : 123100233
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-330;027205;;QTY2;2;
+ITEM:300-330|Row:1|Status:pass,1,Case1
+SO DocNum : 123100005
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:notpass,0,empty
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case2
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case1
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:2|Status:pass,2,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case3
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,Case2
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,Case0
+SO DocNum : 223100070
+SO DocNum : 223100069
+SO DocNum : 123100005
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+SO DocNum : 123100005
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:1|Status:pass,1,-
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,-
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,-
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,-
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,-
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,-
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,-
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,-
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,-
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+->ScanBarCode:300-330;027205;;QTY1;2;300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+SO DocNum : 123100006
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,break
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,break
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:notpass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:notpass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:notpass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:notpass,0,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:notpass,0,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY5;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+SO DocNum : 123100006
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,break
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+SO DocNum : 123100006
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:4|Status:pass,4,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-317;024204;;QTY1;1;
+ITEM:300-317|Row:0|Status:pass,0,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+->ScanBarCode:300-330;027205;;QTY1;2;
+ITEM:300-330|Row:2|Status:pass,2,run
+SO DocNum : 123100006
+SO DocNum : 123100007
+->ScanBarCode:2565;;;QTY1;4;
+SO DocNum : 123100007
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:NaN|Status:pass,NaN,Case0
+SO DocNum : 123100007
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123100007
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+SO DocNum : 123100007
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100007
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100007
+->ScanBarCode:300-320;021105;;QTY1;3;
+SO DocNum : 123100007
+SO DocNum : 123100007
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+SO DocNum : 123100007
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+SO DocNum : 123100007
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123100007
+SO DocNum : 123100007
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123100007
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:3|Status:pass,3,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+SO DocNum : 123100007
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1916322-3433;QTY1;3;
+ITEM:GC120|Row:2|Status:pass,2,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:30000012;;;QTY1;4;
+ITEM:30000012|Row:3|Status:pass,3,run
+->ScanBarCode:GC120;;1916322-3428;QTY1;3;
+ITEM:GC120|Row:3|Status:pass,3,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:0|Status:pass,0,run
+->ScanBarCode:300-320;021105;;QTY1;3;
+ITEM:300-320|Row:1|Status:pass,1,run
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100006
+SO DocNum : 123100005
+SO DocNum : 123100006
+SO DocNum : 123100006
+SO DocNum : 123100006
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100015
+SO DocNum : 123100015
+SO DocNum : 123100015
+SO DocNum : 123100015
+SO DocNum : 123110001
+SO DocNum : 123110001
+SO DocNum : 123100008
+SO DocNum : 123100005
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123100008
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+SO DocNum : 123110002
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110002
+->ScanBarCode:123100006
+SO DocNum : 123110002
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110002
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110004
+SO DocNum : 123110004
+SO DocNum : 123110004
+SO DocNum : 123110004
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110004
+->ScanBarCode:GC120;;2111476-3251QTY;19/06/25
+ITEM:GC120|Row:2|Status:pass,2,run
+SO DocNum : 123110005
+->ScanBarCode:GC120;;2115007-3247QTY;24/04/25
+ITEM:GC120|Row:4|Status:pass,4,run
+SO DocNum : 123110005
+->ScanBarCode:GC120;;2115007-3247QTY;24/04/25
+ITEM:GC120|Row:4|Status:pass,4,run
+SO DocNum : 123110004
+SO DocNum : 123110006
+->ScanBarCode:GC120;;2115007-3255QTY;24/04/25
+ITEM:GC120|Row:4|Status:pass,4,run
+SO DocNum : 123110005
+SO DocNum : 123110008
+->ScanBarCode:GC120;;2115007-3257QTY;24/04/25
+ITEM:GC120|Row:4|Status:pass,4,run
+SO DocNum : 123110008
+SO DocNum : 123110010
+SO DocNum : 123110013
+SO DocNum : 123110013
+SO DocNum : 123110013
+->ScanBarCode:0141Z;CDMEN22C1;;QTY;003;
+ITEM:0141Z|Row:4|Status:pass,4,run
+->ScanBarCode:0141Z;CDMEN22C1;;QTY;003;
+ITEM:0141Z|Row:4|Status:pass,4,run
+->ScanBarCode:0141Z;CDMEN22C1;;QTY;003;
+ITEM:0141Z|Row:4|Status:pass,4,run
+SO DocNum : 123110014
+SO DocNum : 123110014
+SO DocNum : 123110014
+SO DocNum : 123110014
+->ScanBarCode:GC120;;2115007-3266QTY;24/04/25
+->ScanBarCode:GC120;;2115007-3278QTY;24/04/25
+->ScanBarCode:GC120;;2111476-3188QTY;19/06/25
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+SO DocNum : 123110014
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+SO DocNum : 123110015
+SO DocNum : 123110016
+SO DocNum : 123110016
+SO DocNum : 123110016
+SO DocNum : 123110017
+SO DocNum : 123110017
+SO DocNum : 123110018
+SO DocNum : 123110020
+SO DocNum : 123110020
+SO DocNum : 123110020
+SO DocNum : 123110020
+SO DocNum : 123110020
+SO DocNum : 123110005
+SO DocNum : 123110020
+SO DocNum : 123110020
+SO DocNum : 123110020
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+SO DocNum : 123110020
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+SO DocNum : 123110020
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+SO DocNum : 123110020
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+SO DocNum : 123110021
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;2115007-3280QTY;24/04/25
+->ScanBarCode:GC120;;2115007-3283QTY;24/04/25
+->ScanBarCode:GC120;;2111476-3177QTY;19/06/25
+->ScanBarCode:GC120;;1923646-3009;QTY1;0002;
+ITEM:GC120|Row:1|Status:pass,1,run
+SO DocNum : 123110021
+->ScanBarCode:GC120;;1923646-3009;QTY1;0002;
+ITEM:GC120|Row:1|Status:pass,1,run
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+SO DocNum : 123110021
+SO DocNum : 123110021
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220204;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1923646-3009;QTY1;0002;
+ITEM:GC120|Row:1|Status:pass,1,run
+SO DocNum : 123110021
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220204;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1923646-3009;QTY1;0002;]
+ITEM:GC120|Row:1|Status:pass,1,run
+SO DocNum : 123110021
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:0102Z;PDWPU220204;;QTY;001;
+ITEM:0102Z|Row:0|Status:pass,0,run
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+->ScanBarCode:GC120;;1923646-3009;QTY1;0002;
+ITEM:GC120|Row:1|Status:pass,1,run
+SO DocNum : 123110020
+->ScanBarCode:JS-SAW-W2T22-320;;;QTY1;004;
+ITEM:JS-SAW-W2T22-320|Row:2|Status:pass,2,run
+SO DocNum : 123120001
+SO DocNum : 123120001
+SO DocNum : 123120002
+SO DocNum : 123120002
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+->ScanBarCode:0102Z;PDWPU220802;;QTY;001;
+ITEM:0102Z|Row:5|Status:pass,5,run
+SO DocNum : 123120003

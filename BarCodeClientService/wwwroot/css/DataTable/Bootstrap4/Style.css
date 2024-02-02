@@ -1,0 +1,12 @@
+﻿.table th {
+    text-align: center;
+}
+
+.dt-head-center {
+    text-align: center;
+}
+
+.table.dataTable {
+    margin: auto;
+    width: 80% !important;
+}

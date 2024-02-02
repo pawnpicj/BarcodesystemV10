@@ -93,7 +93,7 @@
         width: 60px;
     }
 
-    #TbInfImDataSelect, #TbInfImData, TbInfImDataLine {
+    #TbInfImDataSelect, #TbInfImData, TbInfImDataLine, TbDataLineSummary {
         /*table-layout: fixed;*/
         width: 99% !important;
     }
@@ -177,6 +177,9 @@
             <li class="nav-item">
                 <a class="nav-link color_tap" id="head-tab" data-toggle="tab" href="#head" role="tab" aria-controls="Head" aria-selected="false">Add Head</a>
             </li>
+            @*<li class="nav-item">
+                <a class="nav-link color_tap" id="head-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="Head" aria-selected="false">Summary</a>
+            </li>*@
         </ul>
         <div class="tab-content" id="myTabContent">
 
@@ -207,10 +210,10 @@
                                 </div>
                                 <input type="text" class="form-control" placeholder="Search Customer Code" id="CusID" value="" readonly>
                                 @*<div class="input-group-append">
-                    <button class="input-group-text btnModelsCus" data-toggle="modal" data-target="#ModalCusCode">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>*@
+                                        <button class="input-group-text btnModelsCus" data-toggle="modal" data-target="#ModalCusCode">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>*@
                             </div>
                         </div>
 
@@ -320,8 +323,6 @@
             <div class="tab-pane fade" id="head" role="tabpanel" aria-labelledby="head-tab" style="margin-top: 10px;">
                 <div class="row">
 
-
-
                     <div class="col-sm-6">
                         Series :
                         <div class="input-group">
@@ -331,8 +332,11 @@
 
                         Customer Name :
                         <div class="input-group">
-                            <input type="text" id="txt_H_CusID" disabled size="8" value="" />
-                            <input type="text" class="form-control" placeholder="" id="txt_H_CusName" value="" disabled>
+                            <input type="text" id="txt_H_CusID" size="8" value="" disabled />
+                            <input type="text" class="form-control" placeholder="" id="txt_H_CusName" value="" autocomplete="off" disabled>
+                            <div class="input-group-append">
+                                <button class="input-group-text btnModelsItem" data-toggle="modal" data-target="#ModalCusCode"><i class="fa fa-search"></i></button>
+                            </div>
                         </div>
 
                         Sale Employee :
@@ -355,6 +359,7 @@
 
                         Remarks :
                         <textarea class="form-control" id="comments" rows="3" style="width:100%"></textarea>
+
                     </div>
 
                     <div class="col-sm-6">
@@ -373,6 +378,11 @@
                             <input type="date" class="form-control" id="txt_H_DocumentDate">
                         </div>
 
+                        หมายเหตุ(SQ) :
+                        <textarea class="form-control" id="internal_remark" rows="3" style="width:100%"> </textarea>
+
+                        หมายเหตุในใบกำกับ
+                        <textarea class="form-control" id="inv_remark" rows="2" style="width:100%"></textarea>
                     </div>
 
 
@@ -395,6 +405,7 @@
                                         <th>IsBatchSerial</th>
                                         <th>B\S Number</th>
                                         <th>Patient</th>
+                                        <th>BaseLine</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -403,12 +414,48 @@
                         <div style="text-align:right">
                             <br>
                             <button class="btn btn-success" id="Save" style="margin-left:5px;" onclick="POSTDataAPI()">Send To SAP</button>
+                            @*<button class="btn btn-success modal-toggle" id="btnNextSummary" style="margin-left: 5px;" data-href="#summary">สรุป</button>*@
                         </div>
 
                     </div>
                 </div>
             </div>
 
+            @* Tab for Summary And Edit Price, Discount *@
+            <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab" style="margin-top: 10px;">
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <hr>
+                        <div class="table-responsive">
+                            <table id="TbDataLineSummary" class="table table-striped table-bordered table-condensed dt-responsive nowrap text-xsmall" width="99%" cellspacing="0" style="background:#f0eff1;color:#696969;">
+                                <thead>
+                                    <tr>
+                                        <th>RowNo</th>
+                                        <th>IM-No.</th>
+                                        <th>ItemCode</th>
+                                        <th>ItemName</th>
+                                        <th>Quantity</th>
+                                        <th>UOM</th>
+                                        <th>Warehouse</th>
+                                        <th>Bin Location</th>
+                                        <th>BinEntry</th>
+                                        <th>Price</th>
+                                        <th>IsBatchSerial</th>
+                                        <th>B\S Number</th>
+                                        <th>Patient</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+
+                        <div style="text-align:right">
+                            <br>
+                            @*<button class="btn btn-success" id="Save" style="margin-left:5px;" onclick="POSTDataAPI()">Send To SAP</button>*@
+                        </div>
+                    </div>
+                </div>
 
         </div>
     </div>
@@ -633,24 +680,41 @@
     //+++++ Series Code +++++ END
 
     /* DataTable List Of Customer */
-    @*var LCus = [];
-    DataTableInit.TableCustomer();
-    var tbCus = $('#TbCusCode').DataTable();
-    DataMethod.AddClassSelected(DataMethod.AddClassSelected('TbCusCode', tbCus);
-    $(".btnModelsCus").click(function() {
-        $("#ModalCusCode").modal({ backdrop: "static" });
-        GetMasterData.getCustomer('@Url.Action("GetCustomerClientResult", "GoodsReceiptPO")','C');
-    });*@
+    var LCus = [];
+    //var tbCus = $('#TbCusCode').DataTable();
+    var tbCus = $('#TbCusCode').DataTable({
+            "ajax": {
+            "url": '@Url.Action("GetContactPerson", "Home")',
+            "type": "GET",
+            "dataType": "JSON",
+            "dataSrc": 'data',
+            "complete": function (data) {
+                console.log("Get Customer Complete.");
+                jqueryXml = $(data);
+            }
+        },
+        "columns": [
+            { "data": "cardCode" },
+            { "data": "name" },
+            { "data": "tel1" },
+            { "data": "address" }
+        ],
+        "select": true,
+        "paging": true,
+        "ordering": false,
+        "info": false,
+        "searching": true
+    });
 
-    //$('#ChooseCus').click(function() {
-    //    const index = tbCus.row('.selected').index();
-    //    const data = tbCus.row(index).data();
-    //    //$('#CusID').val(data.cardCode);
-    //    //$('#CusName').val(data.cardName);
+    $('#ChooseCus').click(function() {
+        const index = tbCus.row('.selected').index();
+        const data = tbCus.row(index).data();
+        //$('#CusID').val(data.cardCode);
+        //('#CusName').val(data.cardName);
 
-    //    //$('#txt_H_CusID').val(data.cardCode);
-    //    //$('#txt_H_CusName').val(data.cardName);
-    //});
+        $('#txt_H_CusID').val(data.cardCode);
+        $('#txt_H_CusName').val(data.name);
+    });
     /* End DataTable List Of Customer */
 
     //Search Inventory Tranfer IM
@@ -746,7 +810,7 @@
         searching: false
     });
 
-    tbInfImData.columns([1, 2 , 6, 10, 12, 15]).visible(false, false);
+    tbInfImData.columns([1, 2 , 6, 12, 15]).visible(false, false);
     //onClick="removeRowTo(' + meta.row + ')"
 
     var LtmpDataSelected = [];
@@ -794,13 +858,21 @@
         searching: false
     });
 
-    tbInfImData2.columns([1, 2, 3, 10, 12, 15]).visible(false, false);
+    tbInfImData2.columns([1, 2, 3, 12, 15]).visible(false, false);
 
     $('#ChooseInf').click(function () {
         const index = tbInf.row('.selected').index();
         const data = tbInf.row(index).data();
         $('#txtDocEntry').val(data.docEntry);
         $('#txtDocNum').val(data.docNum);
+
+
+        var strDocNum = $('#txtDocNum').val();
+        strDocNum = "IM" + strDocNum +", ";
+        var strInvRemark = $('#inv_remark').val();
+        strInvRemark = strInvRemark + strDocNum;
+
+        $('#inv_remark').val(strInvRemark);
 
         $('#CusID').val(data.cardCode);
         $('#CusName').val(data.cardName);
@@ -934,7 +1006,7 @@
 
     }
 
-    
+
     function AddRow(row) {
         if ($("#chkLineNumSelect" + row).prop("checked") == true) {
             lsRowNumber.push(row);
@@ -945,38 +1017,39 @@
         }
     }
 
-    //btnGetRow
-    //var length2;
-    //var chkDuplicate;
-    //function CheckItemBS_Duplicate(itemcode, bsnumber) {
-    //    length2 = tbInfImData2.column(0).data().length;
-    //    console.log('length :> ' + length2);
-    //    if (length2 != 0) {
-    //        for (var x = 0; x < tbInfImData2.column(0).data().length; x++) {
-    //            let xdata = tbInfImData2.row(x).data();
-    //            console.log(xdata.itemCode + ":" + itemcode + "," + xdata.batchSerialNumber + ":" + bsnumber);
-    //            if (xdata.itemCode != itemcode && xdata.batchSerialNumber != bsnumber) {
+    var allDataLineSummary = [];
+    var tbDataLineSummary = $('#TbDataLineSummary').DataTable({
+        responsive: true,
+        bLengthChange: false,
+        binfo: false,
+        data: allDataLineSummary,
+        columns: [
+            { data: "lineNum", autoWidth: true }, //0
+            { data: "docNum", autoWidth: true }, //1
+            { data: "itemCode", autoWidth: true }, //2
+            { data: "dscription", autoWidth: true }, //3
+            { data: "quantity", autoWidth: true }, //4
+            { data: "uomName", autoWidth: true }, //5
+            { data: "whsCode", autoWidth: true }, //6
+            { data: "binCode", autoWidth: true }, //7
+            { data: "binEntry", autoWidth: true }, //8
+            { data: "price", autoWidth: true }, //9
+            { data: "manageItem", autoWidth: true }, //10
+            { data: "batchSerialNumber", autoWidth: true }, //11
+            { data: "U_Patient", autoWidth: true } //12
+        ],
+        rowCallback: function (row, data, index) {
+        },
+        autoWidth: true,
+        pageLength: 10,
+        select: true,
+        paging: true,
+        ordering: false,
+        info: false,
+        searching: false
+    });
+    tbDataLineSummary.columns([3,11]).visible(false, false);
 
-    //                chkDuplicate = 'non-duplicate';
-
-    //            } else if (xdata.itemCode == itemcode && xdata.batchSerialNumber == bsnumber) {
-
-    //                chkDuplicate = 'duplicate';
-
-    //            }
-
-    //        }
-    //    }
-    //    else if (length2 == 0) {
-
-    //        chkDuplicate = 'non-duplicate';
-
-    //    }
-
-    //    return chkDuplicate;
-    //}
-
-    
     var tbInfImDataLineA = $('#TbInfImDataLine').DataTable({
         responsive: true,
         bLengthChange: false,
@@ -991,11 +1064,12 @@
             { data: "uomCode", autoWidth: true },
             { data: "whsCode", autoWidth: true },
             { data: "binCode", autoWidth: true },
-            { data: "binEntry", autoWidth: true },            
+            { data: "binEntry", autoWidth: true },
             { data: "price", autoWidth: true },
             { data: "isBtchSerNum", autoWidth: true },
             { data: "batchSerialNumber", autoWidth: true },
-            { data: "patient", autoWidth: true }
+            { data: "patient", autoWidth: true },
+            { data: "baseLine", autoWidth: true }
         ],
         rowCallback: function (row, data, index) {
         },
@@ -1008,7 +1082,7 @@
         searching: false
     });
 
-    
+
     $("#btnSelectData").click(function () {
         //LDataTb1 = [];
 
@@ -1044,13 +1118,108 @@
                 tbInfImData2.rows.add(Ltmp);
                 tbInfImData2.search('').draw();
                 Ltmp = [];
-                
+
                 //========== End Add ==========
                 document.getElementById("chkLineNumSelect" + i).checked = false;
             }
-            
+
         }
 
+    });
+
+    $("#btnNextSummary").click(function () {
+        console.log("OPEN Tab Summary");
+        var dLineX = [];
+        var dLineXX = [];
+        for (let ctblineX = 0; ctblineX < tbInfImDataLineA.column(0).data().length; ctblineX++) {
+            var ldataX = tbInfImDataLineA.row(ctblineX).data();
+            console.log(ldataX);
+
+            batchLine = [];
+            serialLine = [];
+            arrDataLineB = {};
+            arrDataLineS = {};
+            if (ldataX.isBtchSerNum == "B") {
+                arrDataLineB.itemCode = ldataX.itemCode;
+                arrDataLineB.quantity = ldataX.quantity;
+                arrDataLineB.batchNumber = ldataX.batchSerialNumber;
+                batchLine.push(arrDataLineB);
+                serialLine = [];
+            }
+
+            else if (ldataX.isBtchSerNum == "S") {
+                arrDataLineS.itemCode = ldataX.itemCode;
+                arrDataLineS.quantity = ldataX.quantity;
+                arrDataLineS.serialNumber = ldataX.batchSerialNumber;
+                serialLine.push(arrDataLineS);
+                batchLine = [];
+            }
+            else if (ldataX.isBtchSerNum == "N") {
+                batchLine = [];
+                serialLine = [];
+            }
+
+            arrDataLineSummary = {};
+            arrDataLineSummary.groupItem = ldataX.U_TranferNo + ";" + ldataX.itemCode;
+            arrDataLineSummary.lineNum = ldataX.lineNum;
+            arrDataLineSummary.manageItem = ldataX.isBtchSerNum;
+            arrDataLineSummary.itemCode = ldataX.itemCode;
+            arrDataLineSummary.dscription = '';
+            arrDataLineSummary.quantity = parseFloat(ldataX.quantity);
+            arrDataLineSummary.uomName = ldataX.uomCode;
+            arrDataLineSummary.price = ldataX.price;
+            arrDataLineSummary.whsCode = ldataX.whsCode;
+            arrDataLineSummary.binCode = ldataX.binCode;
+            arrDataLineSummary.binEntry = ldataX.binEntry;
+            arrDataLineSummary.docNum = ldataX.U_TranferNo;
+            arrDataLineSummary.U_Patient = ldataX.patient;
+            arrDataLineSummary.batchSerialNumber = '';
+            //arrDataLine.serial = serialLine;
+            dLineX.push(arrDataLineSummary);
+        }
+        //console.log(dLineX);
+
+        const groupBy = dLineX.reduce((acc, cur) => {
+            acc[cur.groupItem] ? acc[cur.groupItem] = {
+                ...acc[cur.groupItem],
+                quantity: acc[cur.groupItem].quantity + cur.quantity
+            } : acc[cur.groupItem] = {
+                ...cur
+            };
+            return acc;
+        }, {});
+
+        const output = Object.values(groupBy).map((item) => ({
+            ...item
+        }));
+
+
+        console.log("Summary groupBy...");
+        console.log(output);
+
+        for (let xx = 0; xx < output.length; xx++) {
+            console.log("No." + xx);
+            arrDataLineSummaryC = {};
+            arrDataLineSummaryC.groupItem = output[xx].groupItem;
+            arrDataLineSummaryC.lineNum = xx;
+            arrDataLineSummaryC.manageItem = output[xx].manageItem;
+            arrDataLineSummaryC.itemCode = output[xx].itemCode;
+            arrDataLineSummaryC.dscription = '';
+            arrDataLineSummaryC.quantity = output[xx].quantity;
+            arrDataLineSummaryC.uomName = output[xx].uomName;
+            arrDataLineSummaryC.price = output[xx].price;
+            arrDataLineSummaryC.whsCode = output[xx].whsCode;
+            arrDataLineSummaryC.binCode = output[xx].binCode;
+            arrDataLineSummaryC.binEntry = output[xx].binEntry;
+            arrDataLineSummaryC.docNum = output[xx].docNum;
+            arrDataLineSummaryC.U_Patient = output[xx].U_Patient;
+            arrDataLineSummaryC.batchSerialNumber = '';
+            dLineXX.push(arrDataLineSummaryC);
+        }
+        console.log(dLineXX);
+
+        tbDataLineSummary.clear().draw();
+        tbDataLineSummary.rows.add(dLineXX).draw(false);
     });
 
     //$('#TbInfImDataSelect').on("click", "button", function () {
@@ -1087,16 +1256,32 @@
 
         //console.log(tab);
         allDataLine = [];
+        const itmIm = [];
+        var itmXim = "";
+        var baseLine = 0;
         if (tab == '#head') {
             // Copy Row To #head Tab
             for (let dtRow = 0; dtRow < tbInfImData2.column(0).data().length; dtRow++) {
                 arrayDataLine = {};
                 var ldata = tbInfImData2.row(dtRow).data();
                 //console.log(ldata);
-                
+
                 //arrayDataLine.cardCode = $('#CusID').val();
                 //arrayDataLine.cardName = $('#CusName').val();
-                
+                itmXim = ldata.itemCode + ";" + ldata.docNum;
+                if (dtRow == 0) {
+                    itmIm[dtRow] = itmXim;
+                    baseLine = 0;
+                } else if (dtRow > 0) {
+                    itmIm[dtRow] = itmXim;
+                    if (itmIm[dtRow - 1] != itmIm[dtRow]) {
+                        baseLine = baseLine + 1;
+                    } else {
+                        baseLine = baseLine;
+                    }
+                }
+
+
                 arrayDataLine.lineNum = dtRow;
                 arrayDataLine.docNum = ldata.docNum;
                 arrayDataLine.itemCode = ldata.itemCode;
@@ -1111,6 +1296,7 @@
                 arrayDataLine.batchSerialNumber = ldata.batchSerialNumber;
                 arrayDataLine.U_TranferNo = ldata.docNum;
                 arrayDataLine.patient = ldata.patient;
+                arrayDataLine.baseLine = baseLine;
                 allDataLine.push(arrayDataLine);
             }
 
@@ -1121,6 +1307,20 @@
 
     });
 
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
     //Add Data Head And Line -> SAP
     function POSTDataAPI() {
@@ -1133,6 +1333,7 @@
         var sHead = {};
         var sLine = [];
         var dLine = [];
+        var dLineX = [];
         var serialLine = [];
         var batchLine = [];
         var arrayLine = {};
@@ -1142,7 +1343,7 @@
         //Data Line
         for (let ctbline = 0; ctbline < tbInfImDataLineA.column(0).data().length; ctbline++) {
             var ldata = tbInfImDataLineA.row(ctbline).data();
-            console.log(ldata);
+            //console.log(ldata);
 
             batchLine = [];
             serialLine = [];
@@ -1180,12 +1381,91 @@
             arrDataLine.binEntry = ldata.binEntry;
             arrDataLine.U_TranferNo = ldata.U_TranferNo;
             arrDataLine.U_Patient = ldata.patient;
-            arrDataLine.batches = batchLine;  
+            arrDataLine.baseLine = ldata.baseLine;
+            arrDataLine.batches = batchLine;
             arrDataLine.serial = serialLine;
             dLine.push(arrDataLine);
-        }
-        console.log(dLine);
+            }
+            console.log("dLine");
+            console.log(dLine);
 
+            for (let ctblineX = 0; ctblineX < tbInfImDataLineA.column(0).data().length; ctblineX++) {
+                var ldataX = tbInfImDataLineA.row(ctblineX).data();
+                //console.log(ldata);
+
+                batchLine = [];
+                serialLine = [];
+                arrDataLineB = {};
+                arrDataLineS = {};
+                if (ldataX.isBtchSerNum == "B") {
+                    arrDataLineB.itemCode = ldataX.itemCode;
+                    arrDataLineB.quantity = ldataX.quantity;
+                    arrDataLineB.batchNumber = ldataX.batchSerialNumber;
+                    batchLine.push(arrDataLineB);
+                    serialLine = [];
+                }
+
+                else if (ldataX.isBtchSerNum == "S") {
+                    arrDataLineS.itemCode = ldataX.itemCode;
+                    arrDataLineS.quantity = ldataX.quantity;
+                    arrDataLineS.serialNumber = ldataX.batchSerialNumber;
+                    serialLine.push(arrDataLineS);
+                    batchLine = [];
+                }
+                else if (ldataX.isBtchSerNum == "N") {
+                    batchLine = [];
+                    serialLine = [];
+                }
+
+                arrDataLine = {};
+                arrDataLine.groupItem = ldataX.U_TranferNo + ";" + ldataX.itemCode;
+                arrDataLine.lineNum = ldataX.lineNum;
+                arrDataLine.manageItem = ldataX.isBtchSerNum;
+                arrDataLine.itemCode = ldataX.itemCode;
+                arrDataLine.quantity = parseFloat(ldataX.quantity);
+                arrDataLine.uomName = ldataX.uomCode;
+                arrDataLine.price = ldataX.price;
+                arrDataLine.whsCode = ldataX.whsCode;
+                arrDataLine.binCode = ldataX.binCode;
+                arrDataLine.binEntry = ldataX.binEntry;
+                arrDataLine.U_TranferNo = ldataX.U_TranferNo;
+                arrDataLine.U_Patient = ldataX.patient;
+                arrDataLine.baseLine = ldataX.baseLine;
+                //arrDataLine.batches = batchLine;
+                //arrDataLine.serial = serialLine;
+                dLineX.push(arrDataLine);
+            }
+            console.log("dLineX");
+            console.log(dLineX);
+
+            const groupBy = dLineX.reduce((acc, cur) => {
+                acc[cur.groupItem] ? acc[cur.groupItem] = {
+                    ...acc[cur.groupItem],
+                    quantity: acc[cur.groupItem].quantity + cur.quantity
+                } : acc[cur.groupItem] = {
+                    ...cur
+                };
+                return acc;
+            }, {});
+
+            const output = Object.values(groupBy).map((item) => ({
+                ...item
+            }));
+
+
+            console.log("groupBy...");
+            console.log(output);
+
+            for (let xx = 0; xx < output.length; xx++) {
+                output[xx].lineNum = xx;
+            }
+            console.log("replace groupBy...");
+            console.log(output);
+
+            var internal_remark = '';
+            if ($('#internal_remark').val() != ''){
+                internal_remark = $('#internal_remark').val();
+            }
         //Data Head
         sHead.seriesCode = $('#txt_H_SeriesCode').val();
         sHead.cardCode = $('#txt_H_CusID').val();
@@ -1194,41 +1474,68 @@
         sHead.taxDate = $('#txt_H_DocumentDate').val();
         sHead.slpCode = $('#txt_H_SlpCode').val();
         sHead.remark = $('#comments').val();
+            sHead.sqRemark = internal_remark;
         sHead.patient = $('#txt_H_Patient').val();
         sHead.tranferNo = $('#txtDocNum').val();
-        sHead.lines = dLine;
-        console.log(sHead);
+        sHead.invRemark = $('#inv_remark').val();
+        sHead.linesX = dLine;
+        sHead.lines = output;
+            console.log(sHead);
 
-        $.ajax({
-            type: "POST",
-            url: '@Url.Action("PostSalesOrderIM", "Inventory")',
-            data: { sendSalesOrderForIM: sHead},
-            dataType: "JSON",
-            error: function (request, error) {
-                    console.log(arguments);
-                    alert(" Can't do because: " + error);
-            },
-            success: function (ex) {
-                //console.log(ex);
-                if (ex.errorCode == 0) {
-                    alert("Create SO -> Success");
-                    document.getElementById("Save").style.display = 'none';
-                    document.getElementById("frmLoading").style.display = "none";
+        //sendUserPassSAP
+            //get cookie
+            let user = getCookie("username");
+            let passer = getCookie("passw0rder");
+            var dataU = {};
+            dataU.userNameSAP = user;
+            dataU.password = passer;
 
-                    setTimeout(() => {
-                        document.location.reload();
-                    }, 1000);
+            //console.log("-> User And Password Sending...");
+            //console.log(dataU);
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("PostUserConfig", "Setting")',
+                data: { send: dataU},
+                dataType: "JSON",
+                error: function (request, error) {
+
+                },
+                success: function (ex) {
+                    console.log("Success PostUserConfig");
+                    //============================================
+                    console.log("-> To Saving...");
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("PostSalesOrderIM", "Inventory")',
+                        data: { sendSalesOrderForIM: sHead},
+                        dataType: "JSON",
+                        error: function (request, error) {
+                                console.log(arguments);
+                                alert(" Can't do because: " + error);
+                        },
+                        success: function (ex) {
+                            //console.log(ex);
+                            if (ex.errorCode == 0) {
+                                alert("Create SO -> Success");
+                                document.getElementById("Save").style.display = 'none';
+                                document.getElementById("frmLoading").style.display = "none";
+
+                                setTimeout(() => {
+                                    document.location.reload();
+                                }, 1000);
 
 
-                } else {
-                    console.log(ex.errorMsg);
-                    alert(ex.errorMsg);
-                    document.getElementById("Save").style.display = 'block';
-                    document.getElementById("frmLoading").style.display = "none";
+                            } else {
+                                console.log(ex.errorMsg);
+                                alert(ex.errorMsg);
+                                document.getElementById("Save").style.display = 'block';
+                                document.getElementById("frmLoading").style.display = "none";
+                            }
+                        }
+                    });
+                    //============================================
                 }
-            }
-        });
-
+            });
 
         } else {
             alert("Please Select Sale Employee.");

@@ -301,59 +301,105 @@ namespace BarCodeAPIService.Service
 
                     foreach (DataRow row in dt.Rows)
                     {
-
-
-                        //lineItem = int.Parse(row["LineNum"].ToString());
-
-                        double QtyX = double.Parse(row["Quantity"].ToString());
-                        double QtyCv = double.Parse(row["QTYCV"].ToString());
-                        double QtyNotify = double.Parse(row["QTYNotify"].ToString());
-                        double CalcQty = QtyX - (QtyCv + QtyNotify);
-                        string str = "";
+                        string strRemark = "";
                         string BatchSerialNumber = "";
                         double BalanceByBS = 0;
+                        double iBalance = 0;
+                        string prDocNum = "";
+                        string prItemCode = "";
+                        string prIsBtchSerNum = "";
 
-                        if (CalcQty != 0 && (row["YNCV"].ToString() == "Y" || row["YNNotify"].ToString() == "Y"))
+                        prDocNum = row["DocNum"].ToString();
+                        prItemCode = row["ItemCode"].ToString();
+                        if (row["IsBtchSerNum"].ToString() == "B")
+                        {
+                            prIsBtchSerNum = row["BatchesNumber"].ToString();
+                        }
+                        else if (row["IsBtchSerNum"].ToString() == "S")
+                        {
+                            prIsBtchSerNum = row["SerialNumber"].ToString();
+                        }
+                        else if (row["IsBtchSerNum"].ToString() == "N")
+                        {
+                            prIsBtchSerNum = "";
+                        }
+                        if (prDocNum == "122050031" && prItemCode == "0102Z" && prIsBtchSerNum == "PDWPU210401")
+                        {
+                            Console.WriteLine("DocNum : " + prDocNum + " ItemCode : " + prItemCode + " ProductNo : " + prIsBtchSerNum);
+                        }
+                        else
+                        {
+                            Console.WriteLine("DocNum : " + prDocNum + " ItemCode : " + prItemCode + " ProductNo : " + prIsBtchSerNum);
+                        }
+
+                        double QtyY = double.Parse(row["QtyBSNo"].ToString());
+                        double QtyCvY = double.Parse(row["QTYCV"].ToString());
+                        double QtyNotifyY = double.Parse(row["QTYNotify"].ToString());
+                        double CalcQtyBS = QtyY - (QtyCvY + QtyNotifyY);
+
+                        double QtyX = double.Parse(row["Quantity"].ToString());
+                        double QtyCv = double.Parse(row["QTYCV_All"].ToString());
+                        double QtyNotify = double.Parse(row["QTYNotify_All"].ToString());
+                        double CalcQty = QtyX - (QtyCv + QtyNotify);
+
+                        string UseBaseUn = row["UseBaseUn"].ToString();
+
+                        if (row["YNCV"].ToString() == "Y" || row["YNNotify"].ToString() == "Y")
                         {
                             //str = Convert.ToString(QtyX) + "-(" + Convert.ToString(QtyCv) + "+" + Convert.ToString(QtyNotify) + ") = " + CalcQty + " | " + row["YNCV"].ToString() + "/" + row["YNNotify"].ToString();
-                            str = "(" + Convert.ToString(QtyNotify) + " + " + Convert.ToString(QtyCv) + ") = " + Convert.ToString(QtyNotify + QtyCv);
+                            strRemark = "QtyX:- " + CalcQty + " QtyY:- " + CalcQtyBS + " UseBaseUn:- " + UseBaseUn;
                         }
                         else
                         {
                             //str = Convert.ToString(QtyX) + "-(" + Convert.ToString(QtyCv) + "+" + Convert.ToString(QtyNotify) + ") = " + CalcQty + " | " + row["YNCV"].ToString() + "/" + row["YNNotify"].ToString();
-                            str = "(" + Convert.ToString(QtyNotify) + " + " + Convert.ToString(QtyCv) + ") = " + Convert.ToString(QtyNotify + QtyCv);
-                        }                        
+                            strRemark = "QtyX:- " + CalcQty + " QtyY:- " + CalcQtyBS + " UseBaseUn:- " + UseBaseUn;
+                        }
 
-                        if (CalcQty > 0)
+                        string dShowHide = "N";
+                        string rYNCV = row["YNCV"].ToString();
+                        string rYNNotify = row["YNNotify"].ToString();
+                        if (rYNNotify == "Y" && QtyNotifyY == 0)
                         {
-                            if (row["YNCV"].ToString() == "N" || row["YNNotify"].ToString() == "N")
+                            dShowHide = "E";
+                        }
+                        else if (rYNCV == "Y" && QtyCvY == 0)
+                        {
+                            dShowHide = "E";
+                        }
+
+
+                        if (row["IsBtchSerNum"].ToString() == "B")
+                        {
+                            //CalcQtyBS = CalcQtyBS;
+                            if (CalcQty == 0)
                             {
+                                iBalance = CalcQty;
+                            }
+                            else
+                            {
+                                iBalance = CalcQtyBS;
+                            }
 
-                                if (row["IsBtchSerNum"].ToString() == "B")
-                                {
-                                    BatchSerialNumber = row["BatchesNumber"].ToString();
-                                }
-                                else if(row["IsBtchSerNum"].ToString() == "S")
-                                {
-                                    BatchSerialNumber = row["SerialNumber"].ToString();
-                                }
+                            BatchSerialNumber = row["BatchesNumber"].ToString();
+                        }
+                        else if (row["IsBtchSerNum"].ToString() == "S")
+                        {
+                            //CalcQtyBS = CalcQtyBS;
+                            iBalance = CalcQtyBS;
+                            BatchSerialNumber = row["SerialNumber"].ToString();
+                        }
+                        else if (row["IsBtchSerNum"].ToString() == "N")
+                        {
+                            //CalcQtyBS = 0;
+                            iBalance = CalcQty;
+                            BatchSerialNumber = "";
+                        }
 
-                                //Balace-QTY-BSN
-                                if (row["IsBtchSerNum"].ToString() == "B")
-                                {
-                                    BalanceByBS = Convert.ToDouble(QtyNotify + QtyCv);
-                                }
-                                else if (row["IsBtchSerNum"].ToString() == "S")
-                                {
-                                    BalanceByBS = Convert.ToDouble(QtyNotify + QtyCv);
-                                }
-                                else if (row["IsBtchSerNum"].ToString() == "N")
-                                {
-                                    BalanceByBS = Convert.ToDouble(row["Balance"].ToString());
-                                }
-
-                                //U_BalanceQty
-
+                        if (iBalance != 0)
+                        {
+                            if (dShowHide != "E")
+                            {
+                                //Data Line
                                 oWTRIM.Add(new RPT_OWTRIM
                                 {
                                     //Head
@@ -371,16 +417,17 @@ namespace BarCodeAPIService.Service
                                     Quantity = Convert.ToDouble(row["Quantity"].ToString()),
                                     UomCode = row["UomCode"].ToString(),
                                     Price = Convert.ToDouble(row["Price"].ToString()),
-                                    DocTotal = Convert.ToDouble(row["DocTotal"].ToString()),
-                                    Balance = Convert.ToDouble(row["Balance"].ToString()),
+                                    DocTotal = Convert.ToDouble(row["Price"].ToString()) * iBalance,
+                                    //DocTotal = Convert.ToDouble(row["DocTotal"].ToString()),
+                                    Balance = iBalance,
                                     BalanceByBS = BalanceByBS,
                                     SlpCode = row["SlpCode"].ToString(),
                                     SlpName = row["SlpName"].ToString(),
-                                    Remark = str.ToString(),
+                                    Remark = strRemark.ToString(),
                                     QTYByBatchSerial = Convert.ToDouble(row["QtyBSNo"].ToString())
                                 });
-
                             }
+
                         }
 
                     }

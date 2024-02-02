@@ -511,23 +511,63 @@
         object.Lines = line;
         console.log(object);
 
-        //Send To SAP
+        //sendUserPassSAP
+        //get cookie
+        let user = getCookie("username");
+        let passer = getCookie("passw0rder");
+        var dataU = {};
+        dataU.userNameSAP = user;
+        dataU.password = passer;
+
+        console.log("-> User And Password Sending...");
+        console.log(dataU);
         $.ajax({
-            url: '@Url.Action("CreateGoodReturn","GoodReturn")',
             type: "POST",
-            data: { sendGoodsReturn: object },
+            url: '@Url.Action("PostUserConfig", "Setting")',
+            data: { send: dataU},
             dataType: "JSON",
-            success: function(data) {
-                alert("Success");
-                document.getElementById("frmLoading").style.display = "none";
-                location.reload();
+            error: function (request, error) {
+
             },
-            error: function(erro) {
-                alert(erro.responseText);
-                document.getElementById("frmLoading").style.display = "none";
+            success: function (ex) {
+                console.log("Success PostUserConfig");
+                console.log("-> To Saving...");
+                //======================================
+                //Send To SAP
+                $.ajax({
+                    url: '@Url.Action("CreateGoodReturn","GoodReturn")',
+                    type: "POST",
+                    data: { sendGoodsReturn: object },
+                    dataType: "JSON",
+                    success: function(data) {
+                        alert("Success");
+                        document.getElementById("frmLoading").style.display = "none";
+                        location.reload();
+                    },
+                    error: function(erro) {
+                        alert(erro.responseText);
+                        document.getElementById("frmLoading").style.display = "none";
+                    }
+                });
+                //======================================
             }
         });
 
     });
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
 </script>

@@ -40,6 +40,7 @@
         {
             public const string Controller = "api/Delivery/";
             public const string GetSO = "GetSO/";
+            public const string GetSONofity = "GetSONofity/";
             public const string GetBatch = "GetBatch/";
             public const string GetSerial = "GetSerial/";
             public const string POSTDelivery = "POSTDelivery";

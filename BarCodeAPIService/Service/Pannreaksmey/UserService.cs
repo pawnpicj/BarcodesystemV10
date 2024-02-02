@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using BarCodeAPIService.Connection;
 using BarCodeAPIService.Models;
 using BarCodeLibrary.Request.SAP.Pannreaksmey;
 using BarCodeLibrary.Respones.SAP;
+using BarCodeLibrary.Respones.SAP.Bank;
 using BarCodeLibrary.Respones.SAP.Pannreaksmey;
 
 namespace BarCodeAPIService.Service
@@ -73,7 +75,7 @@ namespace BarCodeAPIService.Service
                 {
                     ErrorCode = 0,
                     ErrorMsg = "",
-                    UserCode = dt.Rows[0][1].ToString()
+                    UserCode = send.UserName
                 });
             return Task.FromResult(new ResponsePostUser
             {
@@ -126,6 +128,48 @@ namespace BarCodeAPIService.Service
             return Task.FromResult(new ResponseGetUser
             {
                 Data = null
+            });
+        }
+
+        public Task<ResponseGetDataConfig> ResponseGetDataConfig()
+        {
+            var listData = new List<ListData>();
+
+            
+            listData.Add(new ListData
+            {
+                CompanyDB = ConnectionString.CompanyDB,
+                UserNameSAP = ConnectionString.UserName
+            });
+
+
+            return Task.FromResult(new ResponseGetDataConfig
+            {
+                ErrorCode = 0,
+                ErrorMessage = "",
+                Data = listData.ToList()
+            });
+        }
+
+        public Task<ResponsePostUser> ResponseUpdatePasswordAsync(SendUser send)
+        {
+            var clsCRUD = new ClsCRUD();
+            var dt = clsCRUD.GetDataWeb(
+                "UPDATE \"" + ConnectionString.BarcodeDb + "\".TBUSER SET PASSWORD = '"+send.Password+"' " +
+                " WHERE USERNAME = '"+send.UserName+"' AND PASSWORD = '"+send.OldPassword+"' " +
+                "", "WebDb");
+            if (dt != null)
+                return Task.FromResult(new ResponsePostUser
+                {
+                    ErrorCode = 0,
+                    ErrorMsg = "",
+                    UserCode = send.UserName
+                });
+            return Task.FromResult(new ResponsePostUser
+            {
+                ErrorCode = 0,
+                ErrorMsg = "",
+                UserCode = null
             });
         }
     }

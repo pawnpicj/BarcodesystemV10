@@ -1,0 +1,690 @@
+﻿@{
+    ViewData["Title"] = "Inventory Transfer IM Report Auto";
+    var dt = DateTime.Now;
+    ViewData["Date"] = dt.ToShortDateString();
+}
+
+<link href="~/css/styles.css" rel="stylesheet" />
+<link href="~/css/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/css/DataTable/rowReorder.dataTables.min.css" rel="stylesheet" />
+<link href="~/css/buttons.dataTables.min.css" rel="stylesheet" />
+<link href="~/css/rowGroup.dataTables.min.css" rel="stylesheet" />
+
+@*<link href="~/css/DataTable/responsive.dataTables.min.css" rel="stylesheet" />*@
+
+<script src="~/css/DataTable/jquery-3.3.1.js"></script>
+@*<script src="~/css/DataTable/jquery-3.5.1.js"></script>*@
+<script src="~/css/DataTable/jquery.dataTables.min.js"></script>
+<script src="~/css/DataTable/dataTables.rowReorder.min.js"></script>
+<script src="~/css/DataTable/moment.min.js"></script>
+<script src="~/css/DataTable/datetime-moment.js"></script>
+<script src="~/css/DataTable/dataTables.buttons.min.js"></script>
+<script src="~/css/DataTable/dataTables.select.min.js"></script>
+<script src="~/css/DataTable/dataTables.dateTime.min.js"></script>
+<script src="~/css/DataTable/dataTables.editor.min.js"></script>
+
+<script src="~/js/pdfmake/dataTables.rowGroup.min.js"></script>
+<script src="~/js/pdfmake/jszip.min.js"></script>
+<script src="~/js/pdfmake/pdfmake.min.js"></script>
+<script src="~/js/pdfmake/vfs_fonts.js"></script>
+<script src="~/js/pdfmake/buttons.html5.min.js"></script>
+<script src="~/js/pdfmake/buttons.print.min.js"></script>
+
+<style>
+    tr.selected {
+        background: red;
+        color: red;
+    }
+
+    #main {
+        position: absolute;
+    }
+
+    .color_tap {
+        background-color: #5f95c3;
+        color: #ffffff;
+        font-weight: 600;
+        margin-right: 1px;
+        min-width: 60px;
+    }
+
+    .nav-tabs .nav-link {
+        border: 1px solid rgb(193, 193, 193);
+        border-radius: 0px 12px 0px 0px;
+        height: 40px;
+        line-height: 20px;
+    }
+
+    .modal {
+        z-index: 200000;
+    }
+
+    .modal-header {
+        background: #5f95c3;
+        color: #ffffff;
+        height: 40px;
+    }
+
+        .modal-header b {
+            margin-top: -10px;
+        }
+
+    #TbAR table tr td {
+        height: 35px;
+        margin-left: 15px;
+        margin-top: 10px;
+        padding: 0px !important;
+        position: relative !important;
+        /*background-color: none;*/
+    }
+
+    table {
+        width: 90%;
+    }
+
+        table tbody tr td {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        table tbody tr.selected td {
+            background: #94d8e1;
+            color: red;
+        }
+
+            table tbody tr.selected td .clsinput {
+                background: #94d8e1;
+                color: red;
+            }
+
+    input[type="radio"] {
+        margin-top: -1px;
+        vertical-align: middle;
+        height: 28px;
+        width: 28px;
+    }
+
+    .lbl_rdo {
+        font-size: 18px;
+        /*font-weight: bold;*/
+    }
+
+    .clsinput:focus {
+        outline: none;
+    }
+
+    /* Auto Complate*/
+    input[type=text] {        
+        width: 20%;
+    }
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+            .autocomplete-items div:hover {
+                /*when hovering an item:*/
+                background-color: #e9e9e9;
+            }
+
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
+
+    /* =================================================== */
+    .cover-spin {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255,0.7);
+        z-index: 9999;
+        display: none;
+    }
+
+    @@-webkit-keyframes spin {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .cover-spin::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 48%;
+        top: 40%;
+        width: 40px;
+        height: 40px;
+        border-style: solid;
+        border-color: black;
+        border-top-color: transparent;
+        border-width: 4px;
+        border-radius: 50%;
+        -webkit-animation: spin .8s linear infinite;
+        animation: spin .8s linear infinite;
+    }
+    /* =================================================== */
+
+    th {
+        background-image: none;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .bgGray {
+        background-color: #f0eff1;
+    }
+
+    #btnHistory {
+        background-color: #04AA6D;
+    }
+</style>
+
+<script type="text/javascript">
+
+</script>
+
+
+<div id="#main">
+
+    <div id="frmLoading" class="cover-spin" style="display:none"></div>
+
+    <div><h4>Inventory Transfer IM Report</h4></div>
+    <div class="autocomplete" style="width:800px;">
+        From : <input type="date" id="txtFromDate" />
+        To : <input type="date" id="txtToDate" /><br>
+        Customer : <input type="text" id="txtCustomer" />
+        Sale Employee : <input type="text" id="txtSaleEmployee" /><input type="text" id="txtLoad" value=""/>
+    </div>
+    <button class="btn-sm btn-danger" id="btnSearchData" onclick="fncGetRptIM();">&nbsp;Search&nbsp;</button>
+
+    <div class="table-responsive-sm">
+        <table id="TbRptIM" class="table table-bordered  table-striped table-hover display table-sm" style="width: 100%; background: #f0eff1; color: #696969;">
+            <thead>
+                <tr>
+                    <th>CardCode</th>
+                    <th>CardName</th>
+                    <th>DocNum</th>
+                    <th>DocDate</th>
+                    <th>BinLocaton</th>
+                    <th>ItemCode</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Uom</th>
+                    <th>Batch/Serial</th>
+                    <th>BN/SN</th>
+                    <th>Quantity BN/SN</th>
+                    <th>Balance</th>
+                    <th>Expire Date</th>
+                    <th>Price</th>
+                    <th>LineTotal</th>                    
+                    <th>Sale</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var $txtFileName = "";
+    var LoadData = "No";
+    $(document).ready(function () {
+
+        var now = new Date();
+        var day = ("0" + now.getDate()).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        //var today1 = now.getFullYear() + "-" + "01" + "-01";        
+
+        var monthDef = (now.getMonth() + 1);
+        var yearDef = now.getFullYear();
+
+        //$('#txtFileName').val(yearDef + '-' + monthDef);
+
+        //console.log("Date Now " + now);
+        //console.log("Month Default " + monthDef);
+        //console.log("Year Default " + yearDef);
+        getMMYYYY(monthDef, yearDef);
+
+        const LCustomer = [];
+        const arrCustomer = {};
+
+        $.ajax({
+            url: '@Url.Action("GetCustomerC", "Home")',
+            type: "GET",
+            dataType: "JSON",
+            "dataSrc": 'data',
+            success: function (data) {
+                console.log("Get ContactPerson.");
+                //console.log(data);
+                //console.log(data.data.length);
+
+                for (let i = 0; i < data.data.length; i++) {
+                    //console.log(data.data[i].cardCode + "-" + data.data[i].name);
+                    nameCustomer = data.data[i].cardCode + "-" + data.data[i].name;
+                    LCustomer.push(nameCustomer);
+                }
+
+                autocomplete(document.getElementById("txtCustomer"), LCustomer);
+                //console.log("Show List Array Customer.");
+                //console.log(LCustomer);
+            }
+        });
+
+        
+
+        setTimeout(() => {
+            //alert("XxX");
+            document.getElementById("btnSearchData").click();
+            //$('#txtLoad').val('Yes');
+            
+        }, 5000);
+
+        const lSaleEmployee = [];
+        const arrSaleEmployee = {};
+
+        $.ajax({
+            url: '@Url.Action("GetSaleEmployee", "Home")',
+            type: "GET",
+            dataType: "JSON",
+            "dataSrc": 'data',
+            success: function (data) {
+                console.log("Get SaleEmployeee.");
+                //console.log(data);
+                //console.log(data.data.length);
+
+                for (let i = 0; i < data.data.length; i++) {
+                    //console.log(data.data[i].cardCode + "-" + data.data[i].name);
+                    nameSaleEmployee = data.data[i].slpCode + "-" + data.data[i].slpName;
+                    lSaleEmployee.push(nameSaleEmployee);
+                }
+
+                autocomplete(document.getElementById("txtSaleEmployee"), lSaleEmployee);
+                //console.log("Show List Array Customer.");
+                //console.log(LCustomer);
+            }
+        });
+
+        //$txtFileName = $('#txtFileName').val();
+        
+
+    });
+
+    var GetMM = "";
+    var GetYYYY = "";
+    console.log("Get Route -> ");
+    console.log("Route : " + location.pathname.split('/')[1]);
+    var eRoute = "";
+
+    eRoute = location.pathname.split('/')[1];
+    console.log("Get Location -> ");
+    if (eRoute == "SAPUI") {        
+        console.log("MM : " + location.pathname.split('/')[4]);
+        console.log("YYYY : " + location.pathname.split('/')[5]);
+        GetMM = location.pathname.split('/')[4];
+        GetYYYY = location.pathname.split('/')[5];
+    } else {
+        console.log("MM : " + location.pathname.split('/')[3]);
+        console.log("YYYY : " + location.pathname.split('/')[4]);
+        GetMM = location.pathname.split('/')[3];
+        GetYYYY = location.pathname.split('/')[4];
+    }
+    getRePortName(GetMM, GetYYYY);
+
+    console.log("Show -> " + mmx + yyyyx);
+    if (mmx < 10) {
+        mmx = "0" + mmx
+    } else {
+        mmx = mmx
+    }
+
+    var showMMYYYY = mmx + "-" + yyyyx;
+    var LData = [];    
+    var collapsedGroups = {};
+    var tbRptIM = $('#TbRptIM').DataTable({
+        bLengthChange: false,
+        binfo: false,
+        data: LData,
+        columns: [
+            { data: "cardCode" },
+            { data: "cardName" },
+            { data: "docNum" },
+            { data: "docDate" },
+            { data: "fisrtBin" },
+            { data: "itemCode" },
+            { data: "dscription" },
+            { data: "quantity" },
+            { data: "uomCode" },
+            { data: "isBtchSerNum" },
+            { data: "batchSerialNumber" },
+            { data: "qtyByBatchSerial" },
+            { data: "balance" },
+            { data: "expDate" },
+            { data: "price", render: $.fn.dataTable.render.number(',', '.', 2, '') },
+            { data: "docTotal", render: $.fn.dataTable.render.number(',', '.', 2, '')},
+            { data: "slpName" }
+        ],
+        "drawCallback": function (settings) {
+            var api = this.api();
+            var rows = api.rows({ page: 'current' }).nodes();
+            var last = null;
+            this.api().rows({ page: 'current' }).every(function (rowIdx, tableLoop, rowLoop) {
+                var group = this.cell(rowIdx, 2).render('display');
+                console.log("ROW " + rowLoop + ": [" + this.cell(rowIdx, 2).render('display') + "]");
+                if (last !== group) {
+                    $(rows).eq(rowLoop).before(
+                        '<tr class="group"><td colspan="16" class="bgGray">' + group + '</td></tr>'
+                    );
+                    last = group;
+                }
+
+            });
+        },
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excel',
+                filename: 'Inventory_Transfer_IM_Report-' + showMMYYYY,
+                attr: {
+                    id: 'btnDExcel'
+                }
+            },
+            {
+                text: 'History',
+                attr: {
+                    id: 'btnHistory'
+                },
+                action: function (e, dt, button, config) {
+                    window.location = '/SAPUI/Inventory/HistoryReportIM';
+                }
+            }
+        ],
+        autoWidth: true,
+        pageLength: 30,
+        select: false,
+        paging: true,
+        ordering: false,
+    });
+    tbRptIM.columns([2]).visible(false, false);
+
+
+    function fncGetRptIM() {
+        document.getElementById("frmLoading").style.display = "block";
+        //txtFromDate, txtToDate
+        var cFromDate = $("#txtFromDate").val();
+        var cToDate = $("#txtToDate").val();
+        var cCustomer = $("#txtCustomer").val();
+        var cSaleEmployee = $("#txtSaleEmployee").val();
+        var FromDateX = ""
+        var ToDateX =""
+
+        if (cFromDate !== "" && cToDate !== "") {
+
+            var nowFromDate = new Date(cFromDate);
+            var dayFromDate = ("0" + nowFromDate.getDate()).slice(-2);
+            var monthFromDate = ("0" + (nowFromDate.getMonth() + 1)).slice(-2);
+            var yearFromDate = nowFromDate.getFullYear();
+            FromDateX = dayFromDate + monthFromDate + yearFromDate
+
+            var nowToDate = new Date(cToDate);
+            var dayToDate = ("0" + nowToDate.getDate()).slice(-2);
+            var monthToDate = ("0" + (nowToDate.getMonth() + 1)).slice(-2);
+            var yearToDate = nowToDate.getFullYear();
+            ToDateX = dayToDate + monthToDate + yearToDate
+            console.log(FromDateX + "-" + ToDateX);
+
+            tbRptIM.clear().draw();
+            var Ltmp = [];
+            var tmpAdd = {};
+
+            if (cCustomer != '') {
+                const strArr1 = cCustomer.split("-");
+                var CusCode = strArr1[0];
+                keyCustomer = CusCode;
+            } else {
+                keyCustomer = 'empty';
+            }
+
+            if (cSaleEmployee != '') {
+                const strArr2 = cSaleEmployee.split("-");
+                var SaleCode = strArr2[0];
+                keySales = SaleCode;
+            } else {
+                keySales = 'empty';
+            }
+
+            $.ajax({
+                url: '@Url.Action("RptTransferIM", "Inventory")',
+                data: { fromDate: FromDateX, toDate: ToDateX, customer: keyCustomer, saleEmp: keySales },
+                type: "GET",
+                dataType: "JSON",
+                "dataSrc": 'data',
+                success: function (data) {
+                    console.log("Successfully.");
+                    console.log(data);
+                    tbRptIM.rows.add(data);
+                    tbRptIM.search('').draw();
+                    Ltmp = [];
+                    tbRptIM.rowGroup().enable().draw();
+                    LoadData = "Yes";
+                    document.getElementById("frmLoading").style.display = "none";
+
+
+                    console.log("LoadData :- " + LoadData);
+                    if (LoadData == 'Yes') {
+                        setTimeout(() => {
+                            //alert("XxX");
+                            document.getElementById("btnDExcel").click();
+                        }, 3000);
+                    }
+                }
+            });
+
+        } else {
+            alert("กรุณาเลือกวันที่");
+            document.getElementById("frmLoading").style.display = "none";
+        }
+
+
+    }    
+
+    function autocomplete(input, list) {
+        //Add an event listener to compare the input value with all countries
+        input.addEventListener('input', function () {
+            //Close the existing list if it is open
+            closeAllLists();
+
+            //If the input is empty, exit the function
+            if (!this.value)
+                return;
+
+            //Create a suggestions <div> and add it to the element containing the input field
+            suggestions = document.createElement('div');
+            suggestions.setAttribute('id', 'autocomplete-list');
+            suggestions.setAttribute("id", this.id + "autocomplete-list");
+            suggestions.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(suggestions);
+
+            //Iterate through all entries in the list and find matches
+            for (let i = 0; i < list.length; i++) {
+                if (list[i].toUpperCase().includes(this.value.toUpperCase())) {
+                    //If a match is found, create a suggestion <div> and add it to the suggestions <div>
+                    suggestion = document.createElement('div');
+                    suggestion.innerHTML = list[i];
+
+                    suggestion.addEventListener('click', function () {
+                        input.value = this.innerHTML;
+                        closeAllLists();
+                    });
+                    suggestion.style.cursor = 'pointer';
+
+                    suggestions.appendChild(suggestion);
+                }
+            }
+
+        });
+        input.addEventListener("keydown", function (e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+                /*If the arrow DOWN key is pressed,
+                increase the currentFocus variable:*/
+                currentFocus++;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 38) { //up
+                /*If the arrow UP key is pressed,
+                decrease the currentFocus variable:*/
+                currentFocus--;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 13) {
+                /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                }
+            }
+        });
+
+        function addActive(x) {
+            /*a function to classify an item as "active":*/
+            if (!x) return false;
+            /*start by removing the "active" class on all items:*/
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            /*add class "autocomplete-active":*/
+            x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+            /*a function to remove the "active" class from all autocomplete items:*/
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+            }
+        }
+        function closeAllLists(elmnt) {
+            /*close all autocomplete lists in the document,
+            except the one passed as an argument:*/
+            var x = document.getElementsByClassName("autocomplete-items");
+            for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != input) {
+                    x[i].parentNode.removeChild(x[i]);
+                }
+            }
+        }
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+    }
+
+    function getMMYYYY(month, year) {
+        //console.log("getting func getMMYYYY");
+        //month = 3;
+        //year = 2024;
+        var dday = 0;
+        if (month == 1) {
+            month = 12;
+            year = year - 1;
+        } else {
+            month = month - 1;
+            year = year;
+        }
+
+        if (month == 2) {
+            //Mod 4 = 0 is 29
+            if (year % 4 == 0) {
+                dday = "29";
+            } else {
+                dday = "28";
+            }
+        }
+        else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            dday = "31";
+        }
+        else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            dday = "30";
+        }
+
+        var zMonth = ("0" + month).slice(-2);
+        var dateFrom = "2021-01-01";
+        var dateTo = year + "-" + zMonth + "-" + dday;
+        $('#txtFromDate').val(dateFrom);
+        $('#txtToDate').val(dateTo);
+        //var fileNameX = "Inventory_Transfer_IM_Report-" + year + "-" + zMonth;
+        //$('#txtFileName').val(fileNameX);
+        //console.log("Result dDay : " + dday);
+    }
+
+    function getRePortName(month, year) {
+        if (month == 1) {
+            month = 12;
+            year = year - 1;
+        } else {
+            month = month - 1;
+            year = year;
+        }
+
+        if (month == 2) {
+            //Mod 4 = 0 is 29
+            if (year % 4 == 0) {
+                dday = "29";
+            } else {
+                dday = "28";
+            }
+        }
+        else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            dday = "31";
+        }
+        else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            dday = "30";
+        }
+
+        mmx = month;
+        yyyyx = year;
+    }
+
+</script>

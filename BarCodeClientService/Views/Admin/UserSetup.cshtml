@@ -83,92 +83,79 @@
         <div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
             <div class="row" id="BinCode">
                 <div class="col-sm-8" style="padding: 10px;">
-                    User Code :
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
+                    <div id="hidden" style="display:none">
+                        User Code :
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" id="">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" id="userCode">
                         </div>
-                        <input type="text" class="form-control" placeholder="" value="ACT001" id="userCode">
-                        @*<div class="input-group-append">
-                                <button class="input-group-text btnItemCode" data-toggle="modal" data-target="#ModalItemCode"><i class="fa fa-search"></i></button>
-                            </div>*@
+                        Phone :
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" id="">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" id="phone">
+                        </div>
+                        Email
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" id="">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" id="email" required>
+                        </div>
+                        Fax
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text" id="">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" id="fax" required>
+                        </div>
+
+                        Administrator :
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button class="input-group-text">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                            <select style="height: 30px; width: 864px;" id="admin">
+                                <option value="N">No</option>
+                                <option value="Y">Yes</option>
+                            </select>
+
+                        </div>
                     </div>
                     User Name :
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <input type="text" class="form-control" value="ACT001" placeholder="" id="userName">
+                        <input type="text" class="form-control" placeholder="" id="userName">
                     </div>
-                    Phonse :
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <input type="text" class="form-control" value="098743323" placeholder="" id="phone">
-                    </div>
-                    Email
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" value="abc" id="email" required>
-                    </div>
-                    Fax
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" value="abc" id="fax" required>
-
-                    </div>
+                    
                     Department :
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <select style="height: 30px; width: 864px;" id="department">
-                            <option value="1">Admin</option>
+                        <select style="height: 30px; width: 864px;" id="department" class="form-control">
+                            <option value="USER" selected>USER</option>
+                            <option value="ADMIN">ADMIN</option>
                         </select>
                     </div>
                     Password :
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text" id="">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <input type="password" style="font-size: 14px" class="form-control" value="1234" placeholder="" id="password" required>
+                        <input type="password" style="font-size: 14px" class="form-control"
+                               placeholder="" id="password" required>
                         <div class="input-group-append">
                             <button class="input-group-text btnbinLocation" data-toggle="modal" data-target="#ModalBinCode">
                                 <i class="fa fa-eye-slash" id="togglePassword" onclick="ShowPassword()"></i>
                             </button>
                         </div>
-                    </div>
-                    Administrator :
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <button class="input-group-text">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                        <select style="height: 30px; width: 864px;" id="admin">
-                            <option value="Y">Yes</option>
-                            <option value="N">No</option>
-                        </select>
-
                     </div>
                     <div class="form-check" style="margin-top: 5px">
                         <input class="form-check-input" type="checkbox" value="" id="active">
@@ -232,6 +219,9 @@
     <script src="~/css/DataTable/jquery-3.3.1.js"></script>
     <script src="~/css/DataTable/jquery.dataTables.min.js"></script>
     <script>
+        let user0name = getCookie("username");
+        console.log("USERNAME : " + user0name);
+
         function ShowPassword() {
             const password = document.getElementById('password');
             const icon = document.getElementById('togglePassword');
@@ -257,7 +247,7 @@
             if (document.getElementById('active').checked == true) active = 'Y';
             else active = 'N';
             User.UserID = '0';
-            User.UserCode = $('#userCode').val();
+            User.UserCode = $('#userName').val();
             User.UserName = $('#userName').val();
             User.Phone = $('#phone').val();
             User.Email = $('#email').val();
@@ -275,7 +265,8 @@
                 type: 'POST',
                 dataType: 'JSON',
                 data: { send: User },
-                success: function(data) {
+                success: function (data) {
+                    console.log("Insert Success.");
                 }
             });
 
@@ -303,6 +294,8 @@
             ]
         });
         var tbUser = $('#TbListUser').DataTable();
+
+        tbUser.columns([1, 3, 4, 5,7,8]).visible(false, false);
         var LsUser = [];
         $('#TbListUser tbody').on('click', 'tr', function () {
             if ($(this).hasClass('selected')) {
@@ -314,7 +307,7 @@
                 $(this).addClass('selected');
                 var index = tbUser.row('.selected').index();
                 var data = tbUser.row(index).data();
-                $('#userCode').val(data.userCode);
+                $('#userCode').val(data.userName);
                 $('#userName').val(data.userName);
                 $('#phone').val(data.phone);
                 $('#email').val(data.email);
@@ -349,5 +342,21 @@
                 }
             });
         }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
     </script>
 </div>

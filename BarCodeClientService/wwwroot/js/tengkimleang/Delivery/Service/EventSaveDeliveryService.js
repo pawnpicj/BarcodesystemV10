@@ -45,10 +45,12 @@ let EventSaveGoodReceiptPO = {
                     dSubLine.Quantity = xLinesAR[x].Quantity;
                     dSubLine.PriceBeforeDis = xLinesAR[x].PriceBeforeDis;
                     dSubLine.Discount = xLinesAR[x].Discount;
+                    dSubLine.TaxCode = xLinesAR[x].TaxCode;
                     dSubLine.PriceAfterVAT = xLinesAR[x].GrossPrice;
                     dSubLine.Whs = xLinesAR[x].Whs;
                     dSubLine.Patient = xLinesAR[x].Patient;
                     dSubLine.ManageItem = xLinesAR[x].ManageItem;
+                    dSubLine.BinEntry = xLinesAR[x].BinEntry;
                     dSubLine.YesNo = xLinesAR[x].YesNo;
 
                     bLine = [];
@@ -58,6 +60,7 @@ let EventSaveGoodReceiptPO = {
                         bSubLine.ItemCode = xLinesAR[x].Batches[b].ItemCode;
                         bSubLine.qty = xLinesAR[x].Batches[b].qty;
                         bSubLine.BatchNumber = xLinesAR[x].Batches[b].BatchNumber;
+                        bSubLine.BinEntry = xLinesAR[x].Batches[b].BinEntry;
                         bLine.push(bSubLine);
                     }
 
@@ -68,6 +71,7 @@ let EventSaveGoodReceiptPO = {
                         sSubLine.ItemCode = xLinesAR[x].Serial[s].ItemCode;
                         sSubLine.qty = xLinesAR[x].Serial[s].qty;
                         sSubLine.SerialNumber = xLinesAR[x].Serial[s].SerialNumber;
+                        sSubLine.BinEntry = xLinesAR[x].Serial[s].BinEntry;
                         sLine.push(sSubLine);
                     }
 
@@ -84,8 +88,11 @@ let EventSaveGoodReceiptPO = {
                 sendGoodReceiptPO.TaxDate = $("#DocumentDate").val();
                 sendGoodReceiptPO.OrderNumber = $("#OrderNumberID").val();
                 sendGoodReceiptPO.CurrencyCode = $("#BPDocCurr").val();
+                sendGoodReceiptPO.DiscountPercent = $("#DisPer").val();
                 sendGoodReceiptPO.SlpCode = $("#txtSlpCode").val();
+                sendGoodReceiptPO.DocTotal = $("#Total").val();
                 sendGoodReceiptPO.Remark = $("#Remark").val();
+                sendGoodReceiptPO.Sq_Remark = $("#SQ_Remark").val();
                 sendGoodReceiptPO.Lines = dLine;
                 console.log("Data for SAP ->");
                 console.log(sendGoodReceiptPO);

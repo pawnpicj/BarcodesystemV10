@@ -77,10 +77,44 @@
     }
 </style>
 
+<script type="text/javascript">
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    let user0name = getCookie("username");
+    //console.log("USERNAME : " + user0name);
+
+    $(document).ready(function () {
+
+        //#TabUserSetup
+        if (user0name == "admin") {
+            document.getElementById("TabUserSetup").style.display = "block";
+            //alert("Display is block");
+        } else {
+            document.getElementById("TabUserSetup").style.display = "none";
+            //alert("Display is none");
+        }
+
+    });    
+
+</script>
+
 <div class="container">
     <div class="row">
         @*Bin Location *@
-        <div class="alink col-lg-3">
+        <div class="alink col-lg-3" id="TabUserSetup">
             <a asp-controller="Admin" asp-action="UserSetup">
                 <div class="tabIcon">
                     <div style="text-align:center">
@@ -130,5 +164,6 @@
         $('#Label').mouseover(function () {
             document.getElementById("Label").style.backgroundColor = "rgba(0, 74, 153,0.1)";
         });
-    </script>
+        
+</script>
 </div>

@@ -42,14 +42,31 @@ namespace BarCodeAPIService.Service
                     oSalesOrderDocuments.SalesPersonCode = Convert.ToInt32(sendSalesOrderForIM.SlpCode);
 
                     string strWebID = "";
+                    string strInvRemark = "";
+                    string strInvRemarkCut = "";
                     var date = DateTime.Now;
-                    strWebID = oSalesOrderDocuments.Series + "-" + date.Day + "" + date.Month + "" + date.Year + "-" + date.Hour + "" + date.Minute + "" + date.Second;
+                    strWebID = "SO" + oSalesOrderDocuments.Series + "-" + date.Day + "" + date.Month + "" + date.Year + "-" + date.Hour + "" + date.Minute + "" + date.Second;
                     oSalesOrderDocuments.UserFields.Fields.Item("U_WebID").Value = strWebID;
 
                     oSalesOrderDocuments.UserFields.Fields.Item("U_loannum").Value = sendSalesOrderForIM.TranferNo;
                     oSalesOrderDocuments.UserFields.Fields.Item("U_order").Value = "IM" + sendSalesOrderForIM.TranferNo;
-                    oSalesOrderDocuments.UserFields.Fields.Item("U_inv_remark").Value = "IM" + sendSalesOrderForIM.TranferNo;
 
+                    //หมายเหตุในใบกำกับ                    
+                    strInvRemark = sendSalesOrderForIM.InvRemark;
+                    strInvRemarkCut = strInvRemark.Remove(strInvRemark.Length - 2, 1);
+                    oSalesOrderDocuments.UserFields.Fields.Item("U_inv_remark").Value = strInvRemarkCut;
+
+                    string strSqRemark = "";
+                    if (sendSalesOrderForIM.SqRemark != null || sendSalesOrderForIM.SqRemark != "")
+                    {
+                        strSqRemark = sendSalesOrderForIM.SqRemark;
+                    }
+                    else
+                    {
+                        strSqRemark = "";
+                    }
+                    oSalesOrderDocuments.UserFields.Fields.Item("U_sq_remark").Value = (sendSalesOrderForIM.SqRemark == null) ? "" : sendSalesOrderForIM.SqRemark;
+                    
                     string patient = "";
                     patient = sendSalesOrderForIM.Patient;
 
@@ -100,53 +117,14 @@ namespace BarCodeAPIService.Service
                             xPatient = " ";
                         }
                         oSalesOrderDocuments.Lines.UserFields.Fields.Item("U_Patient").Value = xPatient;
-
-                        //if (nLine == countLine)
-                        //{
-                        //    oSalesOrderDocuments.Lines.UserFields.Fields.Item("U_ItemCodeDes").Value = " ";
-                        //}
-
-                        //if (l.ManageItem == "S")
-                        //{
-                        //    int nS = 0;
-                        //    foreach (var serial in l.Serial)
-                        //    {
-                        //        oSalesOrderDocuments.Lines.SerialNumbers.Quantity = 1;
-                        //        oSalesOrderDocuments.Lines.SerialNumbers.InternalSerialNumber = serial.SerialNumber;
-                        //        oSalesOrderDocuments.Lines.SerialNumbers.ManufacturerSerialNumber = serial.SerialNumber;
-                        //        oSalesOrderDocuments.Lines.SerialNumbers.Add();
-
-                        //        oSalesOrderDocuments.Lines.BinAllocations.SerialAndBatchNumbersBaseLine = nS;
-                        //        oSalesOrderDocuments.Lines.BinAllocations.BinAbsEntry = binEntry;
-                        //        oSalesOrderDocuments.Lines.BinAllocations.Quantity = 1;
-                        //        oSalesOrderDocuments.Lines.BinAllocations.Add();
-
-                        //        nS++;
-                        //    }
-                        //}
-                        //else if (l.ManageItem == "B")
-                        //{
-                        //    int nB = 0;
-                        //    foreach (var batch in l.Batches)
-                        //    {
-                        //        oSalesOrderDocuments.Lines.BatchNumbers.ExpiryDate = Convert.ToDateTime(batch.ExpDate);
-                        //        oSalesOrderDocuments.Lines.BatchNumbers.Quantity = batch.Quantity;
-                        //        oSalesOrderDocuments.Lines.BatchNumbers.BatchNumber = batch.BatchNumber;
-                        //        oSalesOrderDocuments.Lines.BatchNumbers.Add();
-
-                        //        oSalesOrderDocuments.Lines.BinAllocations.SerialAndBatchNumbersBaseLine = nB;
-                        //        oSalesOrderDocuments.Lines.BinAllocations.BinAbsEntry = binEntry;
-                        //        oSalesOrderDocuments.Lines.BinAllocations.Quantity = batch.Quantity;
-                        //        oSalesOrderDocuments.Lines.BinAllocations.Add();
-                        //        nB++;
-                        //    }
-                        //}
+                        oSalesOrderDocuments.Lines.UserFields.Fields.Item("U_BalanceQty").Value = "0";
                         oSalesOrderDocuments.Lines.Add();
                     }
 
-                    oSalesOrderDocuments.UserFields.Fields.Item("U_ToBinLoc").Value = strToBinLoc;
+                    //oSalesOrderDocuments.UserFields.Fields.Item("U_ToBinLoc").Value = strToBinLoc;
 
                     Retval = oSalesOrderDocuments.Add();
+                    Retval = 0;
                     if (Retval != 0)
                     {
                         oCompany.GetLastError(out ErrCode, out ErrMsg);
@@ -172,6 +150,55 @@ namespace BarCodeAPIService.Service
                             oRS = (SAPbobsCOM.Recordset)oCompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset);
                             string SQL1 = "CALL \"" + ConnectionString.CompanyDB + "\"._USP_CALLTRANS_BANK('AddPatientSO','"+ DocNumIM + "','"+ patient + "',"+ cLine + ",'','')";
                             oRS.DoQuery(SQL1);
+
+                            //Insert Line BatchNumber/SerialNumber
+                            foreach (var l in sendSalesOrderForIM.LinesX)
+                            {
+                                var BatchNumber = "";
+                                var SerialNumber = "";
+                                if (l.Batches != null) {
+                                    foreach (var batch in l.Batches)
+                                    {
+                                        BatchNumber = batch.BatchNumber;
+                                    }
+                                }
+
+                                if(l.Serial != null)
+                                {
+                                    foreach (var serial in l.Serial)
+                                    {
+                                        SerialNumber = serial.SerialNumber;
+                                    }
+                                }
+
+                                string INS = "INSERT INTO \"" + ConnectionString.BarcodeDb + "\".TBSOBATCHSERIAL ";
+                                INS = INS + "values(";
+                                INS = INS + "(select top 1 ID from \"" + ConnectionString.BarcodeDb + "\".TBSOBATCHSERIAL order by ID desc) + 1"; //ID
+                                INS = INS + ", 0"; //DocEntry
+                                INS = INS + ", '" + sendSalesOrderForIM.TranferNo + "'"; //DocNum
+                                INS = INS + ", " + l.LineNum + ""; //LineNum
+                                INS = INS + ", '"+ sendSalesOrderForIM.CardCode + "'"; //CardCode
+                                INS = INS + ", ''"; //CardName
+                                INS = INS + ", '" + l.ItemCode + "'"; //ItemCode
+                                INS = INS + ", ''"; //Dscription
+                                INS = INS + ", '" + l.ManageItem + "'"; //BatchSerialType
+                                INS = INS + ", '" + BatchNumber + "'"; //BatchNumber
+                                INS = INS + ", '" + SerialNumber + "'"; //SerialNumber
+                                INS = INS + ", " + l.Quantity + ""; //Quantity
+                                INS = INS + ", '" + l.UomName + "'"; //UomCode
+                                INS = INS + ", ''"; //TaxCode
+                                INS = INS + ", NULL"; //UnitPrice
+                                INS = INS + ", " + l.Price + ""; //GrossPrice
+                                INS = INS + ", '" + l.WhsCode + "'"; //Warehouse
+                                INS = INS + ", '" + l.BinCode + "'"; //BinLocation
+                                INS = INS + ", '" + l.U_Patient + "'"; //Patient
+                                INS = INS + ", '" + strWebID + "'"; //WebDocNum
+                                INS = INS + ", " + l.BaseLine + ""; //BaseLine
+                                INS = INS + ", " + l.BinEntry + ""; //BinEntry
+                                INS = INS + ")";
+                                oRS.DoQuery(INS);
+                            }
+                            
                         }
 
                         return Task.FromResult(new ResponseSalesOrder

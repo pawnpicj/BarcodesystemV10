@@ -1205,7 +1205,7 @@
                     tbSerial1.clear();
                     tbSerial1.rows.add(lsSerial);
                     tbSerial1.search("").draw();
-                    
+
                     $('#ModalBarCodeSerail').modal('show');
                 }
             } else if ($('#itemManage').val() == 'B') {
@@ -1346,9 +1346,49 @@
         }
     });
 
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
     $('#Save').click(function () {
         document.getElementById("frmLoading").style.display = "block";
-        EventSaveGoodReceiptPO.sendGoodReceiptPO('@Url.Action("CreateGoodsReceiptPoResult", "GoodsReceiptPO")');
+
+        //sendUserPassSAP
+        //get cookie
+        let user = getCookie("username");
+        let passer = getCookie("passw0rder");
+        var dataU = {};
+        dataU.userNameSAP = user;
+        dataU.password = passer;
+
+        console.log("-> User And Password Sending...");
+        console.log(dataU);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("PostUserConfig", "Setting")',
+            data: { send: dataU},
+            dataType: "JSON",
+            error: function (request, error) {
+
+            },
+            success: function (ex) {
+                console.log("Success PostUserConfig");
+                EventSaveGoodReceiptPO.sendGoodReceiptPO('@Url.Action("CreateGoodsReceiptPoResult", "GoodsReceiptPO")');
+            }
+        });
+
+
     });
 
 

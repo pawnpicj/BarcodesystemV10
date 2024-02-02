@@ -12,7 +12,10 @@ using Microsoft.AspNetCore.Hosting;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-
+using BarCodeLibrary.Request.SAP.Pannreaksmey;
+using BarCodeLibrary.APICall;
+using BarCodeLibrary.Respones.SAP;
+using BarCodeLibrary.Respones.SAP.Pannreaksmey;
 
 namespace BarCodeClientService.Controllers
 {
@@ -93,6 +96,13 @@ namespace BarCodeClientService.Controllers
             }
 
             return Ok(text);
+        }
+
+        [HttpPost]
+        public IActionResult PostUserConfig(SendUser send)
+        {
+            var a = API.PostWithReturn<ResponseGetUserX>("api/User/PostUserConfig", send);
+            return Ok(a);
         }
 
     }

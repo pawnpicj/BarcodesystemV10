@@ -230,20 +230,6 @@ namespace BarCodeAPIService.Controllers.Bank
             }
         }
 
-        [HttpGet("GetDataConfig")]
-        public async Task<IActionResult> GetDataConfigAsync()
-        {
-            var a = await stockWhsBinService.responseGetDataConfig();
-            if (a.ErrorCode == 0)
-            {
-                return Ok(a);
-            }
-            else
-            {
-                return BadRequest(a);
-            }
-        }
-
         [HttpGet("GetItemByBinCode/{itemCode}/{binCode}")]
         public async Task<IActionResult> GetItemByBinCodeAsync(string itemCode, string binCode)
         {

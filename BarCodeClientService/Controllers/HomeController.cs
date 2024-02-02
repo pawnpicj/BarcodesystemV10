@@ -95,7 +95,7 @@ namespace BarCodeClientService.Controllers
 
         public IActionResult GetDataConfig()
         {
-            var a = API.Read<ResponseGetDataConfig>("api/GetDataConfig");
+            var a = API.Read<ResponseGetDataConfig>("/api/User/GetConfig");
             return Ok(a);
         }
 

@@ -45,6 +45,10 @@ namespace BarCodeClientService.Controllers
         {
             return View();
         }
+        public IActionResult CreateDeliveryNofity()
+        {
+            return View();
+        }
         public IActionResult CreateBarCodeSaleOrder()
         {
             return View();
@@ -56,6 +60,20 @@ namespace BarCodeClientService.Controllers
             //var a = API.Read<ResponseGetORDR>("api/Delivery/GetSO/" + cardCode + "/" + typeShow);
             var a = API.Read<ResponseGetORDR>(APIRoute.Delivery.Controller + APIRoute.Delivery.GetSO + cardCode + "/" + typeShow);
             if (a.ErrorCode!=0)
+            {
+                return BadRequest(a);
+            }
+            else
+            {
+                return Ok(a.Data);
+            }
+        }
+
+        public IActionResult GetSONofity(string cardCode, string typeShow)
+        {
+            //var a = API.Read<ResponseGetORDR>("api/Delivery/GetSO/" + cardCode + "/" + typeShow);
+            var a = API.Read<ResponseGetORDRNofity>(APIRoute.Delivery.Controller + APIRoute.Delivery.GetSONofity + cardCode + "/" + typeShow);
+            if (a.ErrorCode != 0)
             {
                 return BadRequest(a);
             }

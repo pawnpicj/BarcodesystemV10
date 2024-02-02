@@ -13,5 +13,8 @@ namespace BarCodeLibrary.Respones.SAP.Bank
     {
         public string CompanyDB { get; set; }
         public string UserNameSAP { get; set; }
+        public string Password { get; set; }
+        public string UserNameSAPX { get; set; }
+        public string PasswordX { get; set; }
     }
 }

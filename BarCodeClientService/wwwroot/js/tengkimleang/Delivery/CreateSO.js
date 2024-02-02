@@ -72,7 +72,7 @@ let DataTableInit = {
                         data: "Quantity", autoWidth: true
                         //render: function (data, type, full, meta) { return '<input type="number" class="clsinput" style="padding:0px; position:absolute;width:40px;border:none;" onchange="QtyChange(' + meta.row + ')" id="tbQty' + meta.row + '" value="' + full.Quantity + '" readonly=true; >'; }, autoWidth: true
                     },
-                    { data: "InputQuantity", autoWidth: true },
+                    { data: "InputQuantity", autoWidth: true },                    
                     { data: "PriceBeforeDis", autoWidth: true },
                     { data: "LineTotal", autoWidth: true },
                     { data: "UomName", autoWidth: true },
@@ -84,8 +84,13 @@ let DataTableInit = {
                     {
                         data: "LineNum", autoWidth: true
                         //render: function (data, type, full, meta) { return meta.row; }
+                    },
+                    {
+                        data: "InputQuantity",
+                        render: function (data, type, full, meta) {
+                            return '<input type="text" id="txtBalance' + meta.row + '" value="' + data + '" size="2" class="styBalance"/>&nbsp;<input type="text" id="txtBalanceX' + meta.row + '" value="' + data +'" size="2" readonly/>';
+                        }
                     }
-                    
                 ],
             rowCallback: function (row, data, index) {
                 //$('td', row).css('background-color', '#ffffff');
@@ -93,6 +98,39 @@ let DataTableInit = {
             }
         });
     },
+
+    TableListBatchSerial() {
+        $('#TbLineBatchSerial').dataTable({
+            bLengthChange: false,
+            bFilter: false,
+            bInfo: false,
+            bPaginate: false,
+            bSelect: true,
+            ordering: false,
+            data: LineBatchSerial,
+            columns:
+                [                    
+                    { data: "lineNo", autoWidth: true },
+                    { data: "itemCode", autoWidth: true},
+                    { data: "itemName", autoWidth: true},
+                    { data: "quatity", autoWidth: true},
+                    { data: "inputQuantity", autoWidth: true },
+                    { data: "uomCode", autoWidth: true },
+                    { data: "grossPrice", autoWidth: true },
+                    { data: "batchSerialType", autoWidth: true },
+                    { data: "batchNumber", autoWidth: true },
+                    { data: "serialNumber", autoWidth: true },
+                    { data: "warehouse", autoWidth: true },
+                    { data: "binEntry", autoWidth: true },
+                    { data: "binLocation", autoWidth: true },
+                    { data: "patient", autoWidth: true },
+                    { data: "lineSap", autoWidth: true }
+                ],
+            rowCallback: function (row, data, index) {
+            }
+        });
+    },
+
     TableSearchItemCode() {
         $('#TbItem').DataTable({
             responsive: true,

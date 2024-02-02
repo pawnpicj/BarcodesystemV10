@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using BarCodeClientService.Models;
 using BarCodeLibrary.APICall;
 using BarCodeLibrary.Request.SAP;
@@ -7,6 +9,7 @@ using BarCodeLibrary.Respones.SAP;
 using BarCodeLibrary.Respones.SAP.Bank;
 using BarCodeLibrary.Respones.SAP.Pannreaksmey;
 using BarCodeLibrary.Respones.SAP.Tengkimleang;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -17,10 +20,11 @@ namespace BarCodeClientService.Controllers
     public class InventoryController : Controller
     {
         private readonly ILogger<InventoryController> _logger;
-
-        public InventoryController(ILogger<InventoryController> logger)
+        private IWebHostEnvironment Environment;
+        public InventoryController(ILogger<InventoryController> logger, IWebHostEnvironment _environment)
         {
             _logger = logger;
+            Environment = _environment;
         }
 
         public IActionResult Index()
@@ -52,16 +56,67 @@ namespace BarCodeClientService.Controllers
         {
             return View();
         }
-
         public IActionResult formRptTransferIM()
         {
             return View();
         }
 
+        public IActionResult Waiting()
+        {
+            return View();
+        }
 
+        [Route("Inventory/formRptTransferIMAuto/{mm?}/{yyyy?}")]
+        public IActionResult formRptTransferIMAuto()
+        {
+            //Console.WriteLine();
+            return View();
+        }
         public IActionResult FrmPrintForTransfer()
         {
             return View();
+        }
+        public IActionResult HistoryReportIM()
+        {
+            ////string contentPath = this.Environment.ContentRootPath + "\\HistoryReport";
+            //string pathHistoryReportIM = $"{Environment.ContentRootPath}\\HistoryReport\\";
+            //string[] filePaths = Directory.GetFiles($"{Environment.ContentRootPath}\\HistoryReport\\");            
+            ////Console.WriteLine(pathHistoryReportIM);
+            //List<FileModel> files = new List<FileModel>();
+            //foreach (string filePath in filePaths)
+            //{
+            //    files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+            //}
+            return View();
+        }
+
+        public IActionResult HistoryReportIM2()
+        {
+            Console.WriteLine("========= HistoryReportIM2 =========");
+            string filePathsx = Path.Combine(this.Environment.WebRootPath, "HistoryReport/");
+            //string[] filePaths = Directory.GetFiles($"{Environment.ContentRootPath}\\wwwroot\\HistoryReport\\");
+            string[] filePaths = Directory.GetFiles(Path.Combine(this.Environment.WebRootPath, "HistoryReport/"));
+            Console.WriteLine(filePathsx);
+            List<FileModel> files = new List<FileModel>();
+            foreach (string filePath in filePaths)
+            {
+                files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+            }
+            var json = System.Text.Json.JsonSerializer.Serialize(files);
+            return Ok(json);
+        }
+
+        public FileResult DownloadFile(string fileName)
+        {
+            //Build the File Path.
+            string filePathsx = Path.Combine(this.Environment.WebRootPath, "HistoryReport/");
+            string path = filePathsx + fileName;
+
+            //Read the File data into Byte Array.
+            byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+            //Send the File to Download.
+            return File(bytes, "application/octet-stream", fileName);
         }
 
         public IActionResult GetOWTQ()
@@ -409,8 +464,7 @@ namespace BarCodeClientService.Controllers
                 PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
                 PageMargins = new Rotativa.AspNetCore.Options.Margins(0, 0, 1, 0)
             };
-        }
-
+        }        
 
         [HttpPost]
         public IActionResult PostInventoryTransfer(SendInventoryTransfer sendInventoryTransfer)

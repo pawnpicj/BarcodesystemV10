@@ -39,8 +39,6 @@ namespace BarCodeAPIService.Service.Bank
 
         Task<ResponseGetOUOM> responseGetOUOM2();
 
-        Task<ResponseGetDataConfig> responseGetDataConfig();
-
         Task<ResponseGetListItemMaster> responseGetListItemMaster();
     }
 }

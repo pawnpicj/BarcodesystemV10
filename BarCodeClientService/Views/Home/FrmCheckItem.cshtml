@@ -336,13 +336,13 @@
                 "dataSrc": 'data',
                 success: function (data) {
                     if (data !== undefined) {
-                        //console.warn(data[0].length);                        
+                        //console.warn(data[0].length);
                         var jqueryXml = $(data);
                         if (jqueryXml[0].data.length > 0) {
                             //
                             console.log('Success..');
                             //console.log(data);
-                            
+
                             document.getElementById("lbItemCode").innerHTML = jqueryXml[0].data[0].itemCode;
                             document.getElementById("lbItemName").innerHTML = jqueryXml[0].data[0].itemName;
                             document.getElementById("lbWarehouse").innerHTML = jqueryXml[0].data[0].whsCode;
@@ -357,15 +357,15 @@
 
                         } else {
                             alert("ไม่มี Item ของ Barcode นี้");
-                            fncExit();                            
+                            fncExit();
                         }
 
-                        
+
                     }
                     else {
                         fncErr();
                     }
-                    
+
 
                 },
                 error: function (err) {
@@ -465,7 +465,7 @@
                     fncErr();
                 }
                 //END -> Check Error [Cannot read properties of undefined]
-                
+
             },
             error: function (err) {
                 console.log(err.responseText);
@@ -488,6 +488,5 @@
         $('#txtSearchItem').val('');
         $('#txtSearchItem').focus();
     }
-
 
 </script>

@@ -125,7 +125,6 @@ namespace BarCodeAPIService.Service
         #endregion
 
         #region Get
-
         public Task<ResponseCustomerGet> responseCustomerGets(string cusType)
         {
             var customerGets = new List<CustomerGet>();
@@ -173,7 +172,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseOPORGetPO> responseOPORGetPO(string cardName)
         {
             var oPORs = new List<OPOR>();
@@ -260,7 +258,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetSeries> responseGetSeries(string objectCode, string dateOfMonth)
         {
             var getSeries = new List<GetSeries>();
@@ -306,7 +303,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetSaleEmployee> responseGetSaleEmployees()
         {
             var getSaleEmployees = new List<GetSaleEmployee>();
@@ -352,7 +348,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetCurrency> responseGetCurrency(string cardCode)
         {
             var getCurrencies = new List<GetCurrency>();
@@ -398,7 +393,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetGenerateBatchSerial> responseGetGenerateBatchSerial(
             GetGenerateSerialBatchRequest generateSerialBatchRequest)
         {
@@ -468,7 +462,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetGenerateBatchSerial> responseGetGenerateBatchAsync(
             GetBatchGenRequest generateBatchRequest)
         {
@@ -548,7 +541,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetItemCode> responseGetItemCodes()
         {
             var getItemCodes = new List<GetItemCode>();
@@ -599,7 +591,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetVatCode> responseGetVatCodes()
         {
             var getVatCodes = new List<GetVatCode>();
@@ -646,7 +637,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetWarehouse> responseGetWarehouses()
         {
             var getWarehouses = new List<GetWarehouse>();
@@ -692,7 +682,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseGetUnitOfMeasure> responseGetUnitOfMeasure(string ItemCode,string UOMType)
         {
             var getUnitOfMeasure = new List<GetUnitOfMeasure>();
@@ -738,7 +727,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
         public Task<ResponseORPDGetGoodReturn> responseORPDGetGoodReturn(string cardName)
         {
             var listOrpds = new List<ORPD>();
@@ -786,8 +774,6 @@ namespace BarCodeAPIService.Service
                 });
             }
         }
-
-
         #endregion
     }
 }

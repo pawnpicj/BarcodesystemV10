@@ -13,6 +13,10 @@ namespace BarCodeLibrary.Request.SAP
         public string CurrencyCode { get; set; }
         public string Remark { get; set; }
         public string SlpCode { get; set; }
+        public double VatSum { get; set; }
+        public double DiscountPercent { get; set; }
+        public double DocTotal { get; set; }
+        public string Sq_Remark { get; set; }
         public List<SendDeliveryLine> Lines { get; set; }
     }
 
@@ -25,7 +29,9 @@ namespace BarCodeLibrary.Request.SAP
         public double PriceBeforeDis { get; set; }
         public double PriceAfterVAT { get; set; }
         public string Whs { get; set; }
+        public int BinEntry { get; set; }
         public string UomName { get; set; }
+        public string TaxCode { get; set; }
         public int DocEntry { get; set; }
         public string Patient { get; set; }
         public string TranferNo { get; set; }
@@ -39,6 +45,7 @@ namespace BarCodeLibrary.Request.SAP
         public string ItemCode { get; set; }
         public string SerialNumber { get; set; }
         public double Qty { get; set; }
+        public int BinEntry { get; set; }
     }
     public class GetBatchDelivery
     {
@@ -48,5 +55,6 @@ namespace BarCodeLibrary.Request.SAP
         //public double InputQty { get; set; }
         public double Qty { get; set; }
         //Quantity
+        public int BinEntry { get; set; }
     }
 }
